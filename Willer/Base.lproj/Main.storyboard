@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16B2548a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
@@ -23,19 +23,30 @@
                                 <frame key="frameInset" minX="144" minY="359" width="86" height="27"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="开始游戏"/>
+                                <connections>
+                                    <segue destination="sfv-GH-IY5" kind="presentation" modalTransitionStyle="crossDissolve" id="pzV-Z3-GuR"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rSX-od-pGt">
                                 <frame key="frameInset" minX="144" minY="430" width="86" height="32"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="狼人学院"/>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Logo" translatesAutoresizingMaskIntoConstraints="NO" id="PQv-jv-hlm"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Frame" translatesAutoresizingMaskIntoConstraints="NO" id="2su-0G-hOe"/>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="2su-0G-hOe" secondAttribute="bottom" id="DVb-uT-iex"/>
                             <constraint firstItem="eqJ-qW-NSi" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="Ex2-VT-27c"/>
+                            <constraint firstItem="PQv-jv-hlm" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="96" id="IMD-22-LXf"/>
                             <constraint firstAttribute="trailing" secondItem="eqJ-qW-NSi" secondAttribute="trailing" id="Nqw-j7-CDb"/>
                             <constraint firstItem="eqJ-qW-NSi" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Nwv-ZO-xGC"/>
+                            <constraint firstItem="2su-0G-hOe" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="OZW-I0-LIq"/>
+                            <constraint firstItem="PQv-jv-hlm" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="SbD-zK-wVu"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="eqJ-qW-NSi" secondAttribute="bottom" id="ViJ-gp-VUZ"/>
+                            <constraint firstItem="2su-0G-hOe" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="sLd-mA-i98"/>
+                            <constraint firstAttribute="trailing" secondItem="2su-0G-hOe" secondAttribute="trailing" id="vXo-Lw-zKO"/>
                         </constraints>
                     </view>
                     <nil key="simulatedStatusBarMetrics"/>
@@ -44,8 +55,28 @@
             </objects>
             <point key="canvasLocation" x="53.600000000000001" y="97.601199400299862"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="2VV-Ez-fkV">
+            <objects>
+                <viewController id="sfv-GH-IY5" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="sKD-WY-zZz"/>
+                        <viewControllerLayoutGuide type="bottom" id="ebQ-PA-m1A"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="lzK-zR-VY2">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="j8Q-Oi-Gjq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="850" y="98"/>
+        </scene>
     </scenes>
     <resources>
         <image name="Background" width="800" height="600"/>
+        <image name="Frame" width="187" height="333"/>
+        <image name="Logo" width="152" height="42"/>
     </resources>
 </document>

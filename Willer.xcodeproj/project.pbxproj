@@ -33,6 +33,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A54CC8171DC1E77600877BE6 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				A5E8B6BB1DBAD9A700DCA56A /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		A54CC8181DC1E82000877BE6 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				A5E8B6B61DBAD9A700DCA56A /* Assets.xcassets */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
 		A5E8B6A31DBAD9A700DCA56A = {
 			isa = PBXGroup;
 			children = (
@@ -55,8 +71,8 @@
 				A5E8B6AF1DBAD9A700DCA56A /* AppDelegate.swift */,
 				A5E8B6B11DBAD9A700DCA56A /* HomeViewController.swift */,
 				A5E8B6B31DBAD9A700DCA56A /* Main.storyboard */,
-				A5E8B6B61DBAD9A700DCA56A /* Assets.xcassets */,
-				A5E8B6BB1DBAD9A700DCA56A /* Info.plist */,
+				A54CC8181DC1E82000877BE6 /* Resources */,
+				A54CC8171DC1E77600877BE6 /* Supporting Files */,
 			);
 			path = Willer;
 			sourceTree = "<group>";
@@ -71,6 +87,7 @@
 				A5E8B6A81DBAD9A700DCA56A /* Sources */,
 				A5E8B6A91DBAD9A700DCA56A /* Frameworks */,
 				A5E8B6AA1DBAD9A700DCA56A /* Resources */,
+				A54CC8191DC1EAAF00877BE6 /* Increment Build */,
 			);
 			buildRules = (
 			);
@@ -127,6 +144,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		A54CC8191DC1EAAF00877BE6 /* Increment Build */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Increment Build";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "buildNumber=$(/usr/libexec/PlistBuddy -c \"Print CFBundleVersion\" \"${PROJECT_DIR}/${INFOPLIST_FILE}\")\nbuildNumber=$(($buildNumber + 1))\n/usr/libexec/PlistBuddy -c \"Set :CFBundleVersion $buildNumber\" \"${PROJECT_DIR}/${INFOPLIST_FILE}\"";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		A5E8B6A81DBAD9A700DCA56A /* Sources */ = {
