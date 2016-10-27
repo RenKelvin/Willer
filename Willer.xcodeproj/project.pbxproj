@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A54CC81F1DC2597700877BE6 /* ConfigViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A54CC81E1DC2597700877BE6 /* ConfigViewController.swift */; };
+		A5A460EE1DC261DB007F1A05 /* MatchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5A460ED1DC261DB007F1A05 /* MatchViewController.swift */; };
+		A5A460F01DC261EB007F1A05 /* PickViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5A460EF1DC261EB007F1A05 /* PickViewController.swift */; };
+		A5A460F21DC2659F007F1A05 /* PlayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5A460F11DC2659F007F1A05 /* PlayViewController.swift */; };
 		A5E8B6B01DBAD9A700DCA56A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5E8B6AF1DBAD9A700DCA56A /* AppDelegate.swift */; };
 		A5E8B6B21DBAD9A700DCA56A /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5E8B6B11DBAD9A700DCA56A /* HomeViewController.swift */; };
 		A5E8B6B51DBAD9A700DCA56A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A5E8B6B31DBAD9A700DCA56A /* Main.storyboard */; };
@@ -14,6 +18,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A54CC81E1DC2597700877BE6 /* ConfigViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfigViewController.swift; sourceTree = "<group>"; };
+		A5A460ED1DC261DB007F1A05 /* MatchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MatchViewController.swift; sourceTree = "<group>"; };
+		A5A460EF1DC261EB007F1A05 /* PickViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PickViewController.swift; sourceTree = "<group>"; };
+		A5A460F11DC2659F007F1A05 /* PlayViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayViewController.swift; sourceTree = "<group>"; };
 		A5E8B6AC1DBAD9A700DCA56A /* Willer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Willer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A5E8B6AF1DBAD9A700DCA56A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A5E8B6B11DBAD9A700DCA56A /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -45,8 +53,42 @@
 			isa = PBXGroup;
 			children = (
 				A5E8B6B61DBAD9A700DCA56A /* Assets.xcassets */,
+				A5E8B6B31DBAD9A700DCA56A /* Main.storyboard */,
 			);
 			name = Resources;
+			sourceTree = "<group>";
+		};
+		A54CC81A1DC256DD00877BE6 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				A5E8B6B11DBAD9A700DCA56A /* HomeViewController.swift */,
+				A54CC81E1DC2597700877BE6 /* ConfigViewController.swift */,
+				A5A460ED1DC261DB007F1A05 /* MatchViewController.swift */,
+				A5A460EF1DC261EB007F1A05 /* PickViewController.swift */,
+				A5A460F11DC2659F007F1A05 /* PlayViewController.swift */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		A54CC81B1DC256E400877BE6 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		A54CC81C1DC256F000877BE6 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Managers;
+			sourceTree = "<group>";
+		};
+		A54CC81D1DC2573100877BE6 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Models;
 			sourceTree = "<group>";
 		};
 		A5E8B6A31DBAD9A700DCA56A = {
@@ -69,8 +111,10 @@
 			isa = PBXGroup;
 			children = (
 				A5E8B6AF1DBAD9A700DCA56A /* AppDelegate.swift */,
-				A5E8B6B11DBAD9A700DCA56A /* HomeViewController.swift */,
-				A5E8B6B31DBAD9A700DCA56A /* Main.storyboard */,
+				A54CC81B1DC256E400877BE6 /* Views */,
+				A54CC81A1DC256DD00877BE6 /* ViewControllers */,
+				A54CC81C1DC256F000877BE6 /* Managers */,
+				A54CC81D1DC2573100877BE6 /* Models */,
 				A54CC8181DC1E82000877BE6 /* Resources */,
 				A54CC8171DC1E77600877BE6 /* Supporting Files */,
 			);
@@ -105,7 +149,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0800;
-				LastUpgradeCheck = 0800;
+				LastUpgradeCheck = 0810;
 				ORGANIZATIONNAME = "Chuan Ren";
 				TargetAttributes = {
 					A5E8B6AB1DBAD9A700DCA56A = {
@@ -167,8 +211,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A5A460EE1DC261DB007F1A05 /* MatchViewController.swift in Sources */,
 				A5E8B6B21DBAD9A700DCA56A /* HomeViewController.swift in Sources */,
 				A5E8B6B01DBAD9A700DCA56A /* AppDelegate.swift in Sources */,
+				A5A460F01DC261EB007F1A05 /* PickViewController.swift in Sources */,
+				A5A460F21DC2659F007F1A05 /* PlayViewController.swift in Sources */,
+				A54CC81F1DC2597700877BE6 /* ConfigViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -204,6 +252,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -254,6 +303,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
