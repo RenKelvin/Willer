@@ -7,8 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		A54CC81F1DC2597700877BE6 /* ConfigViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A54CC81E1DC2597700877BE6 /* ConfigViewController.swift */; };
-		A5A460EE1DC261DB007F1A05 /* MatchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5A460ED1DC261DB007F1A05 /* MatchViewController.swift */; };
+		5AE3747B1287F3CB30BD192B /* Pods_Willer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 372F206E252478FFC6AE7009 /* Pods_Willer.framework */; };
+		A54CC81F1DC2597700877BE6 /* OrderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A54CC81E1DC2597700877BE6 /* OrderViewController.swift */; };
+		A5A460EE1DC261DB007F1A05 /* SetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5A460ED1DC261DB007F1A05 /* SetViewController.swift */; };
 		A5A460F01DC261EB007F1A05 /* PickViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5A460EF1DC261EB007F1A05 /* PickViewController.swift */; };
 		A5A460F21DC2659F007F1A05 /* PlayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5A460F11DC2659F007F1A05 /* PlayViewController.swift */; };
 		A5E8B6B01DBAD9A700DCA56A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5E8B6AF1DBAD9A700DCA56A /* AppDelegate.swift */; };
@@ -18,8 +19,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		A54CC81E1DC2597700877BE6 /* ConfigViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfigViewController.swift; sourceTree = "<group>"; };
-		A5A460ED1DC261DB007F1A05 /* MatchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MatchViewController.swift; sourceTree = "<group>"; };
+		372F206E252478FFC6AE7009 /* Pods_Willer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Willer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3B3ACD283320DC8695B124C3 /* Pods-Willer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Willer.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Willer/Pods-Willer.debug.xcconfig"; sourceTree = "<group>"; };
+		A54CC81E1DC2597700877BE6 /* OrderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderViewController.swift; sourceTree = "<group>"; };
+		A5A460ED1DC261DB007F1A05 /* SetViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetViewController.swift; sourceTree = "<group>"; };
 		A5A460EF1DC261EB007F1A05 /* PickViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PickViewController.swift; sourceTree = "<group>"; };
 		A5A460F11DC2659F007F1A05 /* PlayViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayViewController.swift; sourceTree = "<group>"; };
 		A5E8B6AC1DBAD9A700DCA56A /* Willer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Willer.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -28,6 +31,7 @@
 		A5E8B6B41DBAD9A700DCA56A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A5E8B6B61DBAD9A700DCA56A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A5E8B6BB1DBAD9A700DCA56A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B8AAAF3D72AF8C2064F44B4D /* Pods-Willer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Willer.release.xcconfig"; path = "Pods/Target Support Files/Pods-Willer/Pods-Willer.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -35,12 +39,30 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5AE3747B1287F3CB30BD192B /* Pods_Willer.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2619C5C174524732BE362C57 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				3B3ACD283320DC8695B124C3 /* Pods-Willer.debug.xcconfig */,
+				B8AAAF3D72AF8C2064F44B4D /* Pods-Willer.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		9F544429DE6BF462FE00C513 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				372F206E252478FFC6AE7009 /* Pods_Willer.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		A54CC8171DC1E77600877BE6 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
@@ -62,8 +84,8 @@
 			isa = PBXGroup;
 			children = (
 				A5E8B6B11DBAD9A700DCA56A /* HomeViewController.swift */,
-				A54CC81E1DC2597700877BE6 /* ConfigViewController.swift */,
-				A5A460ED1DC261DB007F1A05 /* MatchViewController.swift */,
+				A54CC81E1DC2597700877BE6 /* OrderViewController.swift */,
+				A5A460ED1DC261DB007F1A05 /* SetViewController.swift */,
 				A5A460EF1DC261EB007F1A05 /* PickViewController.swift */,
 				A5A460F11DC2659F007F1A05 /* PlayViewController.swift */,
 			);
@@ -96,6 +118,8 @@
 			children = (
 				A5E8B6AE1DBAD9A700DCA56A /* Willer */,
 				A5E8B6AD1DBAD9A700DCA56A /* Products */,
+				2619C5C174524732BE362C57 /* Pods */,
+				9F544429DE6BF462FE00C513 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -128,10 +152,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A5E8B6BE1DBAD9A700DCA56A /* Build configuration list for PBXNativeTarget "Willer" */;
 			buildPhases = (
+				CD5B778F1BDA3BF836C8BB96 /* [CP] Check Pods Manifest.lock */,
 				A5E8B6A81DBAD9A700DCA56A /* Sources */,
 				A5E8B6A91DBAD9A700DCA56A /* Frameworks */,
 				A5E8B6AA1DBAD9A700DCA56A /* Resources */,
 				A54CC8191DC1EAAF00877BE6 /* Increment Build */,
+				2DD76D2057B7D2FFB1A4058B /* [CP] Embed Pods Frameworks */,
+				18B5C5B727B8B279012D9811 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -190,6 +217,36 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		18B5C5B727B8B279012D9811 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Willer/Pods-Willer-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		2DD76D2057B7D2FFB1A4058B /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Willer/Pods-Willer-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		A54CC8191DC1EAAF00877BE6 /* Increment Build */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -204,6 +261,21 @@
 			shellPath = /bin/sh;
 			shellScript = "buildNumber=$(/usr/libexec/PlistBuddy -c \"Print CFBundleVersion\" \"${PROJECT_DIR}/${INFOPLIST_FILE}\")\nbuildNumber=$(($buildNumber + 1))\n/usr/libexec/PlistBuddy -c \"Set :CFBundleVersion $buildNumber\" \"${PROJECT_DIR}/${INFOPLIST_FILE}\"";
 		};
+		CD5B778F1BDA3BF836C8BB96 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -211,12 +283,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A5A460EE1DC261DB007F1A05 /* MatchViewController.swift in Sources */,
+				A5A460EE1DC261DB007F1A05 /* SetViewController.swift in Sources */,
 				A5E8B6B21DBAD9A700DCA56A /* HomeViewController.swift in Sources */,
 				A5E8B6B01DBAD9A700DCA56A /* AppDelegate.swift in Sources */,
 				A5A460F01DC261EB007F1A05 /* PickViewController.swift in Sources */,
 				A5A460F21DC2659F007F1A05 /* PlayViewController.swift in Sources */,
-				A54CC81F1DC2597700877BE6 /* ConfigViewController.swift in Sources */,
+				A54CC81F1DC2597700877BE6 /* OrderViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -331,6 +403,7 @@
 		};
 		A5E8B6BF1DBAD9A700DCA56A /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3B3ACD283320DC8695B124C3 /* Pods-Willer.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = N9KJV72CSL;
@@ -345,6 +418,7 @@
 		};
 		A5E8B6C01DBAD9A700DCA56A /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B8AAAF3D72AF8C2064F44B4D /* Pods-Willer.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = N9KJV72CSL;

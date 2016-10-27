@@ -1,5 +1,5 @@
 //
-//  ConfigViewController.swift
+//  OrderViewController.swift
 //  Willer
 //
 //  Created by Chuan Ren on 10/27/16.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ConfigViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class OrderViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,7 +32,7 @@ class ConfigViewController: UIViewController, UITableViewDataSource, UITableView
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "ConfigTableViewCellReuseIdentifier", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "OrderTableViewCellReuseIdentifier", for: indexPath)
 
         // Configure the cell...
 

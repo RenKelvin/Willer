@@ -1,5 +1,5 @@
 //
-//  MatchViewController.swift
+//  SetViewController.swift
 //  Willer
 //
 //  Created by Chuan Ren on 10/27/16.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MatchViewController: UIViewController {
+class SetViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
