@@ -76,23 +76,33 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uvy-ya-cIF">
-                                <rect key="frame" x="16" y="28" width="31" height="30"/>
-                                <state key="normal" title="返回"/>
-                                <connections>
-                                    <segue destination="BYZ-38-t0r" kind="presentation" modalTransitionStyle="crossDissolve" id="74l-Vv-SqD"/>
-                                </connections>
-                            </button>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="111" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="CBJ-ns-pV7">
-                                <rect key="frame" x="0.0" y="129" width="375" height="538"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ASp-we-pNo">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uvy-ya-cIF">
+                                        <rect key="frame" x="16" y="7" width="31" height="30"/>
+                                        <state key="normal" title="返回"/>
+                                        <connections>
+                                            <segue destination="BYZ-38-t0r" kind="presentation" modalTransitionStyle="crossDissolve" id="74l-Vv-SqD"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="0Gc-lf-zP9"/>
+                                    <constraint firstItem="uvy-ya-cIF" firstAttribute="centerY" secondItem="ASp-we-pNo" secondAttribute="centerY" id="fn6-No-qLf"/>
+                                    <constraint firstItem="uvy-ya-cIF" firstAttribute="leading" secondItem="ASp-we-pNo" secondAttribute="leading" constant="16" id="fyh-6h-3Vd"/>
+                                </constraints>
+                            </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="111" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="CBJ-ns-pV7">
+                                <rect key="frame" x="0.0" y="132" width="375" height="535"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="OrderTableViewCellReuseIdentifier" rowHeight="111" id="dyc-gt-fq5">
                                         <rect key="frame" x="0.0" y="28" width="375" height="111"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="dyc-gt-fq5" id="pCL-Zn-Kda">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="110.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="110"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jeI-9c-44P">
@@ -114,11 +124,45 @@
                                     <outlet property="delegate" destination="sfv-GH-IY5" id="tcy-ka-bqe"/>
                                 </connections>
                             </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Alf-kP-ZQe">
+                                <rect key="frame" x="0.0" y="44" width="375" height="88"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QtE-AK-ReG">
+                                        <rect key="frame" x="8" y="29" width="46" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="-"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wnm-ie-Wb0">
+                                        <rect key="frame" x="149" y="29" width="46" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="+"/>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="8" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZkZ-ml-lBy">
+                                        <rect key="frame" x="77" y="33" width="42" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="88" id="Zca-8l-syU"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="uvy-ya-cIF" firstAttribute="top" secondItem="sKD-WY-zZz" secondAttribute="bottom" constant="8" id="9gO-IH-xQp"/>
-                            <constraint firstItem="uvy-ya-cIF" firstAttribute="leading" secondItem="lzK-zR-VY2" secondAttribute="leading" constant="16" id="Adf-UQ-pth"/>
+                            <constraint firstItem="Alf-kP-ZQe" firstAttribute="leading" secondItem="lzK-zR-VY2" secondAttribute="leading" id="3aZ-7r-IrJ"/>
+                            <constraint firstAttribute="trailing" secondItem="Alf-kP-ZQe" secondAttribute="trailing" id="CZ0-eG-KEJ"/>
+                            <constraint firstItem="ASp-we-pNo" firstAttribute="leading" secondItem="lzK-zR-VY2" secondAttribute="leading" id="Fqe-ra-4Tk"/>
+                            <constraint firstItem="ASp-we-pNo" firstAttribute="top" secondItem="sKD-WY-zZz" secondAttribute="bottom" id="eGA-54-S4b"/>
+                            <constraint firstAttribute="trailing" secondItem="ASp-we-pNo" secondAttribute="trailing" id="j5b-XE-E8G"/>
+                            <constraint firstAttribute="trailing" secondItem="CBJ-ns-pV7" secondAttribute="trailing" id="jQN-Pb-1DW"/>
+                            <constraint firstItem="CBJ-ns-pV7" firstAttribute="top" secondItem="Alf-kP-ZQe" secondAttribute="bottom" id="lqZ-0d-Tj4"/>
+                            <constraint firstItem="Alf-kP-ZQe" firstAttribute="top" secondItem="ASp-we-pNo" secondAttribute="bottom" id="tuS-t0-EUI"/>
+                            <constraint firstItem="ebQ-PA-m1A" firstAttribute="top" secondItem="CBJ-ns-pV7" secondAttribute="bottom" id="xaL-kB-UIK"/>
+                            <constraint firstItem="CBJ-ns-pV7" firstAttribute="leading" secondItem="lzK-zR-VY2" secondAttribute="leading" id="zoV-7C-yES"/>
                         </constraints>
                     </view>
                 </viewController>
@@ -139,7 +183,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OvX-nA-xOZ">
-                                <rect key="frame" x="16" y="28" width="31" height="30"/>
+                                <rect key="frame" x="16" y="8" width="31" height="30"/>
                                 <state key="normal" title="返回"/>
                                 <connections>
                                     <segue destination="sfv-GH-IY5" kind="presentation" modalTransitionStyle="crossDissolve" id="DLr-xh-suK"/>
