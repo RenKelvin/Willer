@@ -1,5 +1,5 @@
 //
-//  SetViewController.swift
+//  DeckViewController.swift
 //  Willer
 //
 //  Created by Chuan Ren on 10/27/16.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SetViewController: UIViewController {
+class DeckViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

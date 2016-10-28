@@ -1,5 +1,5 @@
 //
-//  Set.swift
+//  Deck.swift
 //  Willer
 //
 //  Created by Chuan Ren on 10/27/16.
@@ -8,6 +8,6 @@
 
 import UIKit
 
-class Set: NSObject {
+class Deck: NSObject {
 
 }

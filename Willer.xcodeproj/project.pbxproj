@@ -15,12 +15,12 @@
 		A55B71ED1DC33D9800B0CAF4 /* PlayManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A55B71EC1DC33D9800B0CAF4 /* PlayManager.swift */; };
 		A55B71F11DC3415800B0CAF4 /* Character.swift in Sources */ = {isa = PBXBuildFile; fileRef = A55B71F01DC3415800B0CAF4 /* Character.swift */; };
 		A55B71F31DC3416B00B0CAF4 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = A55B71F21DC3416B00B0CAF4 /* Player.swift */; };
-		A5A460EE1DC261DB007F1A05 /* SetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5A460ED1DC261DB007F1A05 /* SetViewController.swift */; };
+		A5A460EE1DC261DB007F1A05 /* DeckViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5A460ED1DC261DB007F1A05 /* DeckViewController.swift */; };
 		A5A460F01DC261EB007F1A05 /* PickViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5A460EF1DC261EB007F1A05 /* PickViewController.swift */; };
 		A5A460F21DC2659F007F1A05 /* PlayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5A460F11DC2659F007F1A05 /* PlayViewController.swift */; };
 		A5A460F41DC2ABCC007F1A05 /* GameManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5A460F31DC2ABCC007F1A05 /* GameManager.swift */; };
 		A5A460F71DC2AE9D007F1A05 /* Role.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5A460F61DC2AE9D007F1A05 /* Role.swift */; };
-		A5A460F91DC2AEF9007F1A05 /* Set.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5A460F81DC2AEF9007F1A05 /* Set.swift */; };
+		A5A460F91DC2AEF9007F1A05 /* Deck.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5A460F81DC2AEF9007F1A05 /* Deck.swift */; };
 		A5E8B6B01DBAD9A700DCA56A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5E8B6AF1DBAD9A700DCA56A /* AppDelegate.swift */; };
 		A5E8B6B21DBAD9A700DCA56A /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5E8B6B11DBAD9A700DCA56A /* HomeViewController.swift */; };
 		A5E8B6B51DBAD9A700DCA56A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A5E8B6B31DBAD9A700DCA56A /* Main.storyboard */; };
@@ -37,12 +37,12 @@
 		A55B71EC1DC33D9800B0CAF4 /* PlayManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayManager.swift; sourceTree = "<group>"; };
 		A55B71F01DC3415800B0CAF4 /* Character.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Character.swift; sourceTree = "<group>"; };
 		A55B71F21DC3416B00B0CAF4 /* Player.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
-		A5A460ED1DC261DB007F1A05 /* SetViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetViewController.swift; sourceTree = "<group>"; };
+		A5A460ED1DC261DB007F1A05 /* DeckViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeckViewController.swift; sourceTree = "<group>"; };
 		A5A460EF1DC261EB007F1A05 /* PickViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PickViewController.swift; sourceTree = "<group>"; };
 		A5A460F11DC2659F007F1A05 /* PlayViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayViewController.swift; sourceTree = "<group>"; };
 		A5A460F31DC2ABCC007F1A05 /* GameManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameManager.swift; sourceTree = "<group>"; };
 		A5A460F61DC2AE9D007F1A05 /* Role.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Role.swift; sourceTree = "<group>"; };
-		A5A460F81DC2AEF9007F1A05 /* Set.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Set.swift; sourceTree = "<group>"; };
+		A5A460F81DC2AEF9007F1A05 /* Deck.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Deck.swift; sourceTree = "<group>"; };
 		A5E8B6AC1DBAD9A700DCA56A /* Willer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Willer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A5E8B6AF1DBAD9A700DCA56A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A5E8B6B11DBAD9A700DCA56A /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -103,7 +103,7 @@
 			children = (
 				A5E8B6B11DBAD9A700DCA56A /* HomeViewController.swift */,
 				A54CC81E1DC2597700877BE6 /* OrderViewController.swift */,
-				A5A460ED1DC261DB007F1A05 /* SetViewController.swift */,
+				A5A460ED1DC261DB007F1A05 /* DeckViewController.swift */,
 				A5A460EF1DC261EB007F1A05 /* PickViewController.swift */,
 				A5A460F11DC2659F007F1A05 /* PlayViewController.swift */,
 				A55B71EA1DC33D8900B0CAF4 /* ResultViewController.swift */,
@@ -147,7 +147,7 @@
 		A55B71EE1DC3411F00B0CAF4 /* Game */ = {
 			isa = PBXGroup;
 			children = (
-				A5A460F81DC2AEF9007F1A05 /* Set.swift */,
+				A5A460F81DC2AEF9007F1A05 /* Deck.swift */,
 				A5A460F61DC2AE9D007F1A05 /* Role.swift */,
 			);
 			name = Game;
@@ -335,7 +335,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A55B71E71DC33CA300B0CAF4 /* Effect.swift in Sources */,
-				A5A460EE1DC261DB007F1A05 /* SetViewController.swift in Sources */,
+				A5A460EE1DC261DB007F1A05 /* DeckViewController.swift in Sources */,
 				A5E8B6B21DBAD9A700DCA56A /* HomeViewController.swift in Sources */,
 				A55B71ED1DC33D9800B0CAF4 /* PlayManager.swift in Sources */,
 				A5E8B6B01DBAD9A700DCA56A /* AppDelegate.swift in Sources */,
@@ -346,7 +346,7 @@
 				A55B71F11DC3415800B0CAF4 /* Character.swift in Sources */,
 				A5A460F71DC2AE9D007F1A05 /* Role.swift in Sources */,
 				A55B71E91DC33CA800B0CAF4 /* Skill.swift in Sources */,
-				A5A460F91DC2AEF9007F1A05 /* Set.swift in Sources */,
+				A5A460F91DC2AEF9007F1A05 /* Deck.swift in Sources */,
 				A55B71F31DC3416B00B0CAF4 /* Player.swift in Sources */,
 				A55B71EB1DC33D8900B0CAF4 /* ResultViewController.swift in Sources */,
 			);
@@ -465,6 +465,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 3B3ACD283320DC8695B124C3 /* Pods-Willer.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = N9KJV72CSL;
 				INFOPLIST_FILE = Willer/Info.plist;
@@ -480,6 +481,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = B8AAAF3D72AF8C2064F44B4D /* Pods-Willer.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = N9KJV72CSL;
 				INFOPLIST_FILE = Willer/Info.plist;
