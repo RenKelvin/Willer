@@ -10,30 +10,35 @@ import UIKit
 
 class GameManager: NSObject {
 
-    var day = 0
+    let statusMidiator = StatusMidiator()
+    let processMidiator = ProcessMidiator()
+    let playerMidiator = PlayerMidiator()
 
-    var playerArray = [Player]()
-
-    // Singleton
+    // MARK: - Singleton
     static let sharedInstance = GameManager()
 
     override private init() {
-        // Add 2 players
-        let player1 = Player()
-        player1.no = 1
-
-        let player2 = Player()
-        player2.no = 2
-
-        self.playerArray.append(player1)
-        self.playerArray.append(player2)
-
-        //
 
     }
 
-    func nextStep() -> Step {
-        return Step.randomStep()
+    // MARK: -
+
+    func nextDay() {
+
+        // Player
+        self.playerMidiator.nextDay()
+
+        // Status
+        self.statusMidiator.nextDay()
+
+        // Process
+        self.processMidiator.nextDay()
+    }
+
+    // MARK: -
+
+    func nextStep() -> Step? {
+        return self.processMidiator.nextStep()
     }
 
 }

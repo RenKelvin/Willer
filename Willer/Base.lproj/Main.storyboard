@@ -77,7 +77,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ASp-we-pNo">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uvy-ya-cIF">
                                         <rect key="frame" x="16" y="7" width="31" height="30"/>
@@ -95,7 +95,7 @@
                                 </constraints>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="111" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="CBJ-ns-pV7">
-                                <rect key="frame" x="0.0" y="132" width="375" height="535"/>
+                                <rect key="frame" x="0.0" y="152" width="375" height="515"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="OrderTableViewCellReuseIdentifier" rowHeight="111" id="dyc-gt-fq5">
@@ -125,7 +125,7 @@
                                 </connections>
                             </tableView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Alf-kP-ZQe">
-                                <rect key="frame" x="0.0" y="44" width="375" height="88"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="88"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QtE-AK-ReG">
                                         <rect key="frame" x="8" y="29" width="46" height="30"/>
@@ -183,7 +183,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OvX-nA-xOZ">
-                                <rect key="frame" x="16" y="8" width="31" height="30"/>
+                                <rect key="frame" x="16" y="28" width="31" height="30"/>
                                 <state key="normal" title="返回"/>
                                 <connections>
                                     <segue destination="sfv-GH-IY5" kind="presentation" modalTransitionStyle="crossDissolve" id="DLr-xh-suK"/>
@@ -324,56 +324,58 @@
                                     <constraint firstAttribute="trailing" secondItem="Lss-OZ-xEG" secondAttribute="trailing" constant="16" id="ty7-Ed-Xf7"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Gph-fQ-2Y5">
-                                <rect key="frame" x="0.0" y="535" width="375" height="132"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mKz-5H-cEb">
-                                        <rect key="frame" x="16" y="86" width="171.5" height="30"/>
-                                        <state key="normal" title="使用解药"/>
-                                        <connections>
-                                            <action selector="action1" destination="i9T-Kh-tB1" eventType="touchUpInside" id="c8q-hK-uSV"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qDk-wK-kZa">
-                                        <rect key="frame" x="187.5" y="86" width="171.5" height="30"/>
-                                        <state key="normal" title="不使用"/>
-                                        <connections>
-                                            <action selector="action2" destination="i9T-Kh-tB1" eventType="touchUpInside" id="w2o-J6-ldm"/>
-                                        </connections>
-                                    </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="狼人请睁眼" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o7O-po-qcx">
-                                        <rect key="frame" x="16" y="16" width="343" height="26.5"/>
-                                        <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
-                                        <color key="textColor" red="0.98431372549999996" green="0.13725490200000001" blue="0.1215686275" alpha="1" colorSpace="calibratedRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="请选择要击杀的目标" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D8K-Yt-3ry">
-                                        <rect key="frame" x="16" y="50.5" width="343" height="20.5"/>
-                                        <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstItem="o7O-po-qcx" firstAttribute="leading" secondItem="Gph-fQ-2Y5" secondAttribute="leading" constant="16" id="1gF-9s-mom"/>
-                                    <constraint firstAttribute="trailing" secondItem="qDk-wK-kZa" secondAttribute="trailing" constant="16" id="2tb-nd-hzn"/>
-                                    <constraint firstItem="o7O-po-qcx" firstAttribute="top" secondItem="Gph-fQ-2Y5" secondAttribute="top" constant="16" id="5fh-iq-6LT"/>
-                                    <constraint firstAttribute="bottom" secondItem="qDk-wK-kZa" secondAttribute="bottom" constant="16" id="855-zo-CWf"/>
-                                    <constraint firstItem="qDk-wK-kZa" firstAttribute="leading" secondItem="mKz-5H-cEb" secondAttribute="trailing" id="EB3-ay-ZQD"/>
-                                    <constraint firstItem="mKz-5H-cEb" firstAttribute="leading" secondItem="Gph-fQ-2Y5" secondAttribute="leading" constant="16" id="Elx-QM-hqI"/>
-                                    <constraint firstAttribute="trailing" secondItem="D8K-Yt-3ry" secondAttribute="trailing" constant="16" id="HCa-E3-I77"/>
-                                    <constraint firstItem="mKz-5H-cEb" firstAttribute="width" secondItem="qDk-wK-kZa" secondAttribute="width" id="JJL-cE-7EC"/>
-                                    <constraint firstItem="D8K-Yt-3ry" firstAttribute="top" secondItem="o7O-po-qcx" secondAttribute="bottom" constant="8" id="Sa7-ZH-fwO"/>
-                                    <constraint firstAttribute="bottom" secondItem="mKz-5H-cEb" secondAttribute="bottom" constant="16" id="TPt-kW-MnW"/>
-                                    <constraint firstAttribute="height" constant="132" id="ZuU-OR-nIL"/>
-                                    <constraint firstAttribute="trailing" secondItem="o7O-po-qcx" secondAttribute="trailing" constant="16" id="glD-sV-Wvb"/>
-                                    <constraint firstItem="D8K-Yt-3ry" firstAttribute="leading" secondItem="Gph-fQ-2Y5" secondAttribute="leading" constant="16" id="pq2-LF-BOB"/>
-                                </constraints>
-                            </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Z9c-4C-lBd">
                                 <rect key="frame" x="0.0" y="44" width="375" height="491"/>
                                 <color key="backgroundColor" red="0.2784313725" green="0.36470588240000001" blue="0.55294117649999996" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Gph-fQ-2Y5">
+                                <rect key="frame" x="0.0" y="535" width="375" height="132"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="zPm-Jo-CAL">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="132"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="狼人请睁眼" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o7O-po-qcx">
+                                                <rect key="frame" x="0.0" y="0.0" width="375" height="45.5"/>
+                                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
+                                                <color key="textColor" red="0.98431372549999996" green="0.13725490200000001" blue="0.1215686275" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="请选择想要击杀的目标" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D8K-Yt-3ry">
+                                                <rect key="frame" x="0.0" y="45.5" width="375" height="35"/>
+                                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="XJR-ey-rl2">
+                                                <rect key="frame" x="0.0" y="80.5" width="375" height="51.5"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mKz-5H-cEb">
+                                                        <rect key="frame" x="0.0" y="0.0" width="187.5" height="51.5"/>
+                                                        <state key="normal" title="使用解药"/>
+                                                        <connections>
+                                                            <action selector="firstButtonTapped" destination="i9T-Kh-tB1" eventType="touchUpInside" id="8SE-KI-VHH"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qDk-wK-kZa">
+                                                        <rect key="frame" x="187.5" y="0.0" width="187.5" height="51.5"/>
+                                                        <state key="normal" title="不使用"/>
+                                                        <connections>
+                                                            <action selector="secondButtonTapped" destination="i9T-Kh-tB1" eventType="touchUpInside" id="sRa-hS-iDa"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="zPm-Jo-CAL" firstAttribute="top" secondItem="Gph-fQ-2Y5" secondAttribute="top" id="0Wp-z6-veq"/>
+                                    <constraint firstAttribute="trailing" secondItem="zPm-Jo-CAL" secondAttribute="trailing" id="QUr-4r-1b6"/>
+                                    <constraint firstAttribute="height" constant="132" id="T75-vf-LeW"/>
+                                    <constraint firstAttribute="bottom" secondItem="zPm-Jo-CAL" secondAttribute="bottom" id="lk7-rV-15u"/>
+                                    <constraint firstItem="zPm-Jo-CAL" firstAttribute="leading" secondItem="Gph-fQ-2Y5" secondAttribute="leading" id="woD-mn-zZ1"/>
+                                </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
@@ -392,8 +394,10 @@
                     </view>
                     <nil key="simulatedStatusBarMetrics"/>
                     <connections>
-                        <outlet property="consoleLabel1" destination="o7O-po-qcx" id="rJ0-U6-Zxe"/>
-                        <outlet property="consoleLabel2" destination="D8K-Yt-3ry" id="GOa-i5-qYA"/>
+                        <outlet property="bodyLabel" destination="D8K-Yt-3ry" id="Nrs-o8-GNZ"/>
+                        <outlet property="firstButton" destination="mKz-5H-cEb" id="eFz-mg-3Rq"/>
+                        <outlet property="headLabel" destination="o7O-po-qcx" id="c4b-lL-Tfj"/>
+                        <outlet property="secondButton" destination="qDk-wK-kZa" id="H37-RJ-GWM"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Dbh-IN-45W" userLabel="First Responder" sceneMemberID="firstResponder"/>

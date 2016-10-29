@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		5AE3747B1287F3CB30BD192B /* Pods_Willer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 372F206E252478FFC6AE7009 /* Pods_Willer.framework */; };
+		A51F9F551DC5565C009A13CF /* ProcessMidiator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A51F9F541DC5565C009A13CF /* ProcessMidiator.swift */; };
+		A51F9F571DC55EBF009A13CF /* StatusMidiator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A51F9F561DC55EBF009A13CF /* StatusMidiator.swift */; };
+		A51F9F591DC55EF4009A13CF /* PlayerMidiator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A51F9F581DC55EF4009A13CF /* PlayerMidiator.swift */; };
 		A54CC81F1DC2597700877BE6 /* OrderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A54CC81E1DC2597700877BE6 /* OrderViewController.swift */; };
 		A55B71E71DC33CA300B0CAF4 /* Effect.swift in Sources */ = {isa = PBXBuildFile; fileRef = A55B71E61DC33CA300B0CAF4 /* Effect.swift */; };
 		A55B71E91DC33CA800B0CAF4 /* Ability.swift in Sources */ = {isa = PBXBuildFile; fileRef = A55B71E81DC33CA800B0CAF4 /* Ability.swift */; };
@@ -37,6 +40,9 @@
 /* Begin PBXFileReference section */
 		372F206E252478FFC6AE7009 /* Pods_Willer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Willer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3B3ACD283320DC8695B124C3 /* Pods-Willer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Willer.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Willer/Pods-Willer.debug.xcconfig"; sourceTree = "<group>"; };
+		A51F9F541DC5565C009A13CF /* ProcessMidiator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProcessMidiator.swift; sourceTree = "<group>"; };
+		A51F9F561DC55EBF009A13CF /* StatusMidiator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusMidiator.swift; sourceTree = "<group>"; };
+		A51F9F581DC55EF4009A13CF /* PlayerMidiator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerMidiator.swift; sourceTree = "<group>"; };
 		A54CC81E1DC2597700877BE6 /* OrderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderViewController.swift; sourceTree = "<group>"; };
 		A55B71E61DC33CA300B0CAF4 /* Effect.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Effect.swift; sourceTree = "<group>"; };
 		A55B71E81DC33CA800B0CAF4 /* Ability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Ability.swift; sourceTree = "<group>"; };
@@ -95,6 +101,18 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		A51F9F531DC5564C009A13CF /* Game */ = {
+			isa = PBXGroup;
+			children = (
+				A55B71EC1DC33D9800B0CAF4 /* GameManager.swift */,
+				A51F9F561DC55EBF009A13CF /* StatusMidiator.swift */,
+				A51F9F541DC5565C009A13CF /* ProcessMidiator.swift */,
+				A51F9F581DC55EF4009A13CF /* PlayerMidiator.swift */,
+				A5FA13E81DC4A1E9004F5939 /* Step.swift */,
+			);
+			name = Game;
+			sourceTree = "<group>";
+		};
 		A54CC8171DC1E77600877BE6 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
@@ -134,8 +152,7 @@
 			isa = PBXGroup;
 			children = (
 				A5A460F31DC2ABCC007F1A05 /* MatchManager.swift */,
-				A55B71EC1DC33D9800B0CAF4 /* GameManager.swift */,
-				A5FA13E81DC4A1E9004F5939 /* Step.swift */,
+				A51F9F531DC5564C009A13CF /* Game */,
 			);
 			name = Managers;
 			sourceTree = "<group>";
@@ -381,17 +398,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A51F9F551DC5565C009A13CF /* ProcessMidiator.swift in Sources */,
 				A5FA13E51DC49532004F5939 /* TakeActionModifier.swift in Sources */,
 				A55B71E71DC33CA300B0CAF4 /* Effect.swift in Sources */,
 				A5A460EE1DC261DB007F1A05 /* DeckViewController.swift in Sources */,
 				A5E8B6B21DBAD9A700DCA56A /* HomeViewController.swift in Sources */,
 				A55B71ED1DC33D9800B0CAF4 /* GameManager.swift in Sources */,
 				A5E8B6B01DBAD9A700DCA56A /* AppDelegate.swift in Sources */,
+				A51F9F591DC55EF4009A13CF /* PlayerMidiator.swift in Sources */,
 				A5A460F41DC2ABCC007F1A05 /* MatchManager.swift in Sources */,
 				A5A460F01DC261EB007F1A05 /* PickViewController.swift in Sources */,
 				A5A460F21DC2659F007F1A05 /* GameViewController.swift in Sources */,
 				A5FA13D61DC4392F004F5939 /* Modifier.swift in Sources */,
 				A54CC81F1DC2597700877BE6 /* OrderViewController.swift in Sources */,
+				A51F9F571DC55EBF009A13CF /* StatusMidiator.swift in Sources */,
 				A5FA13E01DC48D85004F5939 /* AttachEffectModifier.swift in Sources */,
 				A55B71F11DC3415800B0CAF4 /* Character.swift in Sources */,
 				A5A460F71DC2AE9D007F1A05 /* Card.swift in Sources */,
