@@ -10,4 +10,24 @@ import UIKit
 
 class PlayManager: NSObject {
 
+    var playerArray = [Player]()
+
+    // Singleton
+    static let sharedInstance = PlayManager()
+
+    override private init() {
+        // Add 2 players
+        let player1 = Player()
+        player1.no = 1
+
+        let player2 = Player()
+        player2.no = 2
+
+        self.playerArray.append(player1)
+        self.playerArray.append(player2)
+
+        //
+        
+    }
+
 }

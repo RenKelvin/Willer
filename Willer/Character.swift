@@ -10,4 +10,6 @@ import GameplayKit
 
 class Character: NSObject {
 
+    var id: String?
+    
 }

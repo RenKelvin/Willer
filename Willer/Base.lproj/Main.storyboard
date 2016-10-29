@@ -297,36 +297,69 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Va5-ld-ab1">
-                                <rect key="frame" x="16" y="8" width="31" height="30"/>
-                                <state key="normal" title="返回"/>
-                                <connections>
-                                    <segue destination="Sgp-75-xjf" kind="presentation" modalTransitionStyle="crossDissolve" id="3Zt-lA-bsz"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mKz-5H-cEb">
-                                <rect key="frame" x="61" y="568" width="117" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="使用解药"/>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qDk-wK-kZa">
-                                <rect key="frame" x="186" y="568" width="117" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="不使用"/>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lss-OZ-xEG">
-                                <rect key="frame" x="328" y="8" width="31" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="结束"/>
-                                <connections>
-                                    <segue destination="EPk-2w-Khd" kind="presentation" modalTransitionStyle="crossDissolve" id="ANW-Q6-msE"/>
-                                </connections>
-                            </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cEe-61-pMt">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lss-OZ-xEG">
+                                        <rect key="frame" x="328" y="7" width="31" height="30"/>
+                                        <state key="normal" title="结束"/>
+                                        <connections>
+                                            <segue destination="EPk-2w-Khd" kind="presentation" modalTransitionStyle="crossDissolve" id="ANW-Q6-msE"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Va5-ld-ab1">
+                                        <rect key="frame" x="16" y="7" width="31" height="30"/>
+                                        <state key="normal" title="返回"/>
+                                        <connections>
+                                            <segue destination="Sgp-75-xjf" kind="presentation" modalTransitionStyle="crossDissolve" id="3Zt-lA-bsz"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="Va5-ld-ab1" firstAttribute="centerY" secondItem="cEe-61-pMt" secondAttribute="centerY" id="3Eh-Ok-Vlp"/>
+                                    <constraint firstItem="Lss-OZ-xEG" firstAttribute="centerY" secondItem="cEe-61-pMt" secondAttribute="centerY" id="8rA-Co-H4n"/>
+                                    <constraint firstAttribute="height" constant="44" id="JZL-Ol-mj8"/>
+                                    <constraint firstItem="Va5-ld-ab1" firstAttribute="leading" secondItem="cEe-61-pMt" secondAttribute="leading" constant="16" id="L5o-al-1Q5"/>
+                                    <constraint firstAttribute="trailing" secondItem="Lss-OZ-xEG" secondAttribute="trailing" constant="16" id="ty7-Ed-Xf7"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Gph-fQ-2Y5">
+                                <rect key="frame" x="0.0" y="579" width="375" height="88"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qDk-wK-kZa">
+                                        <rect key="frame" x="202" y="50" width="117" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="不使用"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mKz-5H-cEb">
+                                        <rect key="frame" x="53" y="50" width="117" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="使用解药"/>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="88" id="ZuU-OR-nIL"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Z9c-4C-lBd">
+                                <rect key="frame" x="0.0" y="44" width="375" height="535"/>
+                                <color key="backgroundColor" red="0.2784313725" green="0.36470588240000001" blue="0.55294117649999996" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="Va5-ld-ab1" firstAttribute="top" secondItem="0Pt-zY-GXX" secondAttribute="bottom" constant="8" id="Z7i-gX-9QN"/>
-                            <constraint firstItem="Va5-ld-ab1" firstAttribute="leading" secondItem="59A-UF-HpD" secondAttribute="leading" constant="16" id="wSf-xC-MdN"/>
+                            <constraint firstItem="cEe-61-pMt" firstAttribute="top" secondItem="0Pt-zY-GXX" secondAttribute="bottom" id="0Ar-B6-qgk"/>
+                            <constraint firstItem="mpi-Mr-j0I" firstAttribute="top" secondItem="Gph-fQ-2Y5" secondAttribute="bottom" id="GnT-QN-nAr"/>
+                            <constraint firstItem="Z9c-4C-lBd" firstAttribute="top" secondItem="cEe-61-pMt" secondAttribute="bottom" id="Hy3-Eh-Ea3"/>
+                            <constraint firstAttribute="trailing" secondItem="cEe-61-pMt" secondAttribute="trailing" id="WzS-EG-KGV"/>
+                            <constraint firstItem="cEe-61-pMt" firstAttribute="leading" secondItem="59A-UF-HpD" secondAttribute="leading" id="YtR-X0-UNl"/>
+                            <constraint firstAttribute="trailing" secondItem="Z9c-4C-lBd" secondAttribute="trailing" id="Zt9-yL-0JX"/>
+                            <constraint firstItem="Z9c-4C-lBd" firstAttribute="leading" secondItem="59A-UF-HpD" secondAttribute="leading" id="fHJ-Jo-5f3"/>
+                            <constraint firstItem="Gph-fQ-2Y5" firstAttribute="leading" secondItem="59A-UF-HpD" secondAttribute="leading" id="mbe-1Q-SjW"/>
+                            <constraint firstItem="Gph-fQ-2Y5" firstAttribute="top" secondItem="Z9c-4C-lBd" secondAttribute="bottom" id="ozh-Qm-qcG"/>
+                            <constraint firstAttribute="trailing" secondItem="Gph-fQ-2Y5" secondAttribute="trailing" id="t2G-gc-kmK"/>
                         </constraints>
                     </view>
                     <nil key="simulatedStatusBarMetrics"/>
@@ -379,8 +412,8 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="3Zt-lA-bsz"/>
-        <segue reference="v9p-sL-S5v"/>
-        <segue reference="MXL-To-vyS"/>
         <segue reference="DLr-xh-suK"/>
+        <segue reference="aF7-aO-f9P"/>
+        <segue reference="74l-Vv-SqD"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -10,6 +10,8 @@ import GameplayKit
 
 class Player: GKEntity {
 
+    var no: Int = 0
+
     var character: Character?
 
     var effectSet: Set<Effect> = []
