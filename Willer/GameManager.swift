@@ -1,5 +1,5 @@
 //
-//  PlayManager.swift
+//  GameManager.swift
 //  Willer
 //
 //  Created by Chuan Ren on 10/28/16.
@@ -8,12 +8,14 @@
 
 import UIKit
 
-class PlayManager: NSObject {
+class GameManager: NSObject {
+
+    var day = 0
 
     var playerArray = [Player]()
 
     // Singleton
-    static let sharedInstance = PlayManager()
+    static let sharedInstance = GameManager()
 
     override private init() {
         // Add 2 players
@@ -27,7 +29,11 @@ class PlayManager: NSObject {
         self.playerArray.append(player2)
 
         //
-        
+
+    }
+
+    func nextStep() -> Step {
+        return Step.randomStep()
     }
 
 }

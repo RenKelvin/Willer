@@ -170,10 +170,10 @@
             </objects>
             <point key="canvasLocation" x="848.79999999999995" y="97.601199400299862"/>
         </scene>
-        <!--Set View Controller-->
+        <!--Deck View Controller-->
         <scene sceneID="IRs-pm-UVQ">
             <objects>
-                <viewController id="unr-vM-xcp" customClass="SetViewController" customModule="Willer" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="unr-vM-xcp" customClass="DeckViewController" customModule="Willer" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Hyy-Rh-8rj"/>
                         <viewControllerLayoutGuide type="bottom" id="W9Q-nE-UeH"/>
@@ -285,10 +285,10 @@
             </objects>
             <point key="canvasLocation" x="2408.8000000000002" y="97.601199400299862"/>
         </scene>
-        <!--Play View Controller-->
+        <!--Game View Controller-->
         <scene sceneID="iSc-sF-JSt">
             <objects>
-                <viewController id="i9T-Kh-tB1" customClass="PlayViewController" customModule="Willer" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="i9T-Kh-tB1" customClass="GameViewController" customModule="Willer" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="0Pt-zY-GXX"/>
                         <viewControllerLayoutGuide type="bottom" id="mpi-Mr-j0I"/>
@@ -325,26 +325,54 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Gph-fQ-2Y5">
-                                <rect key="frame" x="0.0" y="579" width="375" height="88"/>
+                                <rect key="frame" x="0.0" y="535" width="375" height="132"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qDk-wK-kZa">
-                                        <rect key="frame" x="202" y="50" width="117" height="30"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" title="不使用"/>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mKz-5H-cEb">
-                                        <rect key="frame" x="53" y="50" width="117" height="30"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mKz-5H-cEb">
+                                        <rect key="frame" x="16" y="86" width="171.5" height="30"/>
                                         <state key="normal" title="使用解药"/>
+                                        <connections>
+                                            <action selector="action1" destination="i9T-Kh-tB1" eventType="touchUpInside" id="c8q-hK-uSV"/>
+                                        </connections>
                                     </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qDk-wK-kZa">
+                                        <rect key="frame" x="187.5" y="86" width="171.5" height="30"/>
+                                        <state key="normal" title="不使用"/>
+                                        <connections>
+                                            <action selector="action2" destination="i9T-Kh-tB1" eventType="touchUpInside" id="w2o-J6-ldm"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="狼人请睁眼" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o7O-po-qcx">
+                                        <rect key="frame" x="16" y="16" width="343" height="26.5"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
+                                        <color key="textColor" red="0.98431372549999996" green="0.13725490200000001" blue="0.1215686275" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="请选择要击杀的目标" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D8K-Yt-3ry">
+                                        <rect key="frame" x="16" y="50.5" width="343" height="20.5"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="88" id="ZuU-OR-nIL"/>
+                                    <constraint firstItem="o7O-po-qcx" firstAttribute="leading" secondItem="Gph-fQ-2Y5" secondAttribute="leading" constant="16" id="1gF-9s-mom"/>
+                                    <constraint firstAttribute="trailing" secondItem="qDk-wK-kZa" secondAttribute="trailing" constant="16" id="2tb-nd-hzn"/>
+                                    <constraint firstItem="o7O-po-qcx" firstAttribute="top" secondItem="Gph-fQ-2Y5" secondAttribute="top" constant="16" id="5fh-iq-6LT"/>
+                                    <constraint firstAttribute="bottom" secondItem="qDk-wK-kZa" secondAttribute="bottom" constant="16" id="855-zo-CWf"/>
+                                    <constraint firstItem="qDk-wK-kZa" firstAttribute="leading" secondItem="mKz-5H-cEb" secondAttribute="trailing" id="EB3-ay-ZQD"/>
+                                    <constraint firstItem="mKz-5H-cEb" firstAttribute="leading" secondItem="Gph-fQ-2Y5" secondAttribute="leading" constant="16" id="Elx-QM-hqI"/>
+                                    <constraint firstAttribute="trailing" secondItem="D8K-Yt-3ry" secondAttribute="trailing" constant="16" id="HCa-E3-I77"/>
+                                    <constraint firstItem="mKz-5H-cEb" firstAttribute="width" secondItem="qDk-wK-kZa" secondAttribute="width" id="JJL-cE-7EC"/>
+                                    <constraint firstItem="D8K-Yt-3ry" firstAttribute="top" secondItem="o7O-po-qcx" secondAttribute="bottom" constant="8" id="Sa7-ZH-fwO"/>
+                                    <constraint firstAttribute="bottom" secondItem="mKz-5H-cEb" secondAttribute="bottom" constant="16" id="TPt-kW-MnW"/>
+                                    <constraint firstAttribute="height" constant="132" id="ZuU-OR-nIL"/>
+                                    <constraint firstAttribute="trailing" secondItem="o7O-po-qcx" secondAttribute="trailing" constant="16" id="glD-sV-Wvb"/>
+                                    <constraint firstItem="D8K-Yt-3ry" firstAttribute="leading" secondItem="Gph-fQ-2Y5" secondAttribute="leading" constant="16" id="pq2-LF-BOB"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Z9c-4C-lBd">
-                                <rect key="frame" x="0.0" y="44" width="375" height="535"/>
+                                <rect key="frame" x="0.0" y="44" width="375" height="491"/>
                                 <color key="backgroundColor" red="0.2784313725" green="0.36470588240000001" blue="0.55294117649999996" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
                         </subviews>
@@ -363,6 +391,10 @@
                         </constraints>
                     </view>
                     <nil key="simulatedStatusBarMetrics"/>
+                    <connections>
+                        <outlet property="consoleLabel1" destination="o7O-po-qcx" id="rJ0-U6-Zxe"/>
+                        <outlet property="consoleLabel2" destination="D8K-Yt-3ry" id="GOa-i5-qYA"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Dbh-IN-45W" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

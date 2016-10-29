@@ -8,7 +8,7 @@
         "Modifier": {
             "werewolf_kill_modifier": {
 
-                "Type": "AttachEffect"
+                "Type": "AttachEffect",
 
                 "TargetType": "Target",
                 "TargetAmount": 1,
@@ -40,9 +40,9 @@
 
             },
             "werewolf_suicide_enterNight_modifier": {
-                
+
                 "Type": "Game"
-                
+
             }
         }
     }

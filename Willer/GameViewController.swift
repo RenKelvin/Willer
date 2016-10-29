@@ -1,5 +1,5 @@
 //
-//  PlayViewController.swift
+//  GameViewController.swift
 //  Willer
 //
 //  Created by Chuan Ren on 10/27/16.
@@ -8,19 +8,35 @@
 
 import UIKit
 
-class PlayViewController: UIViewController {
+class GameViewController: UIViewController {
+
+    @IBOutlet var consoleLabel1: UILabel!
+    @IBOutlet var consoleLabel2: UILabel!
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        self.renderStep(step: GameManager.sharedInstance.nextStep())
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
+
+    func renderStep(step: Step) {
+        self.consoleLabel1.text = step.text1
+        self.consoleLabel2.text = step.text2
+    }
+
+    @IBAction func action1() {
+        self.renderStep(step: GameManager.sharedInstance.nextStep())
+    }
+
+    @IBAction func action2() {
+
+    }
 
     /*
     // MARK: - Navigation

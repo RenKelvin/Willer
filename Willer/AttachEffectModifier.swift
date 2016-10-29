@@ -25,7 +25,7 @@ class AttachEffectModifier: Modifier {
     override func perform() {
         switch self.targetType {
         case .target:
-            // TODO: Get targets from PlayManager
+            // TODO: Get targets from GameManager
             let target = Player()
             target.attachEffect(effect: self.effect!)
         default:
