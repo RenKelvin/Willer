@@ -1,5 +1,5 @@
 //
-//  Role.swift
+//  Card.swift
 //  Willer
 //
 //  Created by Chuan Ren on 10/27/16.
@@ -8,6 +8,6 @@
 
 import UIKit
 
-class Role: NSObject {
+class Card: NSObject {
 
 }

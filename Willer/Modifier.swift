@@ -1,5 +1,5 @@
 //
-//  Skill.swift
+//  Modifier.swift
 //  Willer
 //
 //  Created by Chuan Ren on 10/28/16.
@@ -8,6 +8,12 @@
 
 import UIKit
 
-class Skill: NSObject {
+class Modifier: NSObject {
 
+    var id: String?
+
+    func perform() {
+
+    }
+    
 }

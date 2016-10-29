@@ -1,5 +1,5 @@
 //
-//  GameManager.swift
+//  MatchManager.swift
 //  Willer
 //
 //  Created by Chuan Ren on 10/27/16.
@@ -8,10 +8,10 @@
 
 import UIKit
 
-class GameManager: NSObject {
+class MatchManager: NSObject {
 
     // Singleton
-    static let sharedInstance = GameManager()
+    static let sharedInstance = MatchManager()
 
     override private init() {
 

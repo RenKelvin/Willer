@@ -6,7 +6,7 @@
 //  Copyright © 2016 Chuan Ren. All rights reserved.
 //
 
-import UIKit
+import GameplayKit
 
 class Character: NSObject {
 
