@@ -13,6 +13,7 @@ class PlayerMidiator: NSObject {
     var playerArray = [Player]()
 
     // MARK: - Singleton
+    
     static let sharedInstance = PlayerMidiator()
 
     override private init() {

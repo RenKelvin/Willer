@@ -10,7 +10,8 @@ import UIKit
 
 class MatchManager: NSObject {
 
-    // Singleton
+    // MARK: - Singleton
+
     static let sharedInstance = MatchManager()
 
     override private init() {

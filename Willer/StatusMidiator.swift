@@ -16,6 +16,7 @@ class StatusMidiator: NSObject {
     }
 
     // MARK: - Singleton
+
     static let sharedInstance = StatusMidiator()
 
     override private init() {

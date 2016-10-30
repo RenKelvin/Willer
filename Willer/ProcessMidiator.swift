@@ -16,6 +16,7 @@ class ProcessMidiator: NSObject {
     }
 
     // MARK: - Singleton
+
     static let sharedInstance = ProcessMidiator()
 
     override private init() {
@@ -23,12 +24,12 @@ class ProcessMidiator: NSObject {
     }
 
     func reload() {
-        // Clear current queue
+        // Clear current step queue
         self.stepQueue.removeAll()
 
-        //
+        // Add character step
 
-        // Add enter night or day step
+        // Add enter night or day final step
         if StatusMidiator.sharedInstance.isNight {
             self.appendStep(step: self.enterDayStep())
         }
@@ -40,11 +41,8 @@ class ProcessMidiator: NSObject {
     /// Drop the current step and move to next one in the step queue
     ///
     /// - Returns: The current step
-    func nextStep() -> Step? {
-
+    func nextStep() {
         self.stepQueue = Array(self.stepQueue.dropFirst())
-
-        return self.currentStep
     }
 
     func appendStep(step: Step) {
@@ -60,6 +58,13 @@ class ProcessMidiator: NSObject {
 
         step.headText = "天亮了"
 
+        func enterDayAction() -> Bool {
+            GameManager.sharedInstance.nextDay()
+            return true
+        }
+        step.firstAction = enterDayAction
+        step.firstActionText = "黑夜结束"
+
         return step
     }
 
@@ -67,6 +72,13 @@ class ProcessMidiator: NSObject {
         let step = Step()
 
         step.headText = "天黑请闭眼"
+
+        func enterNightAction() -> Bool {
+            GameManager.sharedInstance.nextDay()
+            return true
+        }
+        step.firstAction = enterNightAction
+        step.firstActionText = "进入黑夜"
 
         return step
     }

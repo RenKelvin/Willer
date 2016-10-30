@@ -12,24 +12,28 @@ class GameViewController: UIViewController {
 
     // MARK: - IBOutlets
 
+    @IBOutlet var dayLabel: UILabel!
+
     @IBOutlet var headLabel: UILabel!
     @IBOutlet var bodyLabel: UILabel!
 
     @IBOutlet var firstButton: UIButton!
     @IBOutlet var secondButton: UIButton!
 
-    // MARK: -
-
-    var currentStep: Step?
-
     // MARK: - Life cycle
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+
+        //
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(GameViewController.onUpdate),
+                                               name: NSNotification.Name("OnUpdate"),
+                                               object: nil)
+
+        //
         GameManager.sharedInstance.zeroDay()
-        self.update()
     }
 
     override func didReceiveMemoryWarning() {
@@ -40,30 +44,33 @@ class GameViewController: UIViewController {
     // MARK: - IBActions
 
     @IBAction func firstButtonTapped() {
-        let result = currentStep?.firstAction?()
-        if result != nil && result! {
-            self.updateStep()
-        }
+        let currentStep = GameManager.sharedInstance.currentStep()
+        currentStep?.firstAction?()
     }
 
     @IBAction func secondButtonTapped() {
-        let result = currentStep?.secondAction?()
-        if result != nil && result! {
-            self.updateStep()
-        }
+        let currentStep = GameManager.sharedInstance.currentStep()
+        currentStep?.secondAction?()
     }
 
     // MARK: - General
 
+    func onUpdate() {
+        self.update()
+    }
+
     func update() {
+        // Info
+        self.updateInfo()
 
         // Control
         self.updateStep()
     }
 
     // MARK: - Info area
-
-
+    func updateInfo() {
+        self.dayLabel.text = String(GameManager.sharedInstance.currentDay())
+    }
 
     // MARK: - Play area
 
@@ -72,19 +79,15 @@ class GameViewController: UIViewController {
     // MARK: - Step area
 
     func updateStep() {
-        self.currentStep = GameManager.sharedInstance.currentStep()
+        let currentStep = GameManager.sharedInstance.currentStep()
 
-        self.renderStep()
-    }
+        self.headLabel.text = currentStep?.headText
+        self.bodyLabel.text = currentStep?.bodyText
 
-    func renderStep() {
-        self.headLabel.text = self.currentStep?.headText
-        self.bodyLabel.text = self.currentStep?.bodyText
+        self.firstButton.setTitle(currentStep?.firstActionText, for: .normal)
+        self.secondButton.setTitle(currentStep?.secondActionText, for: .normal)
 
-        self.firstButton.setTitle(self.currentStep?.firstActionText, for: .normal)
-        self.secondButton.setTitle(self.currentStep?.secondActionText, for: .normal)
-
-        if self.currentStep?.secondAction == nil {
+        if currentStep?.secondAction == nil {
             self.secondButton.isHidden = true
         }
     }

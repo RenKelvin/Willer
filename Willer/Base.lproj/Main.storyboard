@@ -288,7 +288,7 @@
         <!--Game View Controller-->
         <scene sceneID="iSc-sF-JSt">
             <objects>
-                <viewController id="i9T-Kh-tB1" customClass="GameViewController" customModule="Willer" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="GameViewController" id="i9T-Kh-tB1" customClass="GameViewController" customModule="Willer" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="0Pt-zY-GXX"/>
                         <viewControllerLayoutGuide type="bottom" id="mpi-Mr-j0I"/>
@@ -326,7 +326,19 @@
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Z9c-4C-lBd">
                                 <rect key="frame" x="0.0" y="44" width="375" height="491"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3VV-kG-uCt">
+                                        <rect key="frame" x="166" y="8" width="42" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
                                 <color key="backgroundColor" red="0.2784313725" green="0.36470588240000001" blue="0.55294117649999996" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstItem="3VV-kG-uCt" firstAttribute="top" secondItem="Z9c-4C-lBd" secondAttribute="top" constant="8" id="2og-FK-148"/>
+                                    <constraint firstItem="3VV-kG-uCt" firstAttribute="centerX" secondItem="Z9c-4C-lBd" secondAttribute="centerX" id="QZZ-U4-0Fn"/>
+                                </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Gph-fQ-2Y5">
                                 <rect key="frame" x="0.0" y="535" width="375" height="132"/>
@@ -395,6 +407,7 @@
                     <nil key="simulatedStatusBarMetrics"/>
                     <connections>
                         <outlet property="bodyLabel" destination="D8K-Yt-3ry" id="Nrs-o8-GNZ"/>
+                        <outlet property="dayLabel" destination="3VV-kG-uCt" id="xTi-vB-N6C"/>
                         <outlet property="firstButton" destination="mKz-5H-cEb" id="eFz-mg-3Rq"/>
                         <outlet property="headLabel" destination="o7O-po-qcx" id="c4b-lL-Tfj"/>
                         <outlet property="secondButton" destination="qDk-wK-kZa" id="H37-RJ-GWM"/>
@@ -447,9 +460,9 @@
         <image name="Logo" width="152" height="42"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="3Zt-lA-bsz"/>
         <segue reference="DLr-xh-suK"/>
-        <segue reference="aF7-aO-f9P"/>
-        <segue reference="74l-Vv-SqD"/>
+        <segue reference="MXL-To-vyS"/>
+        <segue reference="3Zt-lA-bsz"/>
+        <segue reference="v9p-sL-S5v"/>
     </inferredMetricsTieBreakers>
 </document>
