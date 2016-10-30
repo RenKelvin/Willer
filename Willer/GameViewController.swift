@@ -28,6 +28,7 @@ class GameViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        GameManager.sharedInstance.zeroDay()
         self.update()
     }
 
@@ -71,7 +72,7 @@ class GameViewController: UIViewController {
     // MARK: - Step area
 
     func updateStep() {
-        self.currentStep = GameManager.sharedInstance.nextStep()
+        self.currentStep = GameManager.sharedInstance.currentStep()
 
         self.renderStep()
     }

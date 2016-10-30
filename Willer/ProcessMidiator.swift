@@ -15,8 +15,26 @@ class ProcessMidiator: NSObject {
         return self.stepQueue.first
     }
 
-    func nextDay() {
+    // MARK: - Singleton
+    static let sharedInstance = ProcessMidiator()
 
+    override private init() {
+        
+    }
+
+    func reload() {
+        // Clear current queue
+        self.stepQueue.removeAll()
+
+        //
+
+        // Add enter night or day step
+        if StatusMidiator.sharedInstance.isNight {
+            self.appendStep(step: self.enterDayStep())
+        }
+        else {
+            self.appendStep(step: self.enterNightStep())
+        }
     }
 
     /// Drop the current step and move to next one in the step queue
@@ -35,6 +53,22 @@ class ProcessMidiator: NSObject {
 
     func insertAfterCurrentStep(step: Step) {
         self.stepQueue.insert(step, at: 1)
+    }
+
+    func enterDayStep() -> Step {
+        let step = Step()
+
+        step.headText = "天亮了"
+
+        return step
+    }
+
+    func enterNightStep() -> Step {
+        let step = Step()
+
+        step.headText = "天黑请闭眼"
+
+        return step
     }
 
 }

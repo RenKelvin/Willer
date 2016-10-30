@@ -12,7 +12,14 @@ class PlayerMidiator: NSObject {
 
     var playerArray = [Player]()
 
-    func nextDay() {
+    // MARK: - Singleton
+    static let sharedInstance = PlayerMidiator()
+
+    override private init() {
+        
+    }
+
+    func settle() {
 
     }
 

@@ -10,10 +10,20 @@ import UIKit
 
 class StatusMidiator: NSObject {
 
-    var day: Int = 0
-
-    func nextDay() {
-        self.day += 1
+    var currentDay: Int = 0
+    var isNight: Bool {
+        return self.currentDay%2 == 1
     }
 
+    // MARK: - Singleton
+    static let sharedInstance = StatusMidiator()
+
+    override private init() {
+
+    }
+
+    func alternate() {
+        self.currentDay += 1
+    }
+    
 }

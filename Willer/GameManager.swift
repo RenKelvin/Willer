@@ -10,10 +10,6 @@ import UIKit
 
 class GameManager: NSObject {
 
-    let statusMidiator = StatusMidiator()
-    let processMidiator = ProcessMidiator()
-    let playerMidiator = PlayerMidiator()
-
     // MARK: - Singleton
     static let sharedInstance = GameManager()
 
@@ -23,22 +19,31 @@ class GameManager: NSObject {
 
     // MARK: -
 
+    func zeroDay() {
+        // Process
+        ProcessMidiator.sharedInstance.reload()
+    }
+
     func nextDay() {
 
         // Player
-        self.playerMidiator.nextDay()
+        PlayerMidiator.sharedInstance.settle()
 
         // Status
-        self.statusMidiator.nextDay()
+        StatusMidiator.sharedInstance.alternate()
 
         // Process
-        self.processMidiator.nextDay()
+        ProcessMidiator.sharedInstance.reload()
     }
 
     // MARK: -
 
-    func nextStep() -> Step? {
-        return self.processMidiator.nextStep()
+    func currentStep() -> Step? {
+        return ProcessMidiator.sharedInstance.currentStep
     }
 
+    func nextStep() -> Step? {
+        return ProcessMidiator.sharedInstance.nextStep()
+    }
+    
 }
