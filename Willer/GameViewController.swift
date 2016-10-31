@@ -27,10 +27,7 @@ class GameViewController: UIViewController {
 
 
         //
-        NotificationCenter.default.addObserver(self,
-                                               selector: #selector(GameViewController.onUpdate),
-                                               name: NSNotification.Name("OnUpdate"),
-                                               object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(GameViewController.onUpdate), name: NSNotification.Name("OnUpdate"), object: nil)
 
         //
         GameManager.sharedInstance.zeroDay()
@@ -44,13 +41,11 @@ class GameViewController: UIViewController {
     // MARK: - IBActions
 
     @IBAction func firstButtonTapped() {
-        let currentStep = GameManager.sharedInstance.currentStep()
-        currentStep?.firstAction?()
+        GameManager.sharedInstance.firstAction()
     }
 
     @IBAction func secondButtonTapped() {
-        let currentStep = GameManager.sharedInstance.currentStep()
-        currentStep?.secondAction?()
+        GameManager.sharedInstance.secondAction()
     }
 
     // MARK: - General

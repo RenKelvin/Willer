@@ -18,7 +18,7 @@ class GameManager: NSObject {
 
     }
 
-    // MARK: -
+    // MARK: - Update game view controller
 
     func updateViewController() {
         NotificationCenter.default.post(name: NSNotification.Name("OnUpdate"), object: nil)
@@ -49,6 +49,14 @@ class GameManager: NSObject {
         self.updateViewController()
     }
 
+    func nextStep() {
+        //
+        ProcessMidiator.sharedInstance.nextStep()
+
+        //
+        self.updateViewController()
+    }
+
     // MARK: -
 
     func currentDay() -> Int {
@@ -59,8 +67,18 @@ class GameManager: NSObject {
         return ProcessMidiator.sharedInstance.currentStep
     }
 
-    func nextStep() {
-        return ProcessMidiator.sharedInstance.nextStep()
+    func firstAction() {
+        let result = ProcessMidiator.sharedInstance.currentStep?.firstAction?()
+        if result != nil && result! {
+            self.nextStep()
+        }
     }
-    
+
+    func secondAction() {
+        let result = ProcessMidiator.sharedInstance.currentStep?.secondAction?()
+        if result != nil && result! {
+            self.nextStep()
+        }
+    }
+
 }

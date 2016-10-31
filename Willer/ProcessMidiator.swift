@@ -24,8 +24,10 @@ class ProcessMidiator: NSObject {
     }
 
     func reload() {
-        // Clear current step queue
-        self.stepQueue.removeAll()
+        // Clear step queue but current one
+        if !self.stepQueue.isEmpty {
+            self.stepQueue = [self.stepQueue.first!]
+        }
 
         // Add character step
 
