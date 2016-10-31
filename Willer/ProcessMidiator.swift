@@ -67,6 +67,13 @@ class ProcessMidiator: NSObject {
         step.firstAction = enterDayAction
         step.firstActionText = "黑夜结束"
 
+        func emptyAction() -> Bool {
+            return false
+        }
+
+        step.secondAction = emptyAction
+        step.secondActionText = "空动作"
+
         return step
     }
 

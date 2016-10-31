@@ -25,7 +25,6 @@ class GameViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-
         //
         NotificationCenter.default.addObserver(self, selector: #selector(GameViewController.onUpdate), name: NSNotification.Name("OnUpdate"), object: nil)
 
@@ -41,6 +40,7 @@ class GameViewController: UIViewController {
     // MARK: - IBActions
 
     @IBAction func firstButtonTapped() {
+        // self.secondButton.setTitle(String(arc4random_uniform(UInt32(1000))), for: .normal)
         GameManager.sharedInstance.firstAction()
     }
 
@@ -82,6 +82,8 @@ class GameViewController: UIViewController {
         self.firstButton.setTitle(currentStep?.firstActionText, for: .normal)
         self.secondButton.setTitle(currentStep?.secondActionText, for: .normal)
 
+        self.firstButton.isHidden = false
+        self.secondButton.isHidden = false
         if currentStep?.secondAction == nil {
             self.secondButton.isHidden = true
         }
