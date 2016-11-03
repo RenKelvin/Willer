@@ -29,7 +29,10 @@ class ProcessMidiator: NSObject {
             self.stepQueue = [self.stepQueue.first!]
         }
 
-        // Add character step
+        // Add player step
+        for player in PlayerMidiator.sharedInstance.alivePlayers() {
+            self.stepQueue.append(contentsOf: player.steps())
+        }
 
         // Add enter night or day final step
         if StatusMidiator.sharedInstance.isNight {
@@ -66,13 +69,6 @@ class ProcessMidiator: NSObject {
         }
         step.firstAction = enterDayAction
         step.firstActionText = "黑夜结束"
-
-        func emptyAction() -> Bool {
-            return false
-        }
-
-        step.secondAction = emptyAction
-        step.secondActionText = "空动作"
 
         return step
     }

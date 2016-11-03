@@ -58,20 +58,23 @@ class GameViewController: UIViewController {
         // Info
         self.updateInfo()
 
-        // Control
+        // Process
         self.updateStep()
     }
 
     // MARK: - Info area
+
     func updateInfo() {
         self.dayLabel.text = String(GameManager.sharedInstance.currentDay())
     }
 
-    // MARK: - Play area
+    // MARK: - Battle area
 
+    func updateBattle() {
+        
+    }
 
-
-    // MARK: - Step area
+    // MARK: - Process area
 
     func updateStep() {
         let currentStep = GameManager.sharedInstance.currentStep()

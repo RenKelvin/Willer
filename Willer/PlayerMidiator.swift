@@ -17,7 +17,9 @@ class PlayerMidiator: NSObject {
     static let sharedInstance = PlayerMidiator()
 
     override private init() {
-        
+        let p1 = Player()
+        p1.no = 1
+        self.playerArray.append(p1)
     }
 
     func settle() {
@@ -25,7 +27,7 @@ class PlayerMidiator: NSObject {
     }
 
     func alivePlayers() -> [Player] {
-        return []
+        return self.playerArray
     }
 
 }

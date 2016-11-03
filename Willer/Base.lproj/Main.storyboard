@@ -343,26 +343,26 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Gph-fQ-2Y5">
                                 <rect key="frame" x="0.0" y="535" width="375" height="132"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="zPm-Jo-CAL">
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="zPm-Jo-CAL">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="132"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="狼人请睁眼" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o7O-po-qcx">
-                                                <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
                                                 <color key="textColor" red="0.98431372549999996" green="0.13725490200000001" blue="0.1215686275" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="请选择想要击杀的目标" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D8K-Yt-3ry">
-                                                <rect key="frame" x="0.0" y="43" width="375" height="33.5"/>
+                                                <rect key="frame" x="0.0" y="44" width="375" height="44"/>
                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="XJR-ey-rl2">
-                                                <rect key="frame" x="0.0" y="76.5" width="375" height="55.5"/>
+                                                <rect key="frame" x="0.0" y="88" width="375" height="44"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mKz-5H-cEb">
-                                                        <rect key="frame" x="0.0" y="0.0" width="187.5" height="55.5"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="187.5" height="44"/>
                                                         <state key="normal" title="使用解药">
                                                             <color key="titleColor" red="0.2784313725" green="0.36470588240000001" blue="0.55294117649999996" alpha="1" colorSpace="calibratedRGB"/>
                                                         </state>
@@ -371,7 +371,7 @@
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qDk-wK-kZa">
-                                                        <rect key="frame" x="187.5" y="0.0" width="187.5" height="55.5"/>
+                                                        <rect key="frame" x="187.5" y="0.0" width="187.5" height="44"/>
                                                         <state key="normal" title="不使用">
                                                             <color key="titleColor" red="0.2784313725" green="0.36470588240000001" blue="0.55294117649999996" alpha="1" colorSpace="calibratedRGB"/>
                                                         </state>

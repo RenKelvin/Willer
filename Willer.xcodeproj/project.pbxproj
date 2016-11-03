@@ -32,7 +32,6 @@
 		A5FA13D91DC465C4004F5939 /* Werewolf.json in Resources */ = {isa = PBXBuildFile; fileRef = A5FA13D81DC465C4004F5939 /* Werewolf.json */; };
 		A5FA13DC1DC4676B004F5939 /* Werewolf-Ability.json in Resources */ = {isa = PBXBuildFile; fileRef = A5FA13DB1DC4676B004F5939 /* Werewolf-Ability.json */; };
 		A5FA13E01DC48D85004F5939 /* AttachEffectModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5FA13DF1DC48D85004F5939 /* AttachEffectModifier.swift */; };
-		A5FA13E31DC49254004F5939 /* EffectComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5FA13E21DC49254004F5939 /* EffectComponent.swift */; };
 		A5FA13E51DC49532004F5939 /* TakeActionModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5FA13E41DC49532004F5939 /* TakeActionModifier.swift */; };
 		A5FA13E91DC4A1E9004F5939 /* Step.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5FA13E81DC4A1E9004F5939 /* Step.swift */; };
 /* End PBXBuildFile section */
@@ -66,7 +65,6 @@
 		A5FA13D81DC465C4004F5939 /* Werewolf.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Werewolf.json; sourceTree = "<group>"; };
 		A5FA13DB1DC4676B004F5939 /* Werewolf-Ability.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "Werewolf-Ability.json"; sourceTree = "<group>"; };
 		A5FA13DF1DC48D85004F5939 /* AttachEffectModifier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AttachEffectModifier.swift; sourceTree = "<group>"; };
-		A5FA13E21DC49254004F5939 /* EffectComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EffectComponent.swift; sourceTree = "<group>"; };
 		A5FA13E41DC49532004F5939 /* TakeActionModifier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TakeActionModifier.swift; sourceTree = "<group>"; };
 		A5FA13E81DC4A1E9004F5939 /* Step.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Step.swift; sourceTree = "<group>"; };
 		B8AAAF3D72AF8C2064F44B4D /* Pods-Willer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Willer.release.xcconfig"; path = "Pods/Target Support Files/Pods-Willer/Pods-Willer.release.xcconfig"; sourceTree = "<group>"; };
@@ -106,8 +104,8 @@
 			children = (
 				A55B71EC1DC33D9800B0CAF4 /* GameManager.swift */,
 				A51F9F561DC55EBF009A13CF /* StatusMidiator.swift */,
-				A51F9F541DC5565C009A13CF /* ProcessMidiator.swift */,
 				A51F9F581DC55EF4009A13CF /* PlayerMidiator.swift */,
+				A51F9F541DC5565C009A13CF /* ProcessMidiator.swift */,
 				A5FA13E81DC4A1E9004F5939 /* Step.swift */,
 			);
 			name = Game;
@@ -179,7 +177,6 @@
 			isa = PBXGroup;
 			children = (
 				A55B71F21DC3416B00B0CAF4 /* Player.swift */,
-				A5FA13E21DC49254004F5939 /* EffectComponent.swift */,
 				A5FA13E11DC49230004F5939 /* Character */,
 			);
 			name = Game;
@@ -419,7 +416,6 @@
 				A5A460F91DC2AEF9007F1A05 /* Deck.swift in Sources */,
 				A55B71F31DC3416B00B0CAF4 /* Player.swift in Sources */,
 				A5FA13E91DC4A1E9004F5939 /* Step.swift in Sources */,
-				A5FA13E31DC49254004F5939 /* EffectComponent.swift in Sources */,
 				A55B71EB1DC33D8900B0CAF4 /* ResultViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

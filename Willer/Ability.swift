@@ -20,4 +20,9 @@ class Ability: NSObject {
         }
     }
 
+    func action() -> Bool {
+        self.perform()
+        return true
+    }
+
 }

@@ -11,5 +11,12 @@ import GameplayKit
 class Character: NSObject {
 
     var id: String?
-    
+
+    var abilities: [Ability] = []
+
+    override init() {
+        let ability = Ability()
+        self.abilities.append(ability)
+    }
+
 }
