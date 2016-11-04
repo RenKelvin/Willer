@@ -12,7 +12,7 @@ class StatusMidiator: NSObject {
 
     var currentDay: Int = 0
     var isNight: Bool {
-        return self.currentDay%2 == 1
+        return self.currentDay % 2 == 1
     }
 
     // MARK: - Singleton

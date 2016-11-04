@@ -30,7 +30,7 @@ class ProcessMidiator: NSObject {
         }
 
         // Add player step
-        for player in PlayerMidiator.sharedInstance.alivePlayers() {
+        for player in PlayerMidiator.sharedInstance.alivePlayers {
             self.stepQueue.append(contentsOf: player.steps())
         }
 

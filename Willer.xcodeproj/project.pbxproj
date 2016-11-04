@@ -110,7 +110,6 @@
 				A51F9F561DC55EBF009A13CF /* StatusMidiator.swift */,
 				A51F9F581DC55EF4009A13CF /* PlayerMidiator.swift */,
 				A51F9F541DC5565C009A13CF /* ProcessMidiator.swift */,
-				A5FA13E81DC4A1E9004F5939 /* Step.swift */,
 			);
 			name = Game;
 			sourceTree = "<group>";
@@ -134,8 +133,8 @@
 		A54CC8181DC1E82000877BE6 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				A5FA13D71DC46550004F5939 /* Data */,
 				A5E8B6B61DBAD9A700DCA56A /* Assets.xcassets */,
-				A5E8B6B31DBAD9A700DCA56A /* Main.storyboard */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -153,6 +152,7 @@
 		A54CC81B1DC256E400877BE6 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				A5E8B6B31DBAD9A700DCA56A /* Main.storyboard */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -189,6 +189,7 @@
 			children = (
 				A55B71F21DC3416B00B0CAF4 /* Player.swift */,
 				A5FA13E11DC49230004F5939 /* Character */,
+				A5FA13E81DC4A1E9004F5939 /* Step.swift */,
 			);
 			name = Game;
 			sourceTree = "<group>";
@@ -220,7 +221,6 @@
 				A54CC81C1DC256F000877BE6 /* Managers */,
 				A54CC81D1DC2573100877BE6 /* Models */,
 				A52836821DCCF8E100FAA235 /* Extensions */,
-				A5FA13D71DC46550004F5939 /* Data */,
 				A54CC8181DC1E82000877BE6 /* Resources */,
 				A54CC8171DC1E77600877BE6 /* Supporting Files */,
 			);

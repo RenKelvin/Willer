@@ -8,11 +8,13 @@
 
 import UIKit
 
-class GameViewController: UIViewController {
+class GameViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
 
     // MARK: - IBOutlets
 
     @IBOutlet var dayLabel: UILabel!
+
+    @IBOutlet var collectionView: UICollectionView!
 
     @IBOutlet var headLabel: UILabel!
     @IBOutlet var bodyLabel: UILabel!
@@ -41,7 +43,6 @@ class GameViewController: UIViewController {
     // MARK: - IBActions
 
     @IBAction func firstButtonTapped() {
-        // self.secondButton.setTitle(String(arc4random_uniform(UInt32(1000))), for: .normal)
         GameManager.sharedInstance.firstAction()
     }
 
@@ -59,6 +60,9 @@ class GameViewController: UIViewController {
         // Info
         self.updateInfo()
 
+        // Battle
+        self.updateBattle()
+
         // Process
         self.updateStep()
     }
@@ -72,7 +76,7 @@ class GameViewController: UIViewController {
     // MARK: - Battle area
 
     func updateBattle() {
-        
+        collectionView.reloadData()
     }
 
     // MARK: - Process area
@@ -93,6 +97,39 @@ class GameViewController: UIViewController {
         }
     }
 
+    // MARK: - UICollectionView datasource and delegate
+
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return 1
+    }
+
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        switch section {
+        case 0:
+            return 6
+        default:
+            return 0
+        }
+    }
+
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "GameCollectionViewCellReuseIdentifier", for: indexPath) as! GameCollectionViewCell
+
+        // Configure the cell
+        let player = GameManager.sharedInstance.alivePlayers()[indexPath.row]
+        cell.config(player: player)
+
+        return cell
+    }
+
+    func collectionView(_ collectionView: UICollectionView, shouldSelectItemAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        GameManager.sharedInstance.selectPlayer(at: indexPath.row)
+    }
+
     /*
      // MARK: - Navigation
 
@@ -102,5 +139,26 @@ class GameViewController: UIViewController {
      // Pass the selected object to the new view controller.
      }
      */
+
+}
+
+// MARK: -
+
+class GameCollectionViewCell: UICollectionViewCell {
+
+    @IBOutlet var label: UILabel!
+
+    func config(player: Player) {
+        // Info
+        label.text = String(player.no) + " " + player.character.name!
+
+        // Selection
+        if player.selected {
+            self.contentView.backgroundColor = UIColor.green
+        }
+        else {
+            self.contentView.backgroundColor = UIColor.gray
+        }
+    }
     
 }

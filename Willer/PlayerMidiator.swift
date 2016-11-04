@@ -12,12 +12,16 @@ class PlayerMidiator: NSObject {
 
     var playerArray = [Player]()
 
+    var alivePlayers: [Player] {
+        return self.playerArray
+    }
+
     // MARK: - Singleton
 
     static let sharedInstance = PlayerMidiator()
 
     override private init() {
-        print("123")
+
     }
 
     func generatePlayers(deck: Deck) {
@@ -32,14 +36,21 @@ class PlayerMidiator: NSObject {
         let p3 = Player(id: "witch")
         p3.no = 3
         self.playerArray.append(p3)
-    }
 
-    func settle() {
+        let p4 = Player(id: "townsfolk")
+        p4.no = 4
+        self.playerArray.append(p4)
 
-    }
+        let p5 = Player(id: "townsfolk")
+        p5.no = 5
+        self.playerArray.append(p5)
 
-    func alivePlayers() -> [Player] {
-        return self.playerArray
+        let p6 = Player(id: "townsfolk")
+        p6.no = 6
+        self.playerArray.append(p6)
     }
     
+    func settle() {
+        
+    }
 }

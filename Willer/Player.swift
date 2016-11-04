@@ -18,6 +18,8 @@ class Player: NSObject {
 
     var alive: Bool = true
 
+    var selected: Bool = false
+
     // MARK: -
 
     override init() {
