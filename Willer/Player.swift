@@ -24,6 +24,10 @@ class Player: NSObject {
         self.character = Character()
     }
 
+    init(id: String) {
+        self.character = Character(id: "werewolf")
+    }
+
     // MARK: -
 
     func attachEffect(effect: Effect) {
@@ -32,7 +36,7 @@ class Player: NSObject {
 
     func steps() -> [Step] {
         var steps = [Step]()
-        for ability in self.character.abilities {
+        for (_, ability) in self.character.abilities {
             steps.append(self.abilityStep(ability: ability))
         }
         return steps

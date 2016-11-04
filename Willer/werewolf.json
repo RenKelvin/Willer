@@ -1,0 +1,55 @@
+{
+    "id": "werewolf",
+    "name": "狼人",
+
+    "abilities": {
+        "werewolf_kill_ability":
+        {
+            "id": "werewolf_kill_ability",
+
+            "passive": 0,
+            "event": "OnPlayerCast",
+
+            "modifiers": {
+                "werewolf_kill_modifier": {
+
+                    "type": "AttachEffect",
+
+                    "targetType": "Target",
+                    "targetAmount": 1,
+
+                    "effect": {
+                        "werewolf_kill_effect": {
+                            "delay": 0,
+                            "duration": 1,
+                        }
+                    }
+                }
+            }
+        },
+
+        "werewolf_suicide_ability":
+        {
+            "id": "werewolf_suicide_ability",
+
+            "passive": 0,
+            "event": "OnPlayerCast",
+
+            "modifiers": {
+                "werewolf_suicide_killSelf_modifier": {
+
+                    "type": "TakeAction",
+
+                    "targetType": "Caster"
+                },
+                "werewolf_suicide_enterNight_modifier": {
+                    
+                    "type": "TakeAction",
+                    
+                    "targetType": "Game"
+                }
+            }
+            
+        }
+    }
+}

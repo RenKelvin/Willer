@@ -11,6 +11,7 @@
 		A51F9F551DC5565C009A13CF /* ProcessMidiator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A51F9F541DC5565C009A13CF /* ProcessMidiator.swift */; };
 		A51F9F571DC55EBF009A13CF /* StatusMidiator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A51F9F561DC55EBF009A13CF /* StatusMidiator.swift */; };
 		A51F9F591DC55EF4009A13CF /* PlayerMidiator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A51F9F581DC55EF4009A13CF /* PlayerMidiator.swift */; };
+		A52836841DCCF8F000FAA235 /* JSON+file.swift in Sources */ = {isa = PBXBuildFile; fileRef = A52836831DCCF8F000FAA235 /* JSON+file.swift */; };
 		A54CC81F1DC2597700877BE6 /* OrderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A54CC81E1DC2597700877BE6 /* OrderViewController.swift */; };
 		A55B71E71DC33CA300B0CAF4 /* Effect.swift in Sources */ = {isa = PBXBuildFile; fileRef = A55B71E61DC33CA300B0CAF4 /* Effect.swift */; };
 		A55B71E91DC33CA800B0CAF4 /* Ability.swift in Sources */ = {isa = PBXBuildFile; fileRef = A55B71E81DC33CA800B0CAF4 /* Ability.swift */; };
@@ -29,8 +30,7 @@
 		A5E8B6B51DBAD9A700DCA56A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A5E8B6B31DBAD9A700DCA56A /* Main.storyboard */; };
 		A5E8B6B71DBAD9A700DCA56A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A5E8B6B61DBAD9A700DCA56A /* Assets.xcassets */; };
 		A5FA13D61DC4392F004F5939 /* Modifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5FA13D51DC4392F004F5939 /* Modifier.swift */; };
-		A5FA13D91DC465C4004F5939 /* Werewolf.json in Resources */ = {isa = PBXBuildFile; fileRef = A5FA13D81DC465C4004F5939 /* Werewolf.json */; };
-		A5FA13DC1DC4676B004F5939 /* Werewolf-Ability.json in Resources */ = {isa = PBXBuildFile; fileRef = A5FA13DB1DC4676B004F5939 /* Werewolf-Ability.json */; };
+		A5FA13D91DC465C4004F5939 /* werewolf.json in Resources */ = {isa = PBXBuildFile; fileRef = A5FA13D81DC465C4004F5939 /* werewolf.json */; };
 		A5FA13E01DC48D85004F5939 /* AttachEffectModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5FA13DF1DC48D85004F5939 /* AttachEffectModifier.swift */; };
 		A5FA13E51DC49532004F5939 /* TakeActionModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5FA13E41DC49532004F5939 /* TakeActionModifier.swift */; };
 		A5FA13E91DC4A1E9004F5939 /* Step.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5FA13E81DC4A1E9004F5939 /* Step.swift */; };
@@ -42,6 +42,7 @@
 		A51F9F541DC5565C009A13CF /* ProcessMidiator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProcessMidiator.swift; sourceTree = "<group>"; };
 		A51F9F561DC55EBF009A13CF /* StatusMidiator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusMidiator.swift; sourceTree = "<group>"; };
 		A51F9F581DC55EF4009A13CF /* PlayerMidiator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerMidiator.swift; sourceTree = "<group>"; };
+		A52836831DCCF8F000FAA235 /* JSON+file.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "JSON+file.swift"; sourceTree = "<group>"; };
 		A54CC81E1DC2597700877BE6 /* OrderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderViewController.swift; sourceTree = "<group>"; };
 		A55B71E61DC33CA300B0CAF4 /* Effect.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Effect.swift; sourceTree = "<group>"; };
 		A55B71E81DC33CA800B0CAF4 /* Ability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Ability.swift; sourceTree = "<group>"; };
@@ -62,8 +63,7 @@
 		A5E8B6B61DBAD9A700DCA56A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A5E8B6BB1DBAD9A700DCA56A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A5FA13D51DC4392F004F5939 /* Modifier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Modifier.swift; sourceTree = "<group>"; };
-		A5FA13D81DC465C4004F5939 /* Werewolf.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Werewolf.json; sourceTree = "<group>"; };
-		A5FA13DB1DC4676B004F5939 /* Werewolf-Ability.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "Werewolf-Ability.json"; sourceTree = "<group>"; };
+		A5FA13D81DC465C4004F5939 /* werewolf.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = werewolf.json; sourceTree = "<group>"; };
 		A5FA13DF1DC48D85004F5939 /* AttachEffectModifier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AttachEffectModifier.swift; sourceTree = "<group>"; };
 		A5FA13E41DC49532004F5939 /* TakeActionModifier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TakeActionModifier.swift; sourceTree = "<group>"; };
 		A5FA13E81DC4A1E9004F5939 /* Step.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Step.swift; sourceTree = "<group>"; };
@@ -111,6 +111,14 @@
 			name = Game;
 			sourceTree = "<group>";
 		};
+		A52836821DCCF8E100FAA235 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				A52836831DCCF8F000FAA235 /* JSON+file.swift */,
+			);
+			name = Extensions;
+			sourceTree = "<group>";
+		};
 		A54CC8171DC1E77600877BE6 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
@@ -124,7 +132,6 @@
 			children = (
 				A5E8B6B61DBAD9A700DCA56A /* Assets.xcassets */,
 				A5E8B6B31DBAD9A700DCA56A /* Main.storyboard */,
-				A5FA13D71DC46550004F5939 /* Scripts */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -208,19 +215,20 @@
 				A54CC81A1DC256DD00877BE6 /* ViewControllers */,
 				A54CC81C1DC256F000877BE6 /* Managers */,
 				A54CC81D1DC2573100877BE6 /* Models */,
+				A52836821DCCF8E100FAA235 /* Extensions */,
+				A5FA13D71DC46550004F5939 /* Data */,
 				A54CC8181DC1E82000877BE6 /* Resources */,
 				A54CC8171DC1E77600877BE6 /* Supporting Files */,
 			);
 			path = Willer;
 			sourceTree = "<group>";
 		};
-		A5FA13D71DC46550004F5939 /* Scripts */ = {
+		A5FA13D71DC46550004F5939 /* Data */ = {
 			isa = PBXGroup;
 			children = (
-				A5FA13D81DC465C4004F5939 /* Werewolf.json */,
-				A5FA13DB1DC4676B004F5939 /* Werewolf-Ability.json */,
+				A5FA13D81DC465C4004F5939 /* werewolf.json */,
 			);
-			name = Scripts;
+			name = Data;
 			sourceTree = "<group>";
 		};
 		A5FA13DD1DC48AE7004F5939 /* Match */ = {
@@ -321,8 +329,7 @@
 			files = (
 				A5E8B6B71DBAD9A700DCA56A /* Assets.xcassets in Resources */,
 				A5E8B6B51DBAD9A700DCA56A /* Main.storyboard in Resources */,
-				A5FA13D91DC465C4004F5939 /* Werewolf.json in Resources */,
-				A5FA13DC1DC4676B004F5939 /* Werewolf-Ability.json in Resources */,
+				A5FA13D91DC465C4004F5939 /* werewolf.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -397,6 +404,7 @@
 			files = (
 				A51F9F551DC5565C009A13CF /* ProcessMidiator.swift in Sources */,
 				A5FA13E51DC49532004F5939 /* TakeActionModifier.swift in Sources */,
+				A52836841DCCF8F000FAA235 /* JSON+file.swift in Sources */,
 				A55B71E71DC33CA300B0CAF4 /* Effect.swift in Sources */,
 				A5A460EE1DC261DB007F1A05 /* DeckViewController.swift in Sources */,
 				A5E8B6B21DBAD9A700DCA56A /* HomeViewController.swift in Sources */,
@@ -537,6 +545,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = N9KJV72CSL;
 				INFOPLIST_FILE = Willer/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = me.chuanren.willer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -553,6 +562,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = N9KJV72CSL;
 				INFOPLIST_FILE = Willer/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = me.chuanren.willer;
 				PRODUCT_NAME = "$(TARGET_NAME)";

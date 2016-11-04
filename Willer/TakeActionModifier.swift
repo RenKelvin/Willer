@@ -6,8 +6,17 @@
 //  Copyright © 2016 Chuan Ren. All rights reserved.
 //
 
-import UIKit
+import SwiftyJSON
 
 class TakeActionModifier: Modifier {
 
+    override init() {
+        super.init()
+    }
+
+    override init(json: JSON) {
+        super.init(json: json)
+    }
+    
+    
 }

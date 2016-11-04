@@ -17,7 +17,7 @@ class PlayerMidiator: NSObject {
     static let sharedInstance = PlayerMidiator()
 
     override private init() {
-        let p1 = Player()
+        let p1 = Player(id: "werewolf")
         p1.no = 1
         self.playerArray.append(p1)
     }

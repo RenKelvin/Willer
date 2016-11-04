@@ -6,7 +6,7 @@
 //  Copyright © 2016 Chuan Ren. All rights reserved.
 //
 
-import UIKit
+import SwiftyJSON
 
 enum ModifierTargetType {
     case target
@@ -21,6 +21,14 @@ class AttachEffectModifier: Modifier {
     var targetAmount: Int = 0
 
     var effect: Effect?
+
+    override init() {
+        super.init()
+    }
+
+    override init(json: JSON) {
+        super.init(json: json)
+    }
 
     override func perform() {
         switch self.targetType {
