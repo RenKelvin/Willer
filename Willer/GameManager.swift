@@ -11,7 +11,7 @@ import UIKit
 class GameManager: NSObject {
 
     // MARK: - Singleton
-    
+
     static let sharedInstance = GameManager()
 
     override private init() {
@@ -24,7 +24,13 @@ class GameManager: NSObject {
         NotificationCenter.default.post(name: NSNotification.Name("OnUpdate"), object: nil)
     }
 
-    // MARK: -
+    // MARK: - Pick
+
+    func start(deck: Deck) {
+        PlayerMidiator.sharedInstance.generatePlayers(deck: deck)
+    }
+
+    // MARK: - Game
 
     func zeroDay() {
         // Process
@@ -32,7 +38,7 @@ class GameManager: NSObject {
 
         //
         self.updateViewController()
-}
+    }
 
     func nextDay() {
 
@@ -80,5 +86,5 @@ class GameManager: NSObject {
             self.nextStep()
         }
     }
-
+    
 }

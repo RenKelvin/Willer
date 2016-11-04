@@ -10,6 +10,11 @@
             "passive": 0,
             "event": "OnPlayerCast",
 
+            "headText": "狼人请睁眼",
+            "bodyText": "请选择要击杀的目标",
+            "firstActionText": "确认杀害",
+            "secondActionText": "放弃杀害",
+
             "modifiers": {
                 "werewolf_kill_modifier": {
 
@@ -35,6 +40,11 @@
             "passive": 0,
             "event": "OnPlayerCast",
 
+            "headText": "狼人自爆",
+            "bodyText": "X号玩家选择自曝，没有遗言",
+            "firstActionText": "确认自爆",
+            "secondActionText": "",
+
             "modifiers": {
                 "werewolf_suicide_killSelf_modifier": {
 
@@ -43,7 +53,7 @@
                     "targetType": "Caster"
                 },
                 "werewolf_suicide_enterNight_modifier": {
-                    
+
                     "type": "TakeAction",
                     
                     "targetType": "Game"

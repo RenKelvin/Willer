@@ -12,7 +12,12 @@ class Ability: NSObject {
 
     var id: String?
 
-    var passive: Bool = false
+    var passive = true
+
+    var headText = ""
+    var bodyText = ""
+    var firstActionText = "FirstAction"
+    var secondActionText: String?
 
     var modifiers: [String: Modifier] = [:]
 
@@ -21,7 +26,14 @@ class Ability: NSObject {
     }
 
     init(json: JSON) {
+        self.id = json["id"].stringValue
+
         self.passive = json["passive"].boolValue
+
+        self.headText = json["headText"].stringValue
+        self.bodyText = json["bodyText"].stringValue
+        self.firstActionText = json["firstActionText"].stringValue
+        self.secondActionText = json["secondActionText"].string
 
         for (modifierId, modifierJson) in json["modifiers"].dictionaryValue {
             let modifier = Modifier.factory(json: modifierJson)
@@ -36,8 +48,24 @@ class Ability: NSObject {
     }
 
     func action() -> Bool {
-        self.perform()
+        // self.perform()
+
         return true
+    }
+
+    func step() -> Step {
+        let step = Step()
+
+        step.headText = self.headText
+        step.bodyText = self.bodyText
+
+        step.firstActionText = firstActionText
+        step.firstAction = self.action
+
+        step.secondActionText = secondActionText
+        step.secondAction = Step.falseAction
+        
+        return step
     }
     
 }

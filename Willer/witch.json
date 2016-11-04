@@ -1,0 +1,23 @@
+{
+    "id": "witch",
+    "name": "女巫",
+
+    "abilities": {
+        "witch_heal_ability":
+        {
+            "id": "witch_heal_ability",
+
+            "passive": 0,
+            "event": "OnPlayerCast",
+
+            "headText": "女巫请睁眼",
+            "bodyText": "今晚X号玩家死亡，请问你要救吗",
+            "firstActionText": "使用解药",
+            "secondActionText": "不使用",
+
+            "modifiers": {
+
+            }
+        }
+    }
+}

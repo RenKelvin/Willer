@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		5AE3747B1287F3CB30BD192B /* Pods_Willer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 372F206E252478FFC6AE7009 /* Pods_Willer.framework */; };
+		A51DB11B1DCD1DE000F63624 /* townsfolk.json in Resources */ = {isa = PBXBuildFile; fileRef = A51DB11A1DCD1DE000F63624 /* townsfolk.json */; };
+		A51DB11D1DCD1E0900F63624 /* witch.json in Resources */ = {isa = PBXBuildFile; fileRef = A51DB11C1DCD1E0900F63624 /* witch.json */; };
 		A51F9F551DC5565C009A13CF /* ProcessMidiator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A51F9F541DC5565C009A13CF /* ProcessMidiator.swift */; };
 		A51F9F571DC55EBF009A13CF /* StatusMidiator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A51F9F561DC55EBF009A13CF /* StatusMidiator.swift */; };
 		A51F9F591DC55EF4009A13CF /* PlayerMidiator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A51F9F581DC55EF4009A13CF /* PlayerMidiator.swift */; };
@@ -39,6 +41,8 @@
 /* Begin PBXFileReference section */
 		372F206E252478FFC6AE7009 /* Pods_Willer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Willer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3B3ACD283320DC8695B124C3 /* Pods-Willer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Willer.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Willer/Pods-Willer.debug.xcconfig"; sourceTree = "<group>"; };
+		A51DB11A1DCD1DE000F63624 /* townsfolk.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = townsfolk.json; sourceTree = "<group>"; };
+		A51DB11C1DCD1E0900F63624 /* witch.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = witch.json; sourceTree = "<group>"; };
 		A51F9F541DC5565C009A13CF /* ProcessMidiator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProcessMidiator.swift; sourceTree = "<group>"; };
 		A51F9F561DC55EBF009A13CF /* StatusMidiator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusMidiator.swift; sourceTree = "<group>"; };
 		A51F9F581DC55EF4009A13CF /* PlayerMidiator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerMidiator.swift; sourceTree = "<group>"; };
@@ -226,7 +230,9 @@
 		A5FA13D71DC46550004F5939 /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				A51DB11A1DCD1DE000F63624 /* townsfolk.json */,
 				A5FA13D81DC465C4004F5939 /* werewolf.json */,
+				A51DB11C1DCD1E0900F63624 /* witch.json */,
 			);
 			name = Data;
 			sourceTree = "<group>";
@@ -327,7 +333,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A51DB11D1DCD1E0900F63624 /* witch.json in Resources */,
 				A5E8B6B71DBAD9A700DCA56A /* Assets.xcassets in Resources */,
+				A51DB11B1DCD1DE000F63624 /* townsfolk.json in Resources */,
 				A5E8B6B51DBAD9A700DCA56A /* Main.storyboard in Resources */,
 				A5FA13D91DC465C4004F5939 /* werewolf.json in Resources */,
 			);

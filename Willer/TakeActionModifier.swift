@@ -17,6 +17,5 @@ class TakeActionModifier: Modifier {
     override init(json: JSON) {
         super.init(json: json)
     }
-    
-    
+
 }

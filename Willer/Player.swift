@@ -25,7 +25,7 @@ class Player: NSObject {
     }
 
     init(id: String) {
-        self.character = Character(id: "werewolf")
+        self.character = Character(id: id)
     }
 
     // MARK: -
@@ -37,27 +37,9 @@ class Player: NSObject {
     func steps() -> [Step] {
         var steps = [Step]()
         for (_, ability) in self.character.abilities {
-            steps.append(self.abilityStep(ability: ability))
+            steps.append(ability.step())
         }
         return steps
-    }
-
-    func abilityStep(ability: Ability) -> Step {
-        var step = Step()
-        step.headText = "女巫请睁眼"
-        step.bodyText = "5号玩家死亡，请问你要救吗？"
-
-        step.firstActionText = "救人"
-        step.firstAction = ability.action
-
-        func emptyAction() -> Bool {
-            return false
-        }
-
-        step.secondActionText = "不救"
-        step.secondAction = emptyAction
-        
-        return step
     }
     
 }
