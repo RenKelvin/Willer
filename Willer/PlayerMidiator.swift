@@ -12,9 +12,7 @@ class PlayerMidiator: NSObject {
 
     var playerArray = [Player]()
 
-    var alivePlayers: [Player] { return self.playerArray }
-
-    var maxSelected: Int = 1
+    var maxSelected: Int = 0
     var selectedPlayers: [Player] = []
 
     // MARK: - Singleton
@@ -33,57 +31,59 @@ class PlayerMidiator: NSObject {
 
         let p2 = Player()
         p2.no = 2
-        p2.character = Werewolf()
+        p2.character = Witch()
         self.playerArray.append(p2)
 
         let p3 = Player()
         p3.no = 3
-        p3.character = Werewolf()
+        p3.character = Townsfolk()
         self.playerArray.append(p3)
-
-        //        let p4 = Player(id: "townsfolk")
-        //        p4.no = 4
-        //        self.playerArray.append(p4)
-        //
-        //        let p5 = Player(id: "townsfolk")
-        //        p5.no = 5
-        //        self.playerArray.append(p5)
-        //
-        //        let p6 = Player(id: "townsfolk")
-        //        p6.no = 6
-        //        self.playerArray.append(p6)
     }
 
     func settle() {
-
+        for player in self.playerArray {
+            player.settle()
+        }
     }
 
     func selectPlayer(at index: Int) {
-        let player = PlayerMidiator.sharedInstance.alivePlayers[index]
+        let player = PlayerMidiator.sharedInstance.alivePlayers()[index]
 
-        if (!player.selected) {
-            player.selected = true
+        if (!player.stateMachine.selected) {
+            player.stateMachine.selected = true
             self.selectedPlayers.append(player)
 
             if self.selectedPlayers.count > self.maxSelected {
                 let deselectedPlayer = self.selectedPlayers.first
-                deselectedPlayer?.selected = false
+                deselectedPlayer?.stateMachine.selected = false
 
                 self.selectedPlayers = Array(self.selectedPlayers.dropFirst())
             }
         }
         else {
-            player.selected = false
+            player.stateMachine.selected = false
             self.selectedPlayers.remove(at: self.selectedPlayers.index(of: player)!)
         }
     }
 
     func cleanSelectedPlayers() {
         for player in self.selectedPlayers {
-            player.selected = false
+            player.stateMachine.selected = false
         }
         self.selectedPlayers.removeAll()
         self.maxSelected = 0
+    }
+
+    // Mark: -
+
+    func alivePlayers() -> [Player]
+    {
+        return self.playerArray.filter({$0.stateMachine.alive})
+    }
+
+    func werewolfKilledPlayers() -> [Player]
+    {
+        return self.alivePlayers().filter({$0.effectMachine.isWerewolfKilled()})
     }
     
 }

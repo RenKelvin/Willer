@@ -91,7 +91,7 @@ class GameManager: NSObject {
     }
 
     func alivePlayers() -> [Player] {
-        return PlayerMidiator.sharedInstance.alivePlayers
+        return PlayerMidiator.sharedInstance.alivePlayers()
     }
 
     func selectPlayer(at index: Int) {

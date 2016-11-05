@@ -12,24 +12,23 @@ class Player: NSObject {
 
     var no: Int = 0
 
-    var character: Character
+    var character: Character = Character()
 
-    var effectSet: Set<Effect> = []
+    var effectMachine: EffectMachine = EffectMachine()
 
-    var alive: Bool = true
-
-    var selected: Bool = false
+    var stateMachine: StateMachine = StateMachine()
 
     // MARK: -
 
     override init() {
-        self.character = Werewolf()
+
     }
 
     // MARK: -
 
-    func attachEffect(effect: Effect) {
-        self.effectSet.insert(effect)
+    func settle() {
+        let alive = self.effectMachine.settle()
+        self.stateMachine.alive = alive
     }
 
     func steps() -> [Step] {
@@ -40,14 +39,4 @@ class Player: NSObject {
         return steps
     }
 
-    func effects() -> String {
-        var r = "E: "
-
-        for effect in self.effectSet {
-            r += effect.id
-        }
-        
-        return r
-    }
-    
 }

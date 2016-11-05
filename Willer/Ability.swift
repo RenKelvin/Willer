@@ -24,22 +24,26 @@ class Ability: NSObject {
 
     var modifiers: [String: Modifier] = [:]
 
+    // MARK: -
+
     func perform() {
         for (_, modifier) in modifiers {
             modifier.modify()
         }
     }
 
-    func ready() -> Bool {
+    func preAction() {
         PlayerMidiator.sharedInstance.maxSelected = self.maxSelected
-
-        return true
     }
 
     func action() -> Bool {
         self.perform()
 
         return true
+    }
+
+    func posAction() {
+
     }
 
     func step() -> Step {
@@ -54,7 +58,8 @@ class Ability: NSObject {
         step.secondActionText = secondActionText
         step.secondAction = Step.falseAction
 
-        step.ready = self.ready
+        step.preAction = self.preAction
+        step.posAction = self.posAction
 
         return step
     }

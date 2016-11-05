@@ -19,7 +19,8 @@ class Step: NSObject {
     var firstAction: (() -> Bool)?
     var secondAction: (() -> Bool)?
 
-    var ready: (() -> Bool)?
+    var preAction: (() -> Void)?
+    var posAction: (() -> Void)?
 
     // MARK: - Helpers
 

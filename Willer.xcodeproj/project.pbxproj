@@ -12,6 +12,10 @@
 		A51F9F571DC55EBF009A13CF /* StatusMidiator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A51F9F561DC55EBF009A13CF /* StatusMidiator.swift */; };
 		A51F9F591DC55EF4009A13CF /* PlayerMidiator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A51F9F581DC55EF4009A13CF /* PlayerMidiator.swift */; };
 		A525F3061DCD85E900E04895 /* Werewolf.swift in Sources */ = {isa = PBXBuildFile; fileRef = A525F3051DCD85E900E04895 /* Werewolf.swift */; };
+		A525F3091DCDAA9300E04895 /* Townsfolk.swift in Sources */ = {isa = PBXBuildFile; fileRef = A525F3081DCDAA9300E04895 /* Townsfolk.swift */; };
+		A525F30B1DCDAAB900E04895 /* Witch.swift in Sources */ = {isa = PBXBuildFile; fileRef = A525F30A1DCDAAB900E04895 /* Witch.swift */; };
+		A525F30D1DCDB14600E04895 /* EffectMachine.swift in Sources */ = {isa = PBXBuildFile; fileRef = A525F30C1DCDB14600E04895 /* EffectMachine.swift */; };
+		A525F30F1DCDB16E00E04895 /* StateMachine.swift in Sources */ = {isa = PBXBuildFile; fileRef = A525F30E1DCDB16E00E04895 /* StateMachine.swift */; };
 		A54CC81F1DC2597700877BE6 /* OrderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A54CC81E1DC2597700877BE6 /* OrderViewController.swift */; };
 		A55B71E71DC33CA300B0CAF4 /* Effect.swift in Sources */ = {isa = PBXBuildFile; fileRef = A55B71E61DC33CA300B0CAF4 /* Effect.swift */; };
 		A55B71E91DC33CA800B0CAF4 /* Ability.swift in Sources */ = {isa = PBXBuildFile; fileRef = A55B71E81DC33CA800B0CAF4 /* Ability.swift */; };
@@ -40,6 +44,10 @@
 		A51F9F561DC55EBF009A13CF /* StatusMidiator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusMidiator.swift; sourceTree = "<group>"; };
 		A51F9F581DC55EF4009A13CF /* PlayerMidiator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerMidiator.swift; sourceTree = "<group>"; };
 		A525F3051DCD85E900E04895 /* Werewolf.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Werewolf.swift; sourceTree = "<group>"; };
+		A525F3081DCDAA9300E04895 /* Townsfolk.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Townsfolk.swift; sourceTree = "<group>"; };
+		A525F30A1DCDAAB900E04895 /* Witch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Witch.swift; sourceTree = "<group>"; };
+		A525F30C1DCDB14600E04895 /* EffectMachine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EffectMachine.swift; sourceTree = "<group>"; };
+		A525F30E1DCDB16E00E04895 /* StateMachine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StateMachine.swift; sourceTree = "<group>"; };
 		A54CC81E1DC2597700877BE6 /* OrderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderViewController.swift; sourceTree = "<group>"; };
 		A55B71E61DC33CA300B0CAF4 /* Effect.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Effect.swift; sourceTree = "<group>"; };
 		A55B71E81DC33CA800B0CAF4 /* Ability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Ability.swift; sourceTree = "<group>"; };
@@ -112,7 +120,7 @@
 			name = Match;
 			sourceTree = "<group>";
 		};
-		A525F3071DCD877F00E04895 /* Base */ = {
+		A525F3071DCD877F00E04895 /* Character */ = {
 			isa = PBXGroup;
 			children = (
 				A55B71F01DC3415800B0CAF4 /* Character.swift */,
@@ -120,7 +128,7 @@
 				A5FA13D51DC4392F004F5939 /* Modifier.swift */,
 				A55B71E61DC33CA300B0CAF4 /* Effect.swift */,
 			);
-			name = Base;
+			name = Character;
 			sourceTree = "<group>";
 		};
 		A54CC8171DC1E77600877BE6 /* Supporting Files */ = {
@@ -171,6 +179,7 @@
 			children = (
 				A55B71EE1DC3411F00B0CAF4 /* Match */,
 				A55B71EF1DC3412700B0CAF4 /* Game */,
+				A525F3071DCD877F00E04895 /* Character */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -188,6 +197,8 @@
 			isa = PBXGroup;
 			children = (
 				A55B71F21DC3416B00B0CAF4 /* Player.swift */,
+				A525F30C1DCDB14600E04895 /* EffectMachine.swift */,
+				A525F30E1DCDB16E00E04895 /* StateMachine.swift */,
 				A5FA13E81DC4A1E9004F5939 /* Step.swift */,
 			);
 			name = Game;
@@ -248,8 +259,9 @@
 		A5FA13E11DC49230004F5939 /* Characters */ = {
 			isa = PBXGroup;
 			children = (
-				A525F3071DCD877F00E04895 /* Base */,
+				A525F3081DCDAA9300E04895 /* Townsfolk.swift */,
 				A525F3051DCD85E900E04895 /* Werewolf.swift */,
+				A525F30A1DCDAAB900E04895 /* Witch.swift */,
 			);
 			name = Characters;
 			sourceTree = "<group>";
@@ -400,6 +412,7 @@
 				A5E8B6B01DBAD9A700DCA56A /* AppDelegate.swift in Sources */,
 				A51F9F591DC55EF4009A13CF /* PlayerMidiator.swift in Sources */,
 				A525F3061DCD85E900E04895 /* Werewolf.swift in Sources */,
+				A525F30D1DCDB14600E04895 /* EffectMachine.swift in Sources */,
 				A5A460F41DC2ABCC007F1A05 /* MatchManager.swift in Sources */,
 				A5A460F01DC261EB007F1A05 /* PickViewController.swift in Sources */,
 				A5A460F21DC2659F007F1A05 /* GameViewController.swift in Sources */,
@@ -409,9 +422,12 @@
 				A55B71F11DC3415800B0CAF4 /* Character.swift in Sources */,
 				A5A460F71DC2AE9D007F1A05 /* Card.swift in Sources */,
 				A55B71E91DC33CA800B0CAF4 /* Ability.swift in Sources */,
+				A525F30B1DCDAAB900E04895 /* Witch.swift in Sources */,
 				A5A460F91DC2AEF9007F1A05 /* Deck.swift in Sources */,
 				A55B71F31DC3416B00B0CAF4 /* Player.swift in Sources */,
+				A525F3091DCDAA9300E04895 /* Townsfolk.swift in Sources */,
 				A5FA13E91DC4A1E9004F5939 /* Step.swift in Sources */,
+				A525F30F1DCDB16E00E04895 /* StateMachine.swift in Sources */,
 				A55B71EB1DC33D8900B0CAF4 /* ResultViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

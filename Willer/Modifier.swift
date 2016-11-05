@@ -12,8 +12,16 @@ class Modifier: NSObject {
 
     var id: String = "Modifier:id"
 
+    var targetAmount = 0
+
     func modify() {
         print(self.id)
+    }
+
+    func attachEffect(effect: Effect, targets: [Player]) {
+        for target in targets {
+            target.effectMachine.attachEffect(effect: effect)
+        }
     }
     
 }

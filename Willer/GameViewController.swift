@@ -106,7 +106,7 @@ class GameViewController: UIViewController, UICollectionViewDataSource, UICollec
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         switch section {
         case 0:
-            return 3
+            return GameManager.sharedInstance.alivePlayers().count
         default:
             return 0
         }
@@ -150,11 +150,10 @@ class GameCollectionViewCell: UICollectionViewCell {
 
     func config(player: Player) {
         // Info
-        label.text = String(player.no)
-            // + " " + player.character.name! + "\n" + player.effects()
+        label.text = String(player.no) + " " + player.character.name! + "\n" + player.effectMachine.effectString()
 
         // Selection
-        if player.selected {
+        if player.stateMachine.selected {
             self.contentView.backgroundColor = UIColor.green
         }
         else {

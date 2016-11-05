@@ -20,7 +20,7 @@ class ProcessMidiator: NSObject {
     static let sharedInstance = ProcessMidiator()
 
     override private init() {
-        
+
     }
 
     func reload() {
@@ -30,7 +30,7 @@ class ProcessMidiator: NSObject {
         }
 
         // Add player step
-        for player in PlayerMidiator.sharedInstance.alivePlayers {
+        for player in PlayerMidiator.sharedInstance.alivePlayers() {
             self.stepQueue.append(contentsOf: player.steps())
         }
 
@@ -43,7 +43,7 @@ class ProcessMidiator: NSObject {
         }
 
         //
-        _ = self.currentStep?.ready?()
+        _ = self.currentStep?.preAction?()
     }
 
     /// Drop the current step and move to next one in the step queue
@@ -52,7 +52,7 @@ class ProcessMidiator: NSObject {
     func nextStep() {
         self.stepQueue = Array(self.stepQueue.dropFirst())
 
-        _ = self.currentStep?.ready?()
+        _ = self.currentStep?.preAction?()
     }
 
     func appendStep(step: Step) {
@@ -89,8 +89,8 @@ class ProcessMidiator: NSObject {
         }
         step.firstAction = enterNightAction
         step.firstActionText = "进入黑夜"
-
+        
         return step
     }
-
+    
 }

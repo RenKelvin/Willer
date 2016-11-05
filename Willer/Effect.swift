@@ -8,7 +8,7 @@
 
 struct Effect: Hashable {
 
-    var id: String = ""
+    var id: String = "Effect:id"
 
     // Hashable
 
