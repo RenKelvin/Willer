@@ -8,13 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		5AE3747B1287F3CB30BD192B /* Pods_Willer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 372F206E252478FFC6AE7009 /* Pods_Willer.framework */; };
-		A51DB11B1DCD1DE000F63624 /* townsfolk.json in Resources */ = {isa = PBXBuildFile; fileRef = A51DB11A1DCD1DE000F63624 /* townsfolk.json */; };
-		A51DB11D1DCD1E0900F63624 /* witch.json in Resources */ = {isa = PBXBuildFile; fileRef = A51DB11C1DCD1E0900F63624 /* witch.json */; };
 		A51F9F551DC5565C009A13CF /* ProcessMidiator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A51F9F541DC5565C009A13CF /* ProcessMidiator.swift */; };
 		A51F9F571DC55EBF009A13CF /* StatusMidiator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A51F9F561DC55EBF009A13CF /* StatusMidiator.swift */; };
 		A51F9F591DC55EF4009A13CF /* PlayerMidiator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A51F9F581DC55EF4009A13CF /* PlayerMidiator.swift */; };
-		A525F3011DCD5AA200E04895 /* hunter.json in Resources */ = {isa = PBXBuildFile; fileRef = A525F3001DCD5AA200E04895 /* hunter.json */; };
-		A52836841DCCF8F000FAA235 /* JSON+file.swift in Sources */ = {isa = PBXBuildFile; fileRef = A52836831DCCF8F000FAA235 /* JSON+file.swift */; };
+		A525F3061DCD85E900E04895 /* Werewolf.swift in Sources */ = {isa = PBXBuildFile; fileRef = A525F3051DCD85E900E04895 /* Werewolf.swift */; };
 		A54CC81F1DC2597700877BE6 /* OrderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A54CC81E1DC2597700877BE6 /* OrderViewController.swift */; };
 		A55B71E71DC33CA300B0CAF4 /* Effect.swift in Sources */ = {isa = PBXBuildFile; fileRef = A55B71E61DC33CA300B0CAF4 /* Effect.swift */; };
 		A55B71E91DC33CA800B0CAF4 /* Ability.swift in Sources */ = {isa = PBXBuildFile; fileRef = A55B71E81DC33CA800B0CAF4 /* Ability.swift */; };
@@ -33,22 +30,16 @@
 		A5E8B6B51DBAD9A700DCA56A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A5E8B6B31DBAD9A700DCA56A /* Main.storyboard */; };
 		A5E8B6B71DBAD9A700DCA56A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A5E8B6B61DBAD9A700DCA56A /* Assets.xcassets */; };
 		A5FA13D61DC4392F004F5939 /* Modifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5FA13D51DC4392F004F5939 /* Modifier.swift */; };
-		A5FA13D91DC465C4004F5939 /* werewolf.json in Resources */ = {isa = PBXBuildFile; fileRef = A5FA13D81DC465C4004F5939 /* werewolf.json */; };
-		A5FA13E01DC48D85004F5939 /* AttachEffectModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5FA13DF1DC48D85004F5939 /* AttachEffectModifier.swift */; };
-		A5FA13E51DC49532004F5939 /* TakeActionModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5FA13E41DC49532004F5939 /* TakeActionModifier.swift */; };
 		A5FA13E91DC4A1E9004F5939 /* Step.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5FA13E81DC4A1E9004F5939 /* Step.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		372F206E252478FFC6AE7009 /* Pods_Willer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Willer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3B3ACD283320DC8695B124C3 /* Pods-Willer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Willer.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Willer/Pods-Willer.debug.xcconfig"; sourceTree = "<group>"; };
-		A51DB11A1DCD1DE000F63624 /* townsfolk.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = townsfolk.json; sourceTree = "<group>"; };
-		A51DB11C1DCD1E0900F63624 /* witch.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = witch.json; sourceTree = "<group>"; };
 		A51F9F541DC5565C009A13CF /* ProcessMidiator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProcessMidiator.swift; sourceTree = "<group>"; };
 		A51F9F561DC55EBF009A13CF /* StatusMidiator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusMidiator.swift; sourceTree = "<group>"; };
 		A51F9F581DC55EF4009A13CF /* PlayerMidiator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerMidiator.swift; sourceTree = "<group>"; };
-		A525F3001DCD5AA200E04895 /* hunter.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = hunter.json; sourceTree = "<group>"; };
-		A52836831DCCF8F000FAA235 /* JSON+file.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "JSON+file.swift"; sourceTree = "<group>"; };
+		A525F3051DCD85E900E04895 /* Werewolf.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Werewolf.swift; sourceTree = "<group>"; };
 		A54CC81E1DC2597700877BE6 /* OrderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderViewController.swift; sourceTree = "<group>"; };
 		A55B71E61DC33CA300B0CAF4 /* Effect.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Effect.swift; sourceTree = "<group>"; };
 		A55B71E81DC33CA800B0CAF4 /* Ability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Ability.swift; sourceTree = "<group>"; };
@@ -69,9 +60,6 @@
 		A5E8B6B61DBAD9A700DCA56A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A5E8B6BB1DBAD9A700DCA56A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A5FA13D51DC4392F004F5939 /* Modifier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Modifier.swift; sourceTree = "<group>"; };
-		A5FA13D81DC465C4004F5939 /* werewolf.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = werewolf.json; sourceTree = "<group>"; };
-		A5FA13DF1DC48D85004F5939 /* AttachEffectModifier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AttachEffectModifier.swift; sourceTree = "<group>"; };
-		A5FA13E41DC49532004F5939 /* TakeActionModifier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TakeActionModifier.swift; sourceTree = "<group>"; };
 		A5FA13E81DC4A1E9004F5939 /* Step.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Step.swift; sourceTree = "<group>"; };
 		B8AAAF3D72AF8C2064F44B4D /* Pods-Willer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Willer.release.xcconfig"; path = "Pods/Target Support Files/Pods-Willer/Pods-Willer.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -124,12 +112,15 @@
 			name = Match;
 			sourceTree = "<group>";
 		};
-		A52836821DCCF8E100FAA235 /* Extensions */ = {
+		A525F3071DCD877F00E04895 /* Base */ = {
 			isa = PBXGroup;
 			children = (
-				A52836831DCCF8F000FAA235 /* JSON+file.swift */,
+				A55B71F01DC3415800B0CAF4 /* Character.swift */,
+				A55B71E81DC33CA800B0CAF4 /* Ability.swift */,
+				A5FA13D51DC4392F004F5939 /* Modifier.swift */,
+				A55B71E61DC33CA300B0CAF4 /* Effect.swift */,
 			);
-			name = Extensions;
+			name = Base;
 			sourceTree = "<group>";
 		};
 		A54CC8171DC1E77600877BE6 /* Supporting Files */ = {
@@ -197,12 +188,6 @@
 			isa = PBXGroup;
 			children = (
 				A55B71F21DC3416B00B0CAF4 /* Player.swift */,
-				A55B71F01DC3415800B0CAF4 /* Character.swift */,
-				A55B71E81DC33CA800B0CAF4 /* Ability.swift */,
-				A5FA13D51DC4392F004F5939 /* Modifier.swift */,
-				A5FA13DF1DC48D85004F5939 /* AttachEffectModifier.swift */,
-				A55B71E61DC33CA300B0CAF4 /* Effect.swift */,
-				A5FA13E41DC49532004F5939 /* TakeActionModifier.swift */,
 				A5FA13E81DC4A1E9004F5939 /* Step.swift */,
 			);
 			name = Game;
@@ -235,22 +220,10 @@
 				A54CC81C1DC256F000877BE6 /* Managers */,
 				A54CC81D1DC2573100877BE6 /* Models */,
 				A5FA13E11DC49230004F5939 /* Characters */,
-				A52836821DCCF8E100FAA235 /* Extensions */,
 				A54CC8181DC1E82000877BE6 /* Resources */,
 				A54CC8171DC1E77600877BE6 /* Supporting Files */,
 			);
 			path = Willer;
-			sourceTree = "<group>";
-		};
-		A5FA13D71DC46550004F5939 /* Data */ = {
-			isa = PBXGroup;
-			children = (
-				A525F3001DCD5AA200E04895 /* hunter.json */,
-				A51DB11A1DCD1DE000F63624 /* townsfolk.json */,
-				A5FA13D81DC465C4004F5939 /* werewolf.json */,
-				A51DB11C1DCD1E0900F63624 /* witch.json */,
-			);
-			name = Data;
 			sourceTree = "<group>";
 		};
 		A5FA13DD1DC48AE7004F5939 /* Match */ = {
@@ -275,7 +248,8 @@
 		A5FA13E11DC49230004F5939 /* Characters */ = {
 			isa = PBXGroup;
 			children = (
-				A5FA13D71DC46550004F5939 /* Data */,
+				A525F3071DCD877F00E04895 /* Base */,
+				A525F3051DCD85E900E04895 /* Werewolf.swift */,
 			);
 			name = Characters;
 			sourceTree = "<group>";
@@ -344,12 +318,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A51DB11D1DCD1E0900F63624 /* witch.json in Resources */,
 				A5E8B6B71DBAD9A700DCA56A /* Assets.xcassets in Resources */,
-				A51DB11B1DCD1DE000F63624 /* townsfolk.json in Resources */,
-				A525F3011DCD5AA200E04895 /* hunter.json in Resources */,
 				A5E8B6B51DBAD9A700DCA56A /* Main.storyboard in Resources */,
-				A5FA13D91DC465C4004F5939 /* werewolf.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -423,21 +393,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				A51F9F551DC5565C009A13CF /* ProcessMidiator.swift in Sources */,
-				A5FA13E51DC49532004F5939 /* TakeActionModifier.swift in Sources */,
-				A52836841DCCF8F000FAA235 /* JSON+file.swift in Sources */,
 				A55B71E71DC33CA300B0CAF4 /* Effect.swift in Sources */,
 				A5A460EE1DC261DB007F1A05 /* DeckViewController.swift in Sources */,
 				A5E8B6B21DBAD9A700DCA56A /* HomeViewController.swift in Sources */,
 				A55B71ED1DC33D9800B0CAF4 /* GameManager.swift in Sources */,
 				A5E8B6B01DBAD9A700DCA56A /* AppDelegate.swift in Sources */,
 				A51F9F591DC55EF4009A13CF /* PlayerMidiator.swift in Sources */,
+				A525F3061DCD85E900E04895 /* Werewolf.swift in Sources */,
 				A5A460F41DC2ABCC007F1A05 /* MatchManager.swift in Sources */,
 				A5A460F01DC261EB007F1A05 /* PickViewController.swift in Sources */,
 				A5A460F21DC2659F007F1A05 /* GameViewController.swift in Sources */,
 				A5FA13D61DC4392F004F5939 /* Modifier.swift in Sources */,
 				A54CC81F1DC2597700877BE6 /* OrderViewController.swift in Sources */,
 				A51F9F571DC55EBF009A13CF /* StatusMidiator.swift in Sources */,
-				A5FA13E01DC48D85004F5939 /* AttachEffectModifier.swift in Sources */,
 				A55B71F11DC3415800B0CAF4 /* Character.swift in Sources */,
 				A5A460F71DC2AE9D007F1A05 /* Card.swift in Sources */,
 				A55B71E91DC33CA800B0CAF4 /* Ability.swift in Sources */,

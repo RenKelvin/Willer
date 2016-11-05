@@ -106,7 +106,7 @@ class GameViewController: UIViewController, UICollectionViewDataSource, UICollec
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         switch section {
         case 0:
-            return 6
+            return 3
         default:
             return 0
         }
@@ -150,7 +150,8 @@ class GameCollectionViewCell: UICollectionViewCell {
 
     func config(player: Player) {
         // Info
-        label.text = String(player.no) + " " + player.character.name! + "\n" + player.effects()
+        label.text = String(player.no)
+            // + " " + player.character.name! + "\n" + player.effects()
 
         // Selection
         if player.selected {

@@ -6,14 +6,20 @@
 //  Copyright © 2016 Chuan Ren. All rights reserved.
 //
 
-import SwiftyJSON
+struct Effect: Hashable {
 
-class Effect: NSObject {
+    var id: String = ""
 
-    var id: String?
+    // Hashable
 
-    init(json: JSON) {
-        self.id = json["id"].string
+    public var hashValue: Int {
+        return self.id.hash
+    }
+
+    // Equalable
+
+    public static func ==(lhs: Effect, rhs: Effect) -> Bool {
+        return lhs.id == rhs.id
     }
     
 }

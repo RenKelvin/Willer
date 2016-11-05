@@ -6,8 +6,7 @@
 //  Copyright © 2016 Chuan Ren. All rights reserved.
 //
 
-import Foundation
-import SwiftyJSON
+import UIKit
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {

@@ -14,7 +14,7 @@ class PlayerMidiator: NSObject {
 
     var alivePlayers: [Player] { return self.playerArray }
 
-    var maxSelected: Int = 0
+    var maxSelected: Int = 1
     var selectedPlayers: [Player] = []
 
     // MARK: - Singleton
@@ -26,29 +26,32 @@ class PlayerMidiator: NSObject {
     }
 
     func generatePlayers(deck: Deck) {
-        let p1 = Player(id: "townsfolk")
+        let p1 = Player()
         p1.no = 1
+        p1.character = Werewolf()
         self.playerArray.append(p1)
 
-        let p2 = Player(id: "werewolf")
+        let p2 = Player()
         p2.no = 2
+        p2.character = Werewolf()
         self.playerArray.append(p2)
 
-        let p3 = Player(id: "witch")
+        let p3 = Player()
         p3.no = 3
+        p3.character = Werewolf()
         self.playerArray.append(p3)
 
-        let p4 = Player(id: "townsfolk")
-        p4.no = 4
-        self.playerArray.append(p4)
-
-        let p5 = Player(id: "townsfolk")
-        p5.no = 5
-        self.playerArray.append(p5)
-
-        let p6 = Player(id: "townsfolk")
-        p6.no = 6
-        self.playerArray.append(p6)
+        //        let p4 = Player(id: "townsfolk")
+        //        p4.no = 4
+        //        self.playerArray.append(p4)
+        //
+        //        let p5 = Player(id: "townsfolk")
+        //        p5.no = 5
+        //        self.playerArray.append(p5)
+        //
+        //        let p6 = Player(id: "townsfolk")
+        //        p6.no = 6
+        //        self.playerArray.append(p6)
     }
 
     func settle() {

@@ -6,50 +6,27 @@
 //  Copyright © 2016 Chuan Ren. All rights reserved.
 //
 
-import SwiftyJSON
+import UIKit
 
 class Ability: NSObject {
 
-    var id: String?
+    var id: String = "Ability:id"
 
-    var passive = true
-    var trigger: AbilityTrigger = .none
+    var passive: Bool?
+    //    var trigger: AbilityTrigger = .none
 
-    var headText = ""
-    var bodyText = ""
-    var firstActionText = "FirstAction"
-    var secondActionText: String?
+    var headText: String = "Ability:headText"
+    var bodyText: String = "Ability:bodyText"
+    var firstActionText: String = "Ability:firstActionText"
+    var secondActionText: String = "Ability:secondActionText"
 
     var maxSelected: Int = 0
 
     var modifiers: [String: Modifier] = [:]
 
-    override init() {
-
-    }
-
-    init(json: JSON) {
-        self.id = json["id"].stringValue
-
-        self.passive = json["passive"].boolValue
-        self.trigger = AbilityTrigger(rawValue: json["trigger"].stringValue)!
-
-        self.headText = json["headText"].stringValue
-        self.bodyText = json["bodyText"].stringValue
-        self.firstActionText = json["firstActionText"].stringValue
-        self.secondActionText = json["secondActionText"].string
-
-        self.maxSelected = json["maxSelected"].intValue
-
-        for (modifierId, modifierJson) in json["modifiers"].dictionaryValue {
-            let modifier = Modifier.factory(json: modifierJson)
-            self.modifiers[modifierId] = modifier
-        }
-    }
-
     func perform() {
-        for (_, modifier) in self.modifiers {
-            modifier.perform()
+        for (_, modifier) in modifiers {
+            modifier.modify()
         }
     }
 
@@ -83,10 +60,10 @@ class Ability: NSObject {
     }
 
 }
-
-enum AbilityTrigger: String {
-    case none = ""
-    case godCalled = "GodCalled"
-    case playerCast = "PlayerCast"
-    case playerDead = "PlayerDead"
-}
+//
+//enum AbilityTrigger: String {
+//    case none = ""
+//    case godCalled = "GodCalled"
+//    case playerCast = "PlayerCast"
+//    case playerDead = "PlayerDead"
+//}

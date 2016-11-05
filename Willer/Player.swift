@@ -23,11 +23,7 @@ class Player: NSObject {
     // MARK: -
 
     override init() {
-        self.character = Character()
-    }
-
-    init(id: String) {
-        self.character = Character(id: id)
+        self.character = Werewolf()
     }
 
     // MARK: -
@@ -38,9 +34,9 @@ class Player: NSObject {
 
     func steps() -> [Step] {
         var steps = [Step]()
-        for (_, ability) in self.character.abilities {
-            steps.append(ability.step())
-        }
+                for (_, ability) in self.character.abilities {
+                    steps.append(ability.step())
+                }
         return steps
     }
 
@@ -48,7 +44,7 @@ class Player: NSObject {
         var r = "E: "
 
         for effect in self.effectSet {
-            r += effect.id!
+            r += effect.id
         }
         
         return r

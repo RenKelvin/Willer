@@ -6,47 +6,14 @@
 //  Copyright © 2016 Chuan Ren. All rights reserved.
 //
 
-import SwiftyJSON
+import UIKit
 
 class Modifier: NSObject {
 
-    var id: String?
+    var id: String = "Modifier:id"
 
-    // MARK: -
-
-    static func factory(json: JSON) -> Modifier? {
-        let type = ModifierType(rawValue: json["type"].stringValue)
-
-        if let type = type {
-            switch type {
-            case .attachEffect:
-                return AttachEffectModifier(json: json)
-
-            case .takeAction:
-                return TakeActionModifier(json: json)
-            }
-        }
-
-        return nil
-    }
-
-    override init() {
-
-    }
-
-    init(json: JSON) {
-
-    }
-
-    // MARK: -
-    
-    func perform() {
-        
+    func modify() {
+        print(self.id)
     }
     
-}
-
-enum ModifierType: String {
-    case attachEffect = "AttachEffect"
-    case takeAction = "TakeAction"
 }
