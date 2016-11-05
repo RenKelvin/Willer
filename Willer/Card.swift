@@ -10,4 +10,10 @@ import UIKit
 
 class Card: NSObject {
 
+    let id: String
+
+    init(id: String) {
+        self.id = id
+    }
+
 }

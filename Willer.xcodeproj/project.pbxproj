@@ -17,6 +17,8 @@
 		A525F30D1DCDB14600E04895 /* EffectMachine.swift in Sources */ = {isa = PBXBuildFile; fileRef = A525F30C1DCDB14600E04895 /* EffectMachine.swift */; };
 		A525F30F1DCDB16E00E04895 /* StateMachine.swift in Sources */ = {isa = PBXBuildFile; fileRef = A525F30E1DCDB16E00E04895 /* StateMachine.swift */; };
 		A525F3111DCDBD3D00E04895 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A525F3101DCDBD3D00E04895 /* Constants.swift */; };
+		A525F3131DCE55C200E04895 /* Foreteller.swift in Sources */ = {isa = PBXBuildFile; fileRef = A525F3121DCE55C200E04895 /* Foreteller.swift */; };
+		A525F3151DCE55CB00E04895 /* Hunter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A525F3141DCE55CB00E04895 /* Hunter.swift */; };
 		A54CC81F1DC2597700877BE6 /* OrderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A54CC81E1DC2597700877BE6 /* OrderViewController.swift */; };
 		A55B71E71DC33CA300B0CAF4 /* Effect.swift in Sources */ = {isa = PBXBuildFile; fileRef = A55B71E61DC33CA300B0CAF4 /* Effect.swift */; };
 		A55B71E91DC33CA800B0CAF4 /* Ability.swift in Sources */ = {isa = PBXBuildFile; fileRef = A55B71E81DC33CA800B0CAF4 /* Ability.swift */; };
@@ -50,6 +52,8 @@
 		A525F30C1DCDB14600E04895 /* EffectMachine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EffectMachine.swift; sourceTree = "<group>"; };
 		A525F30E1DCDB16E00E04895 /* StateMachine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StateMachine.swift; sourceTree = "<group>"; };
 		A525F3101DCDBD3D00E04895 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		A525F3121DCE55C200E04895 /* Foreteller.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Foreteller.swift; sourceTree = "<group>"; };
+		A525F3141DCE55CB00E04895 /* Hunter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Hunter.swift; sourceTree = "<group>"; };
 		A54CC81E1DC2597700877BE6 /* OrderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderViewController.swift; sourceTree = "<group>"; };
 		A55B71E61DC33CA300B0CAF4 /* Effect.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Effect.swift; sourceTree = "<group>"; };
 		A55B71E81DC33CA800B0CAF4 /* Ability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Ability.swift; sourceTree = "<group>"; };
@@ -264,7 +268,9 @@
 			children = (
 				A525F3081DCDAA9300E04895 /* Townsfolk.swift */,
 				A525F3051DCD85E900E04895 /* Werewolf.swift */,
+				A525F3121DCE55C200E04895 /* Foreteller.swift */,
 				A525F30A1DCDAAB900E04895 /* Witch.swift */,
+				A525F3141DCE55CB00E04895 /* Hunter.swift */,
 			);
 			name = Characters;
 			sourceTree = "<group>";
@@ -412,6 +418,7 @@
 				A5A460EE1DC261DB007F1A05 /* DeckViewController.swift in Sources */,
 				A5E8B6B21DBAD9A700DCA56A /* HomeViewController.swift in Sources */,
 				A55B71ED1DC33D9800B0CAF4 /* GameManager.swift in Sources */,
+				A525F3151DCE55CB00E04895 /* Hunter.swift in Sources */,
 				A5E8B6B01DBAD9A700DCA56A /* AppDelegate.swift in Sources */,
 				A51F9F591DC55EF4009A13CF /* PlayerMidiator.swift in Sources */,
 				A525F3111DCDBD3D00E04895 /* Constants.swift in Sources */,
@@ -425,6 +432,7 @@
 				A51F9F571DC55EBF009A13CF /* StatusMidiator.swift in Sources */,
 				A55B71F11DC3415800B0CAF4 /* Character.swift in Sources */,
 				A5A460F71DC2AE9D007F1A05 /* Card.swift in Sources */,
+				A525F3131DCE55C200E04895 /* Foreteller.swift in Sources */,
 				A55B71E91DC33CA800B0CAF4 /* Ability.swift in Sources */,
 				A525F30B1DCDAAB900E04895 /* Witch.swift in Sources */,
 				A5A460F91DC2AEF9007F1A05 /* Deck.swift in Sources */,

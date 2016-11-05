@@ -15,16 +15,13 @@ class ProcessMidiator: NSObject {
         return self.stepQueue.first
     }
 
-    let firstNightAbilitySequence: [String] = [
+    var firstNightAbilitySequence: [String: Ability?] = [:]
 
-    ]
-    var firstNightAbilityArray: [Ability] = []
-
-    let everyNightAbilitySequence: [String] = [
-        Constants.werewolf_kill_ability,
-        Constants.witch_save_ability
-    ]
-    var everyNightAbilityArray: [Ability] = []
+    var everyNightAbilitySequence: [String: Ability?] = [
+        Constants.werewolf_kill_ability: nil,
+        Constants.foreteller_discover_ability: nil,
+        Constants.witch_save_ability: nil,
+        ]
 
     // MARK: - Singleton
 
@@ -38,11 +35,11 @@ class ProcessMidiator: NSObject {
         player.character.ingest(player: player)
 
         for (abilityName, ability) in player.character.abilities {
-            if self.firstNightAbilitySequence.contains(abilityName) {
-                self.firstNightAbilityArray.append(ability)
+            if let _ = self.firstNightAbilitySequence[abilityName] {
+                self.firstNightAbilitySequence[abilityName] = ability
             }
-            if self.everyNightAbilitySequence.contains(abilityName) {
-                self.everyNightAbilityArray.append(ability)
+            if let _ = self.everyNightAbilitySequence[abilityName] {
+                self.everyNightAbilitySequence[abilityName] = ability
             }
         }
     }
@@ -57,8 +54,10 @@ class ProcessMidiator: NSObject {
 
 
         // Add everynight player step
-        for ability in self.everyNightAbilityArray {
-            self.appendStep(step: ability.step())
+        for (_, ability) in self.everyNightAbilitySequence {
+            if let ability = ability {
+                self.appendStep(step: ability.step())
+            }
         }
 
         // Add enter night or day final step
