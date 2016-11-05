@@ -12,9 +12,10 @@ class PlayerMidiator: NSObject {
 
     var playerArray = [Player]()
 
-    var alivePlayers: [Player] {
-        return self.playerArray
-    }
+    var alivePlayers: [Player] { return self.playerArray }
+
+    var maxSelected: Int = 0
+    var selectedPlayers: [Player] = []
 
     // MARK: - Singleton
 
@@ -49,8 +50,37 @@ class PlayerMidiator: NSObject {
         p6.no = 6
         self.playerArray.append(p6)
     }
-    
+
     func settle() {
-        
+
     }
+
+    func selectPlayer(at index: Int) {
+        let player = PlayerMidiator.sharedInstance.alivePlayers[index]
+
+        if (!player.selected) {
+            player.selected = true
+            self.selectedPlayers.append(player)
+
+            if self.selectedPlayers.count > self.maxSelected {
+                let deselectedPlayer = self.selectedPlayers.first
+                deselectedPlayer?.selected = false
+
+                self.selectedPlayers = Array(self.selectedPlayers.dropFirst())
+            }
+        }
+        else {
+            player.selected = false
+            self.selectedPlayers.remove(at: self.selectedPlayers.index(of: player)!)
+        }
+    }
+
+    func cleanSelectedPlayers() {
+        for player in self.selectedPlayers {
+            player.selected = false
+        }
+        self.selectedPlayers.removeAll()
+        self.maxSelected = 0
+    }
+    
 }

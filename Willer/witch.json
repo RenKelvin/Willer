@@ -8,14 +8,33 @@
             "id": "witch_heal_ability",
 
             "passive": 0,
-            "event": "OnPlayerCast",
+            "trigger": "GodCalled",
 
             "headText": "女巫请睁眼",
             "bodyText": "今晚X号玩家死亡，请问你要救吗",
             "firstActionText": "使用解药",
             "secondActionText": "不使用",
 
+            "maxSelected": 0,
+
             "modifiers": {
+                "witch_heal_modifier": {
+                    "id": "witch_heal_modifier",
+
+                    "type": "AttachEffect",
+
+                    "targetType": "Target",
+                    "targetAmount": 1,
+
+                    "effects": {
+                        "witch_heal_effect": {
+                            "id": "witch_heal_effect",
+
+                            "delay": 0,
+                            "duration": 1,
+                        }
+                    }
+                }
 
             }
         }

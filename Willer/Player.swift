@@ -43,5 +43,15 @@ class Player: NSObject {
         }
         return steps
     }
+
+    func effects() -> String {
+        var r = "E: "
+
+        for effect in self.effectSet {
+            r += effect.id!
+        }
+        
+        return r
+    }
     
 }

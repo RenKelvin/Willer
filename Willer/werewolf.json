@@ -8,12 +8,14 @@
             "id": "werewolf_kill_ability",
 
             "passive": 0,
-            "event": "OnPlayerCast",
+            "trigger": "GodCalled",
 
             "headText": "狼人请睁眼",
             "bodyText": "请选择要击杀的目标",
             "firstActionText": "确认杀害",
             "secondActionText": "放弃杀害",
+
+            "maxSelected": 1,
 
             "modifiers": {
                 "werewolf_kill_modifier": {
@@ -23,8 +25,10 @@
                     "targetType": "Target",
                     "targetAmount": 1,
 
-                    "effect": {
+                    "effects": {
                         "werewolf_kill_effect": {
+                            "id": "werewolf_kill_effect",
+
                             "delay": 0,
                             "duration": 1,
                         }
@@ -38,12 +42,14 @@
             "id": "werewolf_suicide_ability",
 
             "passive": 0,
-            "event": "OnPlayerCast",
+            "trigger": "PlayerCast",
 
             "headText": "狼人自爆",
             "bodyText": "X号玩家选择自曝，没有遗言",
             "firstActionText": "确认自爆",
             "secondActionText": "",
+
+            "maxSelected": 0,
 
             "modifiers": {
                 "werewolf_suicide_killSelf_modifier": {
@@ -52,8 +58,8 @@
 
                     "targetType": "Caster"
                 },
-                "werewolf_suicide_enterNight_modifier": {
-
+                "enter_night_modifier": {
+                    
                     "type": "TakeAction",
                     
                     "targetType": "Game"

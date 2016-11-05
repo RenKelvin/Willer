@@ -19,6 +19,8 @@ class Step: NSObject {
     var firstAction: (() -> Bool)?
     var secondAction: (() -> Bool)?
 
+    var ready: (() -> Bool)?
+
     // MARK: - Helpers
 
     static func randomStep() -> Step {

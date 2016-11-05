@@ -13,11 +13,14 @@ class Ability: NSObject {
     var id: String?
 
     var passive = true
+    var trigger: AbilityTrigger = .none
 
     var headText = ""
     var bodyText = ""
     var firstActionText = "FirstAction"
     var secondActionText: String?
+
+    var maxSelected: Int = 0
 
     var modifiers: [String: Modifier] = [:]
 
@@ -29,11 +32,14 @@ class Ability: NSObject {
         self.id = json["id"].stringValue
 
         self.passive = json["passive"].boolValue
+        self.trigger = AbilityTrigger(rawValue: json["trigger"].stringValue)!
 
         self.headText = json["headText"].stringValue
         self.bodyText = json["bodyText"].stringValue
         self.firstActionText = json["firstActionText"].stringValue
         self.secondActionText = json["secondActionText"].string
+
+        self.maxSelected = json["maxSelected"].intValue
 
         for (modifierId, modifierJson) in json["modifiers"].dictionaryValue {
             let modifier = Modifier.factory(json: modifierJson)
@@ -47,8 +53,14 @@ class Ability: NSObject {
         }
     }
 
+    func ready() -> Bool {
+        PlayerMidiator.sharedInstance.maxSelected = self.maxSelected
+
+        return true
+    }
+
     func action() -> Bool {
-        // self.perform()
+        self.perform()
 
         return true
     }
@@ -64,8 +76,17 @@ class Ability: NSObject {
 
         step.secondActionText = secondActionText
         step.secondAction = Step.falseAction
-        
+
+        step.ready = self.ready
+
         return step
     }
-    
+
+}
+
+enum AbilityTrigger: String {
+    case none = ""
+    case godCalled = "GodCalled"
+    case playerCast = "PlayerCast"
+    case playerDead = "PlayerDead"
 }

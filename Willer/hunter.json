@@ -1,0 +1,39 @@
+{
+    "id": "hunter",
+    "name": "猎人",
+
+    "abilities": {
+        "hunter_shot_ability":
+        {
+            "id": "hunter_shot_ability",
+
+            "passive": 0,
+            "trigger": "PlayerDead",
+
+            "headText": "可以发动技能",
+            "bodyText": "请选择你要带走的玩家",
+            "firstActionText": "确认枪杀",
+            "secondActionText": "不开枪",
+
+            "maxSelected": 1,
+
+            "modifiers": {
+                "hunter_shot_modifier": {
+                    "id": "hunter_shot_modifier",
+
+                    "type": "TakeAction",
+
+                    "targetType": "Target",
+                    "targetAmount": 1,
+
+                    "actions": {
+                        "hunter_shot_action": {
+                            "id": "hunter_shot_action"
+                        }
+                    }
+                }
+                
+            }
+        }
+    }
+}

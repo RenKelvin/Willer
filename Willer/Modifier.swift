@@ -14,11 +14,6 @@ class Modifier: NSObject {
 
     // MARK: -
 
-    enum ModifierType: String {
-        case attachEffect = "AttachEffect"
-        case takeAction = "TakeAction"
-    }
-
     static func factory(json: JSON) -> Modifier? {
         let type = ModifierType(rawValue: json["type"].stringValue)
 
@@ -49,4 +44,9 @@ class Modifier: NSObject {
         
     }
     
+}
+
+enum ModifierType: String {
+    case attachEffect = "AttachEffect"
+    case takeAction = "TakeAction"
 }

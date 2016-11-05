@@ -10,9 +10,6 @@ import UIKit
 
 class GameManager: NSObject {
 
-    var maxSelected: Int = 1
-    var selectedPlayers: [Player] = []
-
     // MARK: - Singleton
 
     static let sharedInstance = GameManager()
@@ -60,6 +57,9 @@ class GameManager: NSObject {
 
     func nextStep() {
         //
+        PlayerMidiator.sharedInstance.cleanSelectedPlayers()
+
+        //
         ProcessMidiator.sharedInstance.nextStep()
 
         //
@@ -95,23 +95,7 @@ class GameManager: NSObject {
     }
 
     func selectPlayer(at index: Int) {
-        let player = PlayerMidiator.sharedInstance.alivePlayers[index]
-
-        if (!player.selected) {
-            player.selected = true
-            self.selectedPlayers.append(player)
-
-            if self.selectedPlayers.count > self.maxSelected {
-                let deselectedPlayer = self.selectedPlayers.first
-                deselectedPlayer?.selected = false
-
-                self.selectedPlayers = Array(self.selectedPlayers.dropFirst())
-            }
-        }
-        else {
-            player.selected = false
-            self.selectedPlayers.remove(at: self.selectedPlayers.index(of: player)!)
-        }
+        PlayerMidiator.sharedInstance.selectPlayer(at: index)
         
         //
         self.updateViewController()

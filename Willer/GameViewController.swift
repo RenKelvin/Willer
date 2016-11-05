@@ -150,7 +150,7 @@ class GameCollectionViewCell: UICollectionViewCell {
 
     func config(player: Player) {
         // Info
-        label.text = String(player.no) + " " + player.character.name!
+        label.text = String(player.no) + " " + player.character.name! + "\n" + player.effects()
 
         // Selection
         if player.selected {

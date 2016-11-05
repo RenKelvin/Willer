@@ -11,7 +11,7 @@ import SwiftyJSON
 class Character: NSObject {
 
     var id: String?
-    var name: String?
+    var name: String = ""
 
     var abilities: [String: Ability] = [:]
 
@@ -25,7 +25,7 @@ class Character: NSObject {
         let json = JSON(file: id)
 
         self.id = json["id"].string
-        self.name = json["name"].string
+        self.name = json["name"].stringValue
 
         // Ability
         for (abilityId, abilityJson) in json["abilities"].dictionaryValue {

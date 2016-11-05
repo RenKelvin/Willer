@@ -41,6 +41,9 @@ class ProcessMidiator: NSObject {
         else {
             self.appendStep(step: self.enterNightStep())
         }
+
+        //
+        _ = self.currentStep?.ready?()
     }
 
     /// Drop the current step and move to next one in the step queue
@@ -48,6 +51,8 @@ class ProcessMidiator: NSObject {
     /// - Returns: The current step
     func nextStep() {
         self.stepQueue = Array(self.stepQueue.dropFirst())
+
+        _ = self.currentStep?.ready?()
     }
 
     func appendStep(step: Step) {

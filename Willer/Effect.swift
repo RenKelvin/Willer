@@ -6,10 +6,14 @@
 //  Copyright © 2016 Chuan Ren. All rights reserved.
 //
 
-import UIKit
+import SwiftyJSON
 
 class Effect: NSObject {
 
     var id: String?
 
+    init(json: JSON) {
+        self.id = json["id"].string
+    }
+    
 }

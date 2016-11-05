@@ -17,7 +17,6 @@ enum ModifierTargetType {
 class AttachEffectModifier: Modifier {
 
     var targetType: ModifierTargetType = .target
-
     var targetAmount: Int = 0
 
     var effect: Effect?
@@ -28,17 +27,21 @@ class AttachEffectModifier: Modifier {
 
     override init(json: JSON) {
         super.init(json: json)
+
+        for (_, effectJson) in json["effects"].dictionary! {
+            self.effect = Effect(json: effectJson)
+        }
     }
 
     override func perform() {
         switch self.targetType {
         case .target:
-            // TODO: Get targets from GameManager
-            let target = Player()
-            target.attachEffect(effect: self.effect!)
+            let target = PlayerMidiator.sharedInstance.selectedPlayers.first
+            target?.attachEffect(effect: self.effect!)
+
         default:
             break
         }
     }
-
+    
 }
