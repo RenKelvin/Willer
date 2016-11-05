@@ -11,6 +11,7 @@ import UIKit
 class StateMachine: NSObject {
 
     var alive: Bool = true
+    
     var selected: Bool = false
 
 }

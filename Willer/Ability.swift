@@ -56,7 +56,7 @@ class Ability: NSObject {
         step.firstAction = self.action
 
         step.secondActionText = secondActionText
-        step.secondAction = Step.falseAction
+        step.secondAction = Step.trueAction
 
         step.preAction = self.preAction
         step.posAction = self.posAction

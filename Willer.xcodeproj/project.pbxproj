@@ -16,6 +16,7 @@
 		A525F30B1DCDAAB900E04895 /* Witch.swift in Sources */ = {isa = PBXBuildFile; fileRef = A525F30A1DCDAAB900E04895 /* Witch.swift */; };
 		A525F30D1DCDB14600E04895 /* EffectMachine.swift in Sources */ = {isa = PBXBuildFile; fileRef = A525F30C1DCDB14600E04895 /* EffectMachine.swift */; };
 		A525F30F1DCDB16E00E04895 /* StateMachine.swift in Sources */ = {isa = PBXBuildFile; fileRef = A525F30E1DCDB16E00E04895 /* StateMachine.swift */; };
+		A525F3111DCDBD3D00E04895 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A525F3101DCDBD3D00E04895 /* Constants.swift */; };
 		A54CC81F1DC2597700877BE6 /* OrderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A54CC81E1DC2597700877BE6 /* OrderViewController.swift */; };
 		A55B71E71DC33CA300B0CAF4 /* Effect.swift in Sources */ = {isa = PBXBuildFile; fileRef = A55B71E61DC33CA300B0CAF4 /* Effect.swift */; };
 		A55B71E91DC33CA800B0CAF4 /* Ability.swift in Sources */ = {isa = PBXBuildFile; fileRef = A55B71E81DC33CA800B0CAF4 /* Ability.swift */; };
@@ -48,6 +49,7 @@
 		A525F30A1DCDAAB900E04895 /* Witch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Witch.swift; sourceTree = "<group>"; };
 		A525F30C1DCDB14600E04895 /* EffectMachine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EffectMachine.swift; sourceTree = "<group>"; };
 		A525F30E1DCDB16E00E04895 /* StateMachine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StateMachine.swift; sourceTree = "<group>"; };
+		A525F3101DCDBD3D00E04895 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		A54CC81E1DC2597700877BE6 /* OrderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderViewController.swift; sourceTree = "<group>"; };
 		A55B71E61DC33CA300B0CAF4 /* Effect.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Effect.swift; sourceTree = "<group>"; };
 		A55B71E81DC33CA800B0CAF4 /* Ability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Ability.swift; sourceTree = "<group>"; };
@@ -226,6 +228,7 @@
 			isa = PBXGroup;
 			children = (
 				A5E8B6AF1DBAD9A700DCA56A /* AppDelegate.swift */,
+				A525F3101DCDBD3D00E04895 /* Constants.swift */,
 				A54CC81B1DC256E400877BE6 /* Views */,
 				A54CC81A1DC256DD00877BE6 /* ViewControllers */,
 				A54CC81C1DC256F000877BE6 /* Managers */,
@@ -411,6 +414,7 @@
 				A55B71ED1DC33D9800B0CAF4 /* GameManager.swift in Sources */,
 				A5E8B6B01DBAD9A700DCA56A /* AppDelegate.swift in Sources */,
 				A51F9F591DC55EF4009A13CF /* PlayerMidiator.swift in Sources */,
+				A525F3111DCDBD3D00E04895 /* Constants.swift in Sources */,
 				A525F3061DCD85E900E04895 /* Werewolf.swift in Sources */,
 				A525F30D1DCDB14600E04895 /* EffectMachine.swift in Sources */,
 				A5A460F41DC2ABCC007F1A05 /* MatchManager.swift in Sources */,
