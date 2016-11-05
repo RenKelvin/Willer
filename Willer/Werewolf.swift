@@ -57,6 +57,7 @@ class werewolf_kill_modifier: Modifier {
 }
 
 extension Constants {
+    static let Werewolf = "Werewolf"
     static let werewolf_kill_ability = "werewolf_kill_ability"
     static let werewolf_kill_modifier = "werewolf_kill_modifier"
     static let werewolf_kill_effect = "werewolf_kill_effect"

@@ -12,7 +12,7 @@ class Player: NSObject {
 
     var no: Int = 0
 
-    var character: Character = Character()
+    var character: Character
 
     var effectMachine: EffectMachine = EffectMachine()
 
@@ -21,7 +21,12 @@ class Player: NSObject {
     // MARK: -
 
     override init() {
+        self.character = Character()
+    }
 
+    init(character: String, no: Int) {
+        self.character = Character.factory(character: character)
+        self.no = no
     }
 
     // MARK: -
@@ -33,10 +38,10 @@ class Player: NSObject {
 
     func steps() -> [Step] {
         var steps = [Step]()
-                for (_, ability) in self.character.abilities {
-                    steps.append(ability.step())
-                }
+        for (_, ability) in self.character.abilities {
+            steps.append(ability.step())
+        }
         return steps
     }
-
+    
 }

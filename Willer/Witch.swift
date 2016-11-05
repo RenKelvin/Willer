@@ -57,6 +57,7 @@ class witch_save_modifier: Modifier {
 }
 
 extension Constants {
+    static let Witch = "Witch"
     static let witch_save_ability = "witch_save_ability"
     static let witch_save_modifier = "witch_save_modifier"
     static let witch_save_effect = "witch_save_effect"

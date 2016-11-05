@@ -84,6 +84,8 @@ class GameViewController: UIViewController, UICollectionViewDataSource, UICollec
     func updateStep() {
         let currentStep = GameManager.sharedInstance.currentStep()
 
+        currentStep?.preAction?()
+
         self.headLabel.text = currentStep?.headText
         self.bodyLabel.text = currentStep?.bodyText
 
@@ -150,7 +152,7 @@ class GameCollectionViewCell: UICollectionViewCell {
 
     func config(player: Player) {
         // Info
-        label.text = String(player.no) + " " + player.character.name! + "\n" + player.effectMachine.effectString()
+        label.text = String(player.no) + " " + player.character.name + "\n" + player.effectMachine.effectString()
 
         // Selection
         if player.stateMachine.selected {

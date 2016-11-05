@@ -10,10 +10,11 @@ import UIKit
 
 class Ability: NSObject {
 
+    weak var player: Player?
+
     var id: String = "Ability:id"
 
     var passive: Bool?
-    //    var trigger: AbilityTrigger = .none
 
     var headText: String = "Ability:headText"
     var bodyText: String = "Ability:bodyText"
@@ -64,11 +65,11 @@ class Ability: NSObject {
         return step
     }
 
+    func ingest(player: Player) {
+        self.player = player
+        for (_, modifier) in self.modifiers {
+            modifier.ingest(player: player)
+        }
+    }
+
 }
-//
-//enum AbilityTrigger: String {
-//    case none = ""
-//    case godCalled = "GodCalled"
-//    case playerCast = "PlayerCast"
-//    case playerDead = "PlayerDead"
-//}

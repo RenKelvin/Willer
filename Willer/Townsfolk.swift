@@ -18,5 +18,9 @@ class Townsfolk: Character {
 
         self.abilities = [:]
     }
-    
+
+}
+
+extension Constants {
+    static let Townsfolk = "Townsfolk"
 }

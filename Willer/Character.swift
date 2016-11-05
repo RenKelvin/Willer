@@ -10,9 +10,31 @@ import UIKit
 
 class Character: NSObject {
 
-    var id: String?
-    var name: String?
+    weak var player: Player?
+
+    var id: String = "Character:id"
+    var name: String = "Character:name"
 
     var abilities: [String: Ability] = [:]
 
+    static func factory(character: String) -> Character {
+        switch character {
+        case Constants.Townsfolk:
+            return Townsfolk()
+        case Constants.Werewolf:
+            return Werewolf()
+        case Constants.Witch:
+            return Witch()
+        default:
+            return Character()
+        }
+    }
+
+    func ingest(player: Player) {
+        self.player = player
+        for (_, ability) in self.abilities {
+            ability.ingest(player: player)
+        }
+    }
+    
 }

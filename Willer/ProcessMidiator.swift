@@ -15,12 +15,36 @@ class ProcessMidiator: NSObject {
         return self.stepQueue.first
     }
 
+    let firstNightAbilitySequence: [String] = [
+
+    ]
+    var firstNightAbilityArray: [Ability] = []
+
+    let everyNightAbilitySequence: [String] = [
+        Constants.werewolf_kill_ability,
+        Constants.witch_save_ability
+    ]
+    var everyNightAbilityArray: [Ability] = []
+
     // MARK: - Singleton
 
     static let sharedInstance = ProcessMidiator()
 
     override private init() {
+        super.init()
+    }
 
+    func register(player: Player) {
+        player.character.ingest(player: player)
+
+        for (abilityName, ability) in player.character.abilities {
+            if self.firstNightAbilitySequence.contains(abilityName) {
+                self.firstNightAbilityArray.append(ability)
+            }
+            if self.everyNightAbilitySequence.contains(abilityName) {
+                self.everyNightAbilityArray.append(ability)
+            }
+        }
     }
 
     func reload() {
@@ -29,21 +53,21 @@ class ProcessMidiator: NSObject {
             self.stepQueue = [self.stepQueue.first!]
         }
 
-        // Add player step
-        for player in PlayerMidiator.sharedInstance.alivePlayers() {
-            self.stepQueue.append(contentsOf: player.steps())
+        // Add firstnight player step
+
+
+        // Add everynight player step
+        for ability in self.everyNightAbilityArray {
+            self.appendStep(step: ability.step())
         }
 
         // Add enter night or day final step
         if StatusMidiator.sharedInstance.isNight {
-            self.appendStep(step: self.enterDayStep())
+            self.appendStep(step: Step.enterDayStep())
         }
         else {
-            self.appendStep(step: self.enterNightStep())
+            self.appendStep(step: Step.enterNightStep())
         }
-
-        //
-        _ = self.currentStep?.preAction?()
     }
 
     /// Drop the current step and move to next one in the step queue
@@ -51,8 +75,6 @@ class ProcessMidiator: NSObject {
     /// - Returns: The current step
     func nextStep() {
         self.stepQueue = Array(self.stepQueue.dropFirst())
-
-        _ = self.currentStep?.preAction?()
     }
 
     func appendStep(step: Step) {
@@ -61,36 +83,6 @@ class ProcessMidiator: NSObject {
 
     func insertAfterCurrentStep(step: Step) {
         self.stepQueue.insert(step, at: 1)
-    }
-
-    func enterDayStep() -> Step {
-        let step = Step()
-
-        step.headText = "天亮了"
-
-        func enterDayAction() -> Bool {
-            GameManager.sharedInstance.nextDay()
-            return true
-        }
-        step.firstAction = enterDayAction
-        step.firstActionText = "黑夜结束"
-
-        return step
-    }
-
-    func enterNightStep() -> Step {
-        let step = Step()
-
-        step.headText = "天黑请闭眼"
-
-        func enterNightAction() -> Bool {
-            GameManager.sharedInstance.nextDay()
-            return true
-        }
-        step.firstAction = enterNightAction
-        step.firstActionText = "进入黑夜"
-        
-        return step
     }
     
 }

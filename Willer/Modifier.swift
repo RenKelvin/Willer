@@ -10,6 +10,8 @@ import UIKit
 
 class Modifier: NSObject {
 
+    weak var player: Player?
+
     var id: String = "Modifier:id"
 
     var targetAmount = 0
@@ -23,5 +25,9 @@ class Modifier: NSObject {
             target.effectMachine.attachEffect(effect: effect)
         }
     }
-    
+
+    func ingest(player: Player) {
+        self.player = player
+    }
+
 }

@@ -24,19 +24,16 @@ class PlayerMidiator: NSObject {
     }
 
     func generatePlayers(deck: Deck) {
-        let p1 = Player()
-        p1.no = 1
-        p1.character = Werewolf()
+        let p1 = Player(character: Constants.Werewolf, no: 1)
+        ProcessMidiator.sharedInstance.register(player: p1)
         self.playerArray.append(p1)
 
-        let p2 = Player()
-        p2.no = 2
-        p2.character = Witch()
+        let p2 = Player(character: Constants.Witch, no: 2)
+        ProcessMidiator.sharedInstance.register(player: p2)
         self.playerArray.append(p2)
 
-        let p3 = Player()
-        p3.no = 3
-        p3.character = Townsfolk()
+        let p3 = Player(character: Constants.Townsfolk, no: 3)
+        ProcessMidiator.sharedInstance.register(player: p3)
         self.playerArray.append(p3)
     }
 

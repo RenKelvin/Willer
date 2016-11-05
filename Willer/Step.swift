@@ -47,4 +47,34 @@ class Step: NSObject {
         return false
     }
 
+    static func enterDayStep() -> Step {
+        let step = Step()
+
+        step.headText = "天亮了"
+
+        func enterDayAction() -> Bool {
+            GameManager.sharedInstance.nextDay()
+            return true
+        }
+        step.firstAction = enterDayAction
+        step.firstActionText = "黑夜结束"
+
+        return step
+    }
+
+    static func enterNightStep() -> Step {
+        let step = Step()
+
+        step.headText = "天黑请闭眼"
+
+        func enterNightAction() -> Bool {
+            GameManager.sharedInstance.nextDay()
+            return true
+        }
+        step.firstAction = enterNightAction
+        step.firstActionText = "进入黑夜"
+        
+        return step
+    }
+
 }
