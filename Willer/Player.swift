@@ -38,7 +38,7 @@ class Player: NSObject {
 
     func steps() -> [Step] {
         var steps = [Step]()
-        for (_, ability) in self.character.abilities {
+        for ability in self.character.abilities {
             steps.append(ability.step())
         }
         return steps

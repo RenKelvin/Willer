@@ -15,16 +15,26 @@ class Character: NSObject {
     var id: String = "Character:id"
     var name: String = "Character:name"
 
-    var abilities: [String: Ability] = [:]
+    var abilities: [Ability] = []
 
     static func factory(character: String) -> Character {
         switch character {
+
         case Constants.Townsfolk:
             return Townsfolk()
+
         case Constants.Werewolf:
             return Werewolf()
+
+        case Constants.Foreteller:
+            return Foreteller()
+
         case Constants.Witch:
             return Witch()
+
+        case Constants.Hunter:
+            return Hunter()
+
         default:
             return Character()
         }
@@ -32,7 +42,7 @@ class Character: NSObject {
 
     func ingest(player: Player) {
         self.player = player
-        for (_, ability) in self.abilities {
+        for ability in self.abilities {
             ability.ingest(player: player)
         }
     }

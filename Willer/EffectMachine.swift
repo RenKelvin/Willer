@@ -38,6 +38,15 @@ class EffectMachine: NSObject {
             system.assertFact("alive" as NSObjectProtocol)
         }
         self.ruleSystem.add(rule2)
+
+        let rule3 = GKRule(blockPredicate: { (system: GKRuleSystem) -> Bool in
+            let effect = Effect(id: Constants.witch_poison_effect)
+            if self.effects.contains(effect) { return true }
+            else { return false }
+        }) { (system: GKRuleSystem) -> Void in
+            system.retractFact("alive" as NSObjectProtocol)
+        }
+        self.ruleSystem.add(rule3)
     }
 
     func attachEffect(effect: Effect) {

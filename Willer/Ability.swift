@@ -16,19 +16,15 @@ class Ability: NSObject {
 
     var passive: Bool?
 
-    var headText: String = "Ability:headText"
-    var bodyText: String = "Ability:bodyText"
-    var firstActionText: String = "Ability:firstActionText"
-    var secondActionText: String = "Ability:secondActionText"
-
     var maxSelected: Int = 0
 
-    var modifiers: [String: Modifier] = [:]
+    var modifiers: [Modifier] = []
+
 
     // MARK: -
 
     func perform() {
-        for (_, modifier) in modifiers {
+        for modifier in modifiers {
             modifier.modify()
         }
     }
@@ -50,14 +46,12 @@ class Ability: NSObject {
     func step() -> Step {
         let step = Step()
 
-        step.headText = self.headText
-        step.bodyText = self.bodyText
+        step.headText = "Ability:headText"
+        step.bodyText = "Ability:bodyText"
 
-        step.firstActionText = firstActionText
-        step.firstAction = self.action
+        step.firstActionText = "Ability:firstActionText"
 
-        step.secondActionText = secondActionText
-        step.secondAction = Step.trueAction
+        step.secondActionText = "Ability:secondActionText"
 
         step.preAction = self.preAction
         step.posAction = self.posAction
@@ -67,9 +61,9 @@ class Ability: NSObject {
 
     func ingest(player: Player) {
         self.player = player
-        for (_, modifier) in self.modifiers {
+        for modifier in self.modifiers {
             modifier.ingest(player: player)
         }
     }
-
+    
 }

@@ -83,7 +83,6 @@ class GameViewController: UIViewController, UICollectionViewDataSource, UICollec
 
     func updateStep() {
         let currentStep = GameManager.sharedInstance.currentStep()
-
         currentStep?.preAction?()
 
         self.headLabel.text = currentStep?.headText

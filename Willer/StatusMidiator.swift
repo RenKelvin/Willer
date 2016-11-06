@@ -10,7 +10,7 @@ import UIKit
 
 class StatusMidiator: NSObject {
 
-    var currentDay: Int = 0
+    var currentDay: Int = 1
     var isNight: Bool {
         return self.currentDay % 2 == 1
     }

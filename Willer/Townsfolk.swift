@@ -16,7 +16,7 @@ class Townsfolk: Character {
         self.id = "Townsfolk"
         self.name = "普通村民"
 
-        self.abilities = [:]
+        self.abilities = []
     }
 
 }
