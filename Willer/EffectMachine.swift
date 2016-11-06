@@ -64,7 +64,7 @@ class EffectMachine: NSObject {
     }
 
     func effectString() -> String {
-        var str = "E: "
+        var str = ""
 
         for effect in self.effects {
             str += effect.id + " "

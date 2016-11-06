@@ -12,7 +12,61 @@ class God: Character {
 
 }
 
+// Assign sheriff
 
+class assign_sheriff_ability: Ability {
+
+    override init() {
+        super.init()
+
+        self.id = Constants.assign_sheriff_ability
+
+        self.cooldown = 1
+
+        self.maxSelected = 1
+
+        self.modifiers = [assign_sheriff_modifier()]
+    }
+
+    override func step() -> Step {
+        let step = super.step()
+
+        step.headText = "警长竞选"
+        step.bodyText = "现在开始警长竞选，想要竞选警长的玩家请举手 从X号玩家开始发言 （） X号玩家当选警长"
+
+        step.firstActionText = "确认警长"
+        step.firstAction = self.action
+
+        step.secondActionText = "没有警长"
+        step.secondAction = Step.trueAction
+
+        return step
+    }
+
+}
+
+class assign_sheriff_modifier: Modifier {
+
+    override init() {
+        super.init()
+
+        self.id = Constants.assign_sheriff_modifier
+    }
+
+    override func modify() -> Bool {
+        let effect = Effect.factory(id: Constants.sheriff_effect)
+        let targets = PlayerMidiator.sharedInstance.selectedPlayers
+        if targets.isEmpty {
+            return false
+        }
+
+        self.attachEffect(effect: effect, targets: targets)
+        return true
+    }
+    
+}
+
+// Exile
 class exile_ability: Ability {
 
     override init() {
@@ -59,7 +113,7 @@ class exile_modifier: Modifier {
             return false
         }
 
-        self.attachEffect(effect: effect, targets: targets)
+        self.takeEffect(effect: effect, targets: targets)
         return true
     }
     

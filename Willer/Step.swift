@@ -80,15 +80,7 @@ class Step: NSObject {
     }
 
     static func electSheriffStep() -> Step {
-        let step = Step()
-
-        step.headText = "警长竞选"
-        step.bodyText = "现在开始警长竞选，想要竞选警长的玩家请举手 从X号玩家开始发言 （） X号玩家当选警长"
-
-        step.firstAction = Step.trueAction
-        step.firstActionText = "下一步"
-
-        return step
+        return assign_sheriff_ability().step()
     }
 
     static func annouceStep() -> Step {
