@@ -58,8 +58,9 @@ class hunter_shot_modifier: Modifier {
         self.id = Constants.hunter_shot_modifier
     }
 
-    override func modify() {
-
+    override func modify() -> Bool {
+        // TODO
+        return true
     }
     
 }

@@ -40,24 +40,34 @@ class witch_save_ability: Ability {
     override func step() -> Step {
         _step = super.step()
 
-        _step.headText = "女巫请睁眼"
-
-        _step.firstActionText = "救"
-        _step.firstAction = self.action
-
-        _step.secondActionText = "不救"
-        _step.secondAction = Step.trueAction
-
         return _step
     }
 
     override func preAction() {
+
+        _step.headText = "女巫请睁眼"
+
         let player = PlayerMidiator.sharedInstance.werewolfKilledPlayers().first
-        if let player = player {
-            _step.bodyText = "\(player.no)号玩家死亡，请问你要救吗"
+        if player != nil && self.avalaible() {
+            _step.bodyText = "\(player!.no)号玩家死亡，请问你要救吗"
         }
         else {
             _step.bodyText = "X号玩家死亡，请问你要救吗"
+        }
+
+        if self.avalaible() {
+            _step.firstActionText = "救"
+            _step.firstAction = self.action
+
+            _step.secondActionText = "不救"
+            _step.secondAction = Step.trueAction
+        }
+        else {
+            _step.firstActionText = "解药已使用"
+            _step.firstAction = Step.falseAction
+
+            _step.secondActionText = "下一步"
+            _step.secondAction = Step.trueAction
         }
     }
 
@@ -71,11 +81,12 @@ class witch_save_modifier: Modifier {
         self.id = Constants.witch_save_modifier
     }
 
-    override func modify() {
-        let effect = Effect(id: Constants.witch_save_effect)
+    override func modify() -> Bool {
+        let effect = Effect.factory(id: Constants.witch_save_effect)
         let targets = PlayerMidiator.sharedInstance.werewolfKilledPlayers()
 
         self.attachEffect(effect: effect, targets: targets)
+        return true
     }
 
 }
@@ -119,11 +130,15 @@ class witch_poison_modifier: Modifier {
         self.id = Constants.witch_poison_modifier
     }
 
-    override func modify() {
-        let effect = Effect(id: Constants.witch_poison_effect)
+    override func modify() -> Bool {
+        let effect = Effect.factory(id: Constants.witch_poison_effect)
         let targets = PlayerMidiator.sharedInstance.selectedPlayers
+        if targets.isEmpty {
+            return false
+        }
 
         self.attachEffect(effect: effect, targets: targets)
+        return true
     }
 
 }

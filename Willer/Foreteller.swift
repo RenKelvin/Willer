@@ -28,6 +28,7 @@ class foreteller_discover_ability: Ability {
 
         self.id = Constants.foreteller_discover_ability
 
+        self.cooldown = 1
         self.maxSelected = 0
 
         self.modifiers = [foreteller_discover_modifier()]
@@ -55,8 +56,9 @@ class foreteller_discover_modifier: Modifier {
         self.id = Constants.foreteller_discover_modifier
     }
 
-    override func modify() {
-
+    override func modify() -> Bool {
+        // TODO
+        return true
     }
     
 }

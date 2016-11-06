@@ -36,7 +36,7 @@ class PlayerMidiator: NSObject {
     }
 
     func settle() {
-        for player in self.playerArray {
+        for player in self.alivePlayers() {
             player.settle()
         }
     }

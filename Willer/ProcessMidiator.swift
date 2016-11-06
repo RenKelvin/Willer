@@ -60,7 +60,7 @@ class ProcessMidiator: NSObject {
         }
 
         // Add firstnight player step
-        if day == 1 {
+        if day == 1 && StatusMidiator.sharedInstance.isNight {
             for abilityName in self.firstNightAbilitySequence {
                 if let ability = self.firstNightAbilityDictionary[abilityName] {
                     self.appendStep(step: ability.step())
@@ -69,7 +69,7 @@ class ProcessMidiator: NSObject {
         }
 
         // Add everynight player step
-        if day > 0 {
+        if day > 0 && StatusMidiator.sharedInstance.isNight {
             for abilityName in self.everyNightAbilitySequence {
                 if let ability = self.everyNightAbilityDictionary[abilityName] {
                     self.appendStep(step: ability.step())

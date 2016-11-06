@@ -30,6 +30,8 @@ class werewolf_kill_ability: Ability {
 
         self.id = Constants.werewolf_kill_ability
 
+        self.cooldown = 1
+
         self.maxSelected = 1
 
         self.modifiers = [werewolf_kill_modifier()]
@@ -60,11 +62,15 @@ class werewolf_kill_modifier: Modifier {
         self.id = Constants.werewolf_kill_modifier
     }
 
-    override func modify() {
-        let effect = Effect(id: Constants.werewolf_kill_effect)
+    override func modify() -> Bool {
+        let effect = Effect.factory(id: Constants.werewolf_kill_effect)
         let targets = PlayerMidiator.sharedInstance.selectedPlayers
+        if targets.isEmpty {
+            return false
+        }
         
         self.attachEffect(effect: effect, targets: targets)
+        return true
     }
 
 }

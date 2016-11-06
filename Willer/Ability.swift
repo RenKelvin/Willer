@@ -16,6 +16,9 @@ class Ability: NSObject {
 
     var passive: Bool?
 
+    var cooldown = 9999
+    var lastCast = -9999
+
     var maxSelected: Int = 0
 
     var modifiers: [Modifier] = []
@@ -23,10 +26,12 @@ class Ability: NSObject {
 
     // MARK: -
 
-    func perform() {
+    func perform() -> Bool {
+        var rst = true
         for modifier in modifiers {
-            modifier.modify()
+            rst = modifier.modify() && rst
         }
+        return rst
     }
 
     func preAction() {
@@ -34,9 +39,15 @@ class Ability: NSObject {
     }
 
     func action() -> Bool {
-        self.perform()
+        if !self.avalaible() {
+            return false
+        }
 
-        return true
+        let rst = self.perform()
+        if rst {
+            self.lastCast = StatusMidiator.sharedInstance.currentDay
+        }
+        return rst
     }
 
     func posAction() {
@@ -50,7 +61,6 @@ class Ability: NSObject {
         step.bodyText = "Ability:bodyText"
 
         step.firstActionText = "Ability:firstActionText"
-
         step.secondActionText = "Ability:secondActionText"
 
         step.preAction = self.preAction
@@ -64,6 +74,10 @@ class Ability: NSObject {
         for modifier in self.modifiers {
             modifier.ingest(player: player)
         }
+    }
+
+    func avalaible() -> Bool {
+        return StatusMidiator.sharedInstance.currentDay - self.lastCast > self.cooldown
     }
     
 }

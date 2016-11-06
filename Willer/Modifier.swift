@@ -16,13 +16,16 @@ class Modifier: NSObject {
 
     var targetAmount = 0
 
-    func modify() {
-        print(self.id)
+    func modify() -> Bool {
+        return true
     }
 
     func attachEffect(effect: Effect, targets: [Player]) {
+        var e = effect
+        e.attached = StatusMidiator.sharedInstance.currentDay
+
         for target in targets {
-            target.effectMachine.attachEffect(effect: effect)
+            target.effectMachine.attachEffect(effect: e)
         }
     }
 

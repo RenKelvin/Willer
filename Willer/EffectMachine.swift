@@ -71,6 +71,8 @@ class EffectMachine: NSObject {
 
         let grade = self.ruleSystem.grade(forFact: "alive" as NSObjectProtocol)
 
+        self.effects = Set(self.effects.filter({!($0.inactive() || $0.lastDayActive())}))
+
         return grade == 1
     }
 
