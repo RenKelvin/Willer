@@ -29,6 +29,16 @@ class Modifier: NSObject {
         }
     }
 
+    func takeEffect(effect: Effect, targets: [Player]) {
+        var e = effect
+        e.attached = StatusMidiator.sharedInstance.currentDay
+
+        for target in targets {
+            target.effectMachine.attachEffect(effect: e)
+            target.settle()
+        }
+    }
+
     func ingest(player: Player) {
         self.player = player
     }

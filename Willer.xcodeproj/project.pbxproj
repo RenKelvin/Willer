@@ -19,6 +19,7 @@
 		A525F3111DCDBD3D00E04895 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A525F3101DCDBD3D00E04895 /* Constants.swift */; };
 		A525F3131DCE55C200E04895 /* Foreteller.swift in Sources */ = {isa = PBXBuildFile; fileRef = A525F3121DCE55C200E04895 /* Foreteller.swift */; };
 		A525F3151DCE55CB00E04895 /* Hunter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A525F3141DCE55CB00E04895 /* Hunter.swift */; };
+		A525F3191DCFC84500E04895 /* God.swift in Sources */ = {isa = PBXBuildFile; fileRef = A525F3181DCFC84500E04895 /* God.swift */; };
 		A54CC81F1DC2597700877BE6 /* OrderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A54CC81E1DC2597700877BE6 /* OrderViewController.swift */; };
 		A55B71E71DC33CA300B0CAF4 /* Effect.swift in Sources */ = {isa = PBXBuildFile; fileRef = A55B71E61DC33CA300B0CAF4 /* Effect.swift */; };
 		A55B71E91DC33CA800B0CAF4 /* Ability.swift in Sources */ = {isa = PBXBuildFile; fileRef = A55B71E81DC33CA800B0CAF4 /* Ability.swift */; };
@@ -54,6 +55,7 @@
 		A525F3101DCDBD3D00E04895 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		A525F3121DCE55C200E04895 /* Foreteller.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Foreteller.swift; sourceTree = "<group>"; };
 		A525F3141DCE55CB00E04895 /* Hunter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Hunter.swift; sourceTree = "<group>"; };
+		A525F3181DCFC84500E04895 /* God.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = God.swift; sourceTree = "<group>"; };
 		A54CC81E1DC2597700877BE6 /* OrderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderViewController.swift; sourceTree = "<group>"; };
 		A55B71E61DC33CA300B0CAF4 /* Effect.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Effect.swift; sourceTree = "<group>"; };
 		A55B71E81DC33CA800B0CAF4 /* Ability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Ability.swift; sourceTree = "<group>"; };
@@ -266,6 +268,7 @@
 		A5FA13E11DC49230004F5939 /* Characters */ = {
 			isa = PBXGroup;
 			children = (
+				A525F3181DCFC84500E04895 /* God.swift */,
 				A525F3081DCDAA9300E04895 /* Townsfolk.swift */,
 				A525F3051DCD85E900E04895 /* Werewolf.swift */,
 				A525F3121DCE55C200E04895 /* Foreteller.swift */,
@@ -413,6 +416,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A525F3191DCFC84500E04895 /* God.swift in Sources */,
 				A51F9F551DC5565C009A13CF /* ProcessMidiator.swift in Sources */,
 				A55B71E71DC33CA300B0CAF4 /* Effect.swift in Sources */,
 				A5A460EE1DC261DB007F1A05 /* DeckViewController.swift in Sources */,

@@ -82,8 +82,8 @@ class Step: NSObject {
     static func electSheriffStep() -> Step {
         let step = Step()
 
-        step.headText = "现在开始警长竞选"
-        step.bodyText = ""
+        step.headText = "警长竞选"
+        step.bodyText = "现在开始警长竞选，想要竞选警长的玩家请举手 从X号玩家开始发言 （） X号玩家当选警长"
 
         step.firstAction = Step.trueAction
         step.firstActionText = "下一步"
@@ -94,8 +94,8 @@ class Step: NSObject {
     static func annouceStep() -> Step {
         let step = Step()
 
-        step.headText = "昨夜X号玩家死亡"
-        step.bodyText = ""
+        step.headText = "宣布死者"
+        step.bodyText = "昨夜X号玩家死亡，请留遗言"
 
         step.firstAction = Step.trueAction
         step.firstActionText = "下一步"
@@ -106,8 +106,8 @@ class Step: NSObject {
     static func pitchStep() -> Step {
         let step = Step()
 
-        step.headText = "现在开始发言"
-        step.bodyText = "从警长左手边X号玩家开始发言"
+        step.headText = "放逐发言"
+        step.bodyText = "现在开始发言，从警长左手边X号玩家开始发言"
 
         step.firstAction = Step.trueAction
         step.firstActionText = "下一步"
@@ -116,15 +116,7 @@ class Step: NSObject {
     }
 
     static func exileStep() -> Step {
-        let step = Step()
-
-        step.headText = "现在开始放逐投票"
-        step.bodyText = ""
-
-        step.firstAction = Step.trueAction
-        step.firstActionText = "下一步"
-
-        return step
+        return exile_ability().step()
     }
 
 }

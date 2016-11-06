@@ -45,14 +45,14 @@ class witch_save_ability: Ability {
 
     override func preAction() {
 
-        _step.headText = "女巫请睁眼"
+        _step.headText = "女巫行动"
 
         let player = PlayerMidiator.sharedInstance.werewolfKilledPlayers().first
         if player != nil && self.avalaible() {
-            _step.bodyText = "今晚这位玩家(\(player!.no)号)死亡，请问你要救吗"
+            _step.bodyText = "女巫请睁眼 今晚这位玩家(\(player!.no)号)死亡，请问你要救吗"
         }
         else {
-            _step.bodyText = "今晚这位玩家死亡，请问你要救吗"
+            _step.bodyText = "女巫请睁眼 今晚这位玩家死亡，请问你要救吗"
         }
 
         if self.avalaible() {
@@ -108,7 +108,7 @@ class witch_poison_ability: Ability {
     override func step() -> Step {
         let step = super.step()
 
-        step.headText = "女巫请睁眼"
+        step.headText = "女巫行动"
         step.bodyText = "请问你要毒死谁吗"
 
         if self.avalaible() {

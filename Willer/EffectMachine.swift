@@ -47,6 +47,16 @@ class EffectMachine: NSObject {
             system.retractFact("alive" as NSObjectProtocol)
         }
         self.ruleSystem.add(rule3)
+
+        let rule4 = GKRule(blockPredicate: { (system: GKRuleSystem) -> Bool in
+            let effect = Effect(id: Constants.exile_effect)
+            if self.effects.contains(effect) { return true }
+            else { return false }
+        }) { (system: GKRuleSystem) -> Void in
+            system.retractFact("alive" as NSObjectProtocol)
+        }
+        self.ruleSystem.add(rule4)
+
     }
 
     func attachEffect(effect: Effect) {

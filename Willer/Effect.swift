@@ -35,6 +35,9 @@ struct Effect: Hashable {
         case Constants.witch_poison_effect:
             return Effect(id: Constants.witch_poison_effect, delay: 0, duration: 1)
 
+        case Constants.exile_effect:
+            return Effect(id: Constants.exile_effect, delay: 0, duration: 1)
+
         default:
             return Effect()
         }
