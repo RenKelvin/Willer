@@ -51,13 +51,14 @@ class Step: NSObject {
         let step = Step()
 
         step.headText = "天亮了"
+        step.bodyText = "所有人请睁眼"
 
         func enterDayAction() -> Bool {
             GameManager.sharedInstance.nextDay()
             return true
         }
         step.firstAction = enterDayAction
-        step.firstActionText = "黑夜结束"
+        step.firstActionText = "进入白天"
 
         return step
     }
@@ -66,6 +67,7 @@ class Step: NSObject {
         let step = Step()
 
         step.headText = "天黑请闭眼"
+        step.bodyText = ""
 
         func enterNightAction() -> Bool {
             GameManager.sharedInstance.nextDay()
@@ -74,6 +76,54 @@ class Step: NSObject {
         step.firstAction = enterNightAction
         step.firstActionText = "进入黑夜"
         
+        return step
+    }
+
+    static func electSheriffStep() -> Step {
+        let step = Step()
+
+        step.headText = "现在开始警长竞选"
+        step.bodyText = ""
+
+        step.firstAction = Step.trueAction
+        step.firstActionText = "下一步"
+
+        return step
+    }
+
+    static func annouceStep() -> Step {
+        let step = Step()
+
+        step.headText = "昨夜X号玩家死亡"
+        step.bodyText = ""
+
+        step.firstAction = Step.trueAction
+        step.firstActionText = "下一步"
+
+        return step
+    }
+
+    static func pitchStep() -> Step {
+        let step = Step()
+
+        step.headText = "现在开始发言"
+        step.bodyText = "从警长左手边X号玩家开始发言"
+
+        step.firstAction = Step.trueAction
+        step.firstActionText = "下一步"
+
+        return step
+    }
+
+    static func exileStep() -> Step {
+        let step = Step()
+
+        step.headText = "现在开始放逐投票"
+        step.bodyText = ""
+
+        step.firstAction = Step.trueAction
+        step.firstActionText = "下一步"
+
         return step
     }
 

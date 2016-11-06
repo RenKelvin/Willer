@@ -9,5 +9,5 @@
 import UIKit
 
 struct Constants {
-    
+    static let exile_ability = "exile_ability"
 }

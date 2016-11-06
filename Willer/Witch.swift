@@ -49,10 +49,10 @@ class witch_save_ability: Ability {
 
         let player = PlayerMidiator.sharedInstance.werewolfKilledPlayers().first
         if player != nil && self.avalaible() {
-            _step.bodyText = "\(player!.no)号玩家死亡，请问你要救吗"
+            _step.bodyText = "今晚这位玩家(\(player!.no)号)死亡，请问你要救吗"
         }
         else {
-            _step.bodyText = "X号玩家死亡，请问你要救吗"
+            _step.bodyText = "今晚这位玩家死亡，请问你要救吗"
         }
 
         if self.avalaible() {
@@ -111,11 +111,21 @@ class witch_poison_ability: Ability {
         step.headText = "女巫请睁眼"
         step.bodyText = "请问你要毒死谁吗"
 
-        step.firstActionText = "毒杀"
-        step.firstAction = self.action
+        if self.avalaible() {
+            step.firstActionText = "毒杀"
+            step.firstAction = self.action
 
-        step.secondActionText = "不毒"
-        step.secondAction = Step.trueAction
+            step.secondActionText = "不毒"
+            step.secondAction = Step.trueAction
+        }
+        else {
+            step.firstActionText = "毒药已使用"
+            step.firstAction = Step.falseAction
+
+            step.secondActionText = "下一步"
+            step.secondAction = Step.trueAction
+
+        }
 
         return step
     }

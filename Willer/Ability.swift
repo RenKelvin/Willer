@@ -79,5 +79,5 @@ class Ability: NSObject {
     func avalaible() -> Bool {
         return StatusMidiator.sharedInstance.currentDay - self.lastCast > self.cooldown
     }
-    
+
 }

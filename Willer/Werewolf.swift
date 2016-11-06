@@ -40,8 +40,8 @@ class werewolf_kill_ability: Ability {
     override func step() -> Step {
         let step = super.step()
 
-        step.headText = "狼人请睁眼"
-        step.bodyText = "请选择要击杀的目标"
+        step.headText = "狼人回合"
+        step.bodyText = "1. 狼人请睁眼 2. 请选择要击杀的目标 3. 狼人请闭眼"
         
         step.firstActionText = "确认杀害"
         step.firstAction = self.action

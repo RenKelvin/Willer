@@ -52,15 +52,14 @@ class ProcessMidiator: NSObject {
     }
 
     func reload() {
-        let day = StatusMidiator.sharedInstance.currentDay
-
         // Clear step queue but current one
         if !self.stepQueue.isEmpty {
             self.stepQueue = [self.stepQueue.first!]
         }
 
-        // Add firstnight player step
-        if day == 1 && StatusMidiator.sharedInstance.isNight {
+        let day = StatusMidiator.sharedInstance.currentDay
+        if day == 1 {
+            // Add firstnight player step
             for abilityName in self.firstNightAbilitySequence {
                 if let ability = self.firstNightAbilityDictionary[abilityName] {
                     self.appendStep(step: ability.step())
@@ -68,23 +67,34 @@ class ProcessMidiator: NSObject {
             }
         }
 
-        // Add everynight player step
-        if day > 0 && StatusMidiator.sharedInstance.isNight {
+        if day == 2 {
+            // Elect sheriff step
+            self.appendStep(step: Step.electSheriffStep())
+        }
+
+        if day % 2 == 1 {
+            // Add everynight player step
             for abilityName in self.everyNightAbilitySequence {
                 if let ability = self.everyNightAbilityDictionary[abilityName] {
                     self.appendStep(step: ability.step())
                 }
             }
-        }
 
-        // Add enter night or day final step
-        if day > 0 {
-            if StatusMidiator.sharedInstance.isNight {
-                self.appendStep(step: Step.enterDayStep())
-            }
-            else {
-                self.appendStep(step: Step.enterNightStep())
-            }
+            // Add enter night final step
+            self.appendStep(step: Step.enterDayStep())
+        }
+        else {
+            // Announce
+            self.appendStep(step: Step.annouceStep())
+
+            // Pitch
+            self.appendStep(step: Step.pitchStep())
+
+            // Exile
+            self.appendStep(step: Step.exileStep())
+
+            // Add enter day final step
+            self.appendStep(step: Step.enterNightStep())
         }
     }
 
