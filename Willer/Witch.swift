@@ -19,6 +19,22 @@ class Witch: Character {
         self.abilities = [witch_save_ability(), witch_poison_ability()]
     }
 
+    override func steps() -> [Step] {
+        var steps = [Step]()
+
+        let firstStep = Step.simpleStep(head: "女巫行动", body: "女巫请睁眼")
+        steps.append(firstStep)
+
+        for ability in self.abilities {
+            steps.append(ability.step())
+        }
+
+        let lastStep = Step.simpleStep(head: "女巫行动", body: "女巫请闭眼")
+        steps.append(lastStep)
+
+        return steps
+    }
+
 }
 
 // MARK: - Save
@@ -49,10 +65,10 @@ class witch_save_ability: Ability {
 
         let player = PlayerMidiator.sharedInstance.werewolfKilledPlayers().first
         if player != nil && self.avalaible() {
-            _step.bodyText = "女巫请睁眼 今晚这位玩家(\(player!.no)号)死亡，请问你要救吗"
+            _step.bodyText = "今晚这位玩家(\(player!.no)号)死亡，请问你要救吗"
         }
         else {
-            _step.bodyText = "女巫请睁眼 今晚这位玩家死亡，请问你要救吗"
+            _step.bodyText = "今晚这位玩家死亡，请问你要救吗"
         }
 
         if self.avalaible() {

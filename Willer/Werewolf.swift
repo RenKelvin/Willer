@@ -19,6 +19,22 @@ class Werewolf: Character {
         self.abilities = [werewolf_kill_ability()]
     }
 
+    override func steps() -> [Step] {
+        var steps = [Step]()
+
+        let firstStep = Step.simpleStep(head: "狼人行动", body: "狼人请睁眼")
+        steps.append(firstStep)
+
+        for ability in self.abilities {
+            steps.append(ability.step())
+        }
+
+        let lastStep = Step.simpleStep(head: "狼人行动", body: "狼人请闭眼")
+        steps.append(lastStep)
+
+        return steps
+    }
+
 }
 
 // MARK: - Kill
@@ -41,7 +57,7 @@ class werewolf_kill_ability: Ability {
         let step = super.step()
 
         step.headText = "狼人行动"
-        step.bodyText = "狼人请睁眼 请选择要击杀的目标 狼人请闭眼"
+        step.bodyText = "请选择要击杀的目标"
         
         step.firstActionText = "确认杀害"
         step.firstAction = self.action

@@ -15,17 +15,16 @@ class ProcessMidiator: NSObject {
         return self.stepQueue.first
     }
 
-    var firstNightAbilitySequence: [String] = [
+    var firstNightCharacterSequence: [String] = [
     ]
-    var firstNightAbilityDictionary: [String: Ability] = [:]
+    var firstNightCharacterDictionary: [String: Character] = [:]
 
-    var everyNightAbilitySequence: [String] = [
-        Constants.werewolf_kill_ability,
-        Constants.foreteller_discover_ability,
-        Constants.witch_save_ability,
-        Constants.witch_poison_ability,
+    var everyNightCharacterSequence: [String] = [
+        Constants.Werewolf,
+        Constants.Foreteller,
+        Constants.Witch,
         ]
-    var everyNightAbilityDictionary: [String: Ability] = [:]
+    var everyNightCharacterDictionary: [String: Character] = [:]
 
     // MARK: - Singleton
 
@@ -36,18 +35,15 @@ class ProcessMidiator: NSObject {
     }
 
     func register(player: Player) {
+        // Ingest player to character
         player.character.ingest(player: player)
 
-        for ability in player.character.abilities {
-            let abilityId = ability.id
+        if self.everyNightCharacterSequence.contains(player.character.id) {
+            self.everyNightCharacterDictionary[player.character.id] = player.character
+        }
 
-            if self.firstNightAbilitySequence.contains(abilityId) {
-                self.firstNightAbilityDictionary[abilityId] = ability
-            }
-
-            if self.everyNightAbilitySequence.contains(abilityId) {
-                self.everyNightAbilityDictionary[abilityId] = ability
-            }
+        if self.everyNightCharacterSequence.contains(player.character.id) {
+            self.everyNightCharacterDictionary[player.character.id] = player.character
         }
     }
 
@@ -60,23 +56,23 @@ class ProcessMidiator: NSObject {
         let day = StatusMidiator.sharedInstance.currentDay
         if day == 1 {
             // Add firstnight player step
-            for abilityName in self.firstNightAbilitySequence {
-                if let ability = self.firstNightAbilityDictionary[abilityName] {
-                    self.appendStep(step: ability.step())
+            for characterId in self.firstNightCharacterSequence {
+                if let character = self.firstNightCharacterDictionary[characterId] {
+                    self.appendSteps(steps: character.steps())
                 }
             }
         }
 
         if day == 2 {
             // Elect sheriff step
-            self.appendStep(step: Step.electSheriffStep())
+            self.appendSteps(steps: Step.electSheriffSteps())
         }
 
         if day % 2 == 1 {
             // Add everynight player step
-            for abilityName in self.everyNightAbilitySequence {
-                if let ability = self.everyNightAbilityDictionary[abilityName] {
-                    self.appendStep(step: ability.step())
+            for characterId in self.everyNightCharacterSequence {
+                if let character = self.everyNightCharacterDictionary[characterId] {
+                    self.appendSteps(steps: character.steps())
                 }
             }
 
@@ -107,6 +103,12 @@ class ProcessMidiator: NSObject {
 
     func appendStep(step: Step) {
         self.stepQueue.append(step)
+    }
+
+    func appendSteps(steps: [Step]) {
+        for step in steps {
+            self.stepQueue.append(step)
+        }
     }
     
     func insertAfterCurrentStep(step: Step) {

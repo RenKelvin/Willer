@@ -46,5 +46,16 @@ class Character: NSObject {
             ability.ingest(player: player)
         }
     }
+
+    func steps() -> [Step] {
+        var steps: [Step] = []
+
+        // Abilities step
+        for ability in self.abilities {
+            steps.append(ability.step())
+        }
+
+        return steps
+    }
     
 }

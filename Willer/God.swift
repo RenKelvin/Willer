@@ -32,7 +32,7 @@ class assign_sheriff_ability: Ability {
         let step = super.step()
 
         step.headText = "警长竞选"
-        step.bodyText = "现在开始警长竞选，想要竞选警长的玩家请举手 从X号玩家开始发言 （） X号玩家当选警长"
+        step.bodyText = "（）"
 
         step.firstActionText = "确认警长"
         step.firstAction = self.action

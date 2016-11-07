@@ -47,11 +47,23 @@ class Step: NSObject {
         return false
     }
 
+    static func simpleStep(head: String, body: String) -> Step {
+        let step = Step()
+
+        step.headText = head
+        step.bodyText = body
+
+        step.firstActionText = "下一步"
+        step.firstAction = trueAction
+
+        return step
+    }
+
     static func enterDayStep() -> Step {
         let step = Step()
 
-        step.headText = "天亮了"
-        step.bodyText = "所有人请睁眼"
+        step.headText = "黑夜结束"
+        step.bodyText = "天亮了，所有人请睁眼"
 
         func enterDayAction() -> Bool {
             GameManager.sharedInstance.nextDay()
@@ -66,8 +78,8 @@ class Step: NSObject {
     static func enterNightStep() -> Step {
         let step = Step()
 
-        step.headText = "天黑请闭眼"
-        step.bodyText = ""
+        step.headText = "白天结束"
+        step.bodyText = "天黑请闭眼"
 
         func enterNightAction() -> Bool {
             GameManager.sharedInstance.nextDay()
@@ -79,8 +91,24 @@ class Step: NSObject {
         return step
     }
 
-    static func electSheriffStep() -> Step {
-        return assign_sheriff_ability().step()
+    static func electSheriffSteps() -> [Step] {
+        var steps = [Step]()
+
+        let step1 = Step.simpleStep(head: "警长竞选", body: "现在开始警长竞选，想要竞选警长的玩家请举手")
+        steps.append(step1)
+
+        let step2 = Step.simpleStep(head: "警长竞选", body: "从X号玩家开始发言")
+        steps.append(step2)
+
+        let step3 = Step.simpleStep(head: "警长竞选", body: "现在开始投票，竞选及退水的玩家不能投票")
+        steps.append(step3)
+
+        steps.append(assign_sheriff_ability().step())
+
+        let step5 = Step.simpleStep(head: "警长竞选", body: "X号玩家当选警长")
+        steps.append(step5)
+
+        return steps
     }
 
     static func annouceStep() -> Step {
