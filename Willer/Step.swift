@@ -63,7 +63,7 @@ class Step: NSObject {
         let step = Step()
 
         step.headText = "黑夜结束"
-        step.bodyText = "天亮了，所有人请睁眼"
+        step.bodyText = "天亮了，全体玩家请睁眼"
 
         func enterDayAction() -> Bool {
             GameManager.sharedInstance.nextDay()

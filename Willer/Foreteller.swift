@@ -19,6 +19,22 @@ class Foreteller: Character {
         self.abilities = [foreteller_discover_ability()]
     }
 
+    override func steps() -> [Step] {
+        var steps = [Step]()
+
+        let firstStep = Step.simpleStep(head: "预言家行动", body: "预言家请睁眼")
+        steps.append(firstStep)
+
+        for ability in self.abilities {
+            steps.append(ability.step())
+        }
+
+        let lastStep = Step.simpleStep(head: "预言家行动", body: "预言家请闭眼")
+        steps.append(lastStep)
+
+        return steps
+    }
+
 }
 
 class foreteller_discover_ability: Ability {
@@ -29,7 +45,7 @@ class foreteller_discover_ability: Ability {
         self.id = Constants.foreteller_discover_ability
 
         self.cooldown = 1
-        self.maxSelected = 0
+        self.maxSelected = 1
 
         self.modifiers = [foreteller_discover_modifier()]
     }
@@ -40,8 +56,11 @@ class foreteller_discover_ability: Ability {
         step.headText = "预言家请睁眼"
         step.bodyText = "请选择你要查验的人"
 
-        step.firstActionText = "下一步"
+        step.firstActionText = "确认查验"
         step.firstAction = self.action
+
+        step.secondActionText = "放弃查验"
+        step.secondAction = Step.trueAction
 
         return step
     }
@@ -57,7 +76,22 @@ class foreteller_discover_modifier: Modifier {
     }
 
     override func modify() -> Bool {
-        // TODO
+        let targets = PlayerMidiator.sharedInstance.selectedPlayers
+        if targets.isEmpty {
+            return false
+        }
+
+        let player = targets.first!
+        var role = ""
+        if (player.character.isWerewolf()) {
+            role = "狼人"
+        }
+        else {
+            role = "好人"
+        }
+        let step = Step.simpleStep(head: "预言家行动", body: "他的身份是 "+role)
+        ProcessMidiator.sharedInstance.ingestStep(step: step)
+
         return true
     }
     

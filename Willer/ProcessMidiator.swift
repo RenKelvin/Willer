@@ -68,17 +68,19 @@ class ProcessMidiator: NSObject {
             self.appendSteps(steps: Step.electSheriffSteps())
         }
 
+        // Night
         if day % 2 == 1 {
-            // Add everynight player step
+            // Everynight player step
             for characterId in self.everyNightCharacterSequence {
                 if let character = self.everyNightCharacterDictionary[characterId] {
                     self.appendSteps(steps: character.steps())
                 }
             }
 
-            // Add enter night final step
+            // Enter night final step
             self.appendStep(step: Step.enterDayStep())
         }
+        // Day
         else {
             // Announce
             self.appendStep(step: Step.annouceStep())
@@ -89,7 +91,7 @@ class ProcessMidiator: NSObject {
             // Exile
             self.appendStep(step: Step.exileStep())
 
-            // Add enter day final step
+            // Enter day final step
             self.appendStep(step: Step.enterNightStep())
         }
     }
@@ -111,7 +113,7 @@ class ProcessMidiator: NSObject {
         }
     }
     
-    func insertAfterCurrentStep(step: Step) {
+    func ingestStep(step: Step) {
         self.stepQueue.insert(step, at: 1)
     }
     

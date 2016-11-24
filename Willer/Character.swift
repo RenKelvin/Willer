@@ -57,5 +57,8 @@ class Character: NSObject {
 
         return steps
     }
-    
+
+    func isWerewolf() -> Bool {
+        return self.id == "Werewolf"
+    }
 }
