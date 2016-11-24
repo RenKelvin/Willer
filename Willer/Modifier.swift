@@ -22,7 +22,7 @@ class Modifier: NSObject {
 
     func attachEffect(effect: Effect, targets: [Player]) {
         var e = effect
-        e.attached = StatusMidiator.sharedInstance.currentDay
+        e.attached = StatusMidiator.shared.currentDay
 
         for target in targets {
             target.effectMachine.attachEffect(effect: e)
@@ -31,7 +31,7 @@ class Modifier: NSObject {
 
     func takeEffect(effect: Effect, targets: [Player]) {
         var e = effect
-        e.attached = StatusMidiator.sharedInstance.currentDay
+        e.attached = StatusMidiator.shared.currentDay
 
         for target in targets {
             target.effectMachine.attachEffect(effect: e)

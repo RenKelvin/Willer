@@ -76,7 +76,7 @@ class foreteller_discover_modifier: Modifier {
     }
 
     override func modify() -> Bool {
-        let targets = PlayerMidiator.sharedInstance.selectedPlayers
+        let targets = PlayerMidiator.shared.selectedPlayers
         if targets.isEmpty {
             return false
         }
@@ -90,7 +90,7 @@ class foreteller_discover_modifier: Modifier {
             role = "好人"
         }
         let step = Step.simpleStep(head: "预言家行动", body: "他的身份是 "+role)
-        ProcessMidiator.sharedInstance.ingestStep(step: step)
+        ProcessMidiator.shared.ingestStep(step: step)
 
         return true
     }

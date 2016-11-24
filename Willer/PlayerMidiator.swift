@@ -17,7 +17,7 @@ class PlayerMidiator: NSObject {
 
     // MARK: - Singleton
 
-    static let sharedInstance = PlayerMidiator()
+    static let shared = PlayerMidiator()
 
     override private init() {
 
@@ -28,7 +28,7 @@ class PlayerMidiator: NSObject {
         for (card, num) in deck.cards {
             for _ in 1...num {
                 let player = Player(character: card.id, no: no)
-                ProcessMidiator.sharedInstance.register(player: player)
+                ProcessMidiator.shared.register(player: player)
                 self.playerArray.append(player)
                 no += 1
             }
@@ -36,13 +36,21 @@ class PlayerMidiator: NSObject {
     }
 
     func settle() {
-        for player in self.alivePlayers() {
+        for player in self.livingPlayers() {
             player.settle()
+        }
+
+        // Winning check
+        if (self.isWerewolfWiped()) {
+            print("好人获胜")
+        }
+        else if (self.isTownsfolkWiped() || self.isPriesthoodWiped()) {
+            print("狼人获胜")
         }
     }
 
     func selectPlayer(at index: Int) {
-        let player = PlayerMidiator.sharedInstance.alivePlayers()[index]
+        let player = PlayerMidiator.shared.livingPlayers()[index]
 
         if (!player.stateMachine.selected) {
             player.stateMachine.selected = true
@@ -71,14 +79,33 @@ class PlayerMidiator: NSObject {
 
     // Mark: -
 
-    func alivePlayers() -> [Player]
+    func livingPlayers() -> [Player]
     {
-        return self.playerArray.filter({$0.stateMachine.alive})
+        return self.playerArray.filter({$0.stateMachine.living})
+    }
+
+    func livePlayers() -> [Player]
+    {
+        return self.playerArray.filter({$0.stateMachine.state == .live})
     }
 
     func werewolfKilledPlayers() -> [Player]
     {
-        return self.alivePlayers().filter({$0.effectMachine.isWerewolfKilled()})
+        return self.livePlayers().filter({$0.effectMachine.isWerewolfKilled()})
+    }
+
+    // MARK: - Winning checks
+
+    func isWerewolfWiped() -> Bool {
+        return self.livePlayers().filter({$0.character.isWerewolf()}).isEmpty
+    }
+
+    func isTownsfolkWiped() -> Bool {
+        return self.livePlayers().filter({$0.character.isTownsfolk()}).isEmpty
+    }
+
+    func isPriesthoodWiped() -> Bool {
+        return self.livePlayers().filter({$0.character.isPriesthood()}).isEmpty
     }
     
 }

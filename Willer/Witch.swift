@@ -63,7 +63,7 @@ class witch_save_ability: Ability {
 
         _step.headText = "女巫行动"
 
-        let player = PlayerMidiator.sharedInstance.werewolfKilledPlayers().first
+        let player = PlayerMidiator.shared.werewolfKilledPlayers().first
         if player != nil && self.avalaible() {
             _step.bodyText = "今晚这位玩家(\(player!.no)号)死亡，请问你要救吗"
         }
@@ -99,7 +99,7 @@ class witch_save_modifier: Modifier {
 
     override func modify() -> Bool {
         let effect = Effect.factory(id: Constants.witch_save_effect)
-        let targets = PlayerMidiator.sharedInstance.werewolfKilledPlayers()
+        let targets = PlayerMidiator.shared.werewolfKilledPlayers()
 
         self.attachEffect(effect: effect, targets: targets)
         return true
@@ -158,7 +158,7 @@ class witch_poison_modifier: Modifier {
 
     override func modify() -> Bool {
         let effect = Effect.factory(id: Constants.witch_poison_effect)
-        let targets = PlayerMidiator.sharedInstance.selectedPlayers
+        let targets = PlayerMidiator.shared.selectedPlayers
         if targets.isEmpty {
             return false
         }

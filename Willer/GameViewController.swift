@@ -31,8 +31,8 @@ class GameViewController: UIViewController, UICollectionViewDataSource, UICollec
         NotificationCenter.default.addObserver(self, selector: #selector(GameViewController.onUpdate), name: NSNotification.Name("OnUpdate"), object: nil)
 
         // Game
-        GameManager.sharedInstance.start(deck: Deck.testDeck())
-        GameManager.sharedInstance.zeroDay()
+        GameManager.shared.start(deck: Deck.testDeck())
+        GameManager.shared.zeroDay()
     }
 
     override func didReceiveMemoryWarning() {
@@ -43,11 +43,11 @@ class GameViewController: UIViewController, UICollectionViewDataSource, UICollec
     // MARK: - IBActions
 
     @IBAction func firstButtonTapped() {
-        GameManager.sharedInstance.firstAction()
+        GameManager.shared.firstAction()
     }
 
     @IBAction func secondButtonTapped() {
-        GameManager.sharedInstance.secondAction()
+        GameManager.shared.secondAction()
     }
 
     // MARK: - General
@@ -70,7 +70,7 @@ class GameViewController: UIViewController, UICollectionViewDataSource, UICollec
     // MARK: - Info area
 
     func updateInfo() {
-        self.dayLabel.text = String(GameManager.sharedInstance.currentDay())
+        self.dayLabel.text = String(GameManager.shared.currentDay())
     }
 
     // MARK: - Battle area
@@ -82,7 +82,7 @@ class GameViewController: UIViewController, UICollectionViewDataSource, UICollec
     // MARK: - Process area
 
     func updateStep() {
-        let currentStep = GameManager.sharedInstance.currentStep()
+        let currentStep = GameManager.shared.currentStep()
         currentStep?.preAction?()
 
         self.headLabel.text = currentStep?.headText
@@ -107,7 +107,7 @@ class GameViewController: UIViewController, UICollectionViewDataSource, UICollec
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         switch section {
         case 0:
-            return GameManager.sharedInstance.alivePlayers().count
+            return GameManager.shared.livingPlayers().count
         default:
             return 0
         }
@@ -117,7 +117,7 @@ class GameViewController: UIViewController, UICollectionViewDataSource, UICollec
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "GameCollectionViewCellReuseIdentifier", for: indexPath) as! GameCollectionViewCell
 
         // Configure the cell
-        let player = GameManager.sharedInstance.alivePlayers()[indexPath.row]
+        let player = GameManager.shared.livingPlayers()[indexPath.row]
         cell.config(player: player)
 
         return cell
@@ -128,7 +128,7 @@ class GameViewController: UIViewController, UICollectionViewDataSource, UICollec
     }
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        GameManager.sharedInstance.selectPlayer(at: indexPath.row)
+        GameManager.shared.selectPlayer(at: indexPath.row)
     }
 
     /*

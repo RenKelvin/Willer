@@ -32,8 +32,15 @@ class Player: NSObject {
     // MARK: -
 
     func settle() {
-        let alive = self.effectMachine.settle()
-        self.stateMachine.alive = alive
+        if (self.stateMachine.state == .live) {
+            let live = self.effectMachine.settle()
+            if (!live) {
+                self.stateMachine.state = .dying
+            }
+        }
+        else if (self.stateMachine.state == .dying) {
+            self.stateMachine.state = .dead
+        }
     }
 
     func steps() -> [Step] {

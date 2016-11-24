@@ -61,4 +61,13 @@ class Character: NSObject {
     func isWerewolf() -> Bool {
         return self.id == "Werewolf"
     }
+
+    func isTownsfolk() -> Bool {
+        return self.id == "Townsfolk"
+    }
+    
+    func isPriesthood() -> Bool {
+        return self.id == "Foreteller" || self.id == "Witch" || self.id == "Hunter"
+    }
+    
 }

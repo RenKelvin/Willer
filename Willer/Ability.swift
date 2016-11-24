@@ -37,7 +37,7 @@ class Ability: NSObject {
     // MARK: -
 
     func preAction() {
-        PlayerMidiator.sharedInstance.maxSelected = self.maxSelected
+        PlayerMidiator.shared.maxSelected = self.maxSelected
     }
 
     func action() -> Bool {
@@ -47,7 +47,7 @@ class Ability: NSObject {
 
         let rst = self.perform()
         if rst {
-            self.lastCast = StatusMidiator.sharedInstance.currentDay
+            self.lastCast = StatusMidiator.shared.currentDay
         }
         return rst
     }
@@ -81,7 +81,7 @@ class Ability: NSObject {
     }
 
     func avalaible() -> Bool {
-        return StatusMidiator.sharedInstance.currentDay - self.lastCast > self.cooldown
+        return StatusMidiator.shared.currentDay - self.lastCast > self.cooldown
     }
     
 }

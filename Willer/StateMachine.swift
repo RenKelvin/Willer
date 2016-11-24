@@ -10,8 +10,18 @@ import UIKit
 
 class StateMachine: NSObject {
 
-    var alive: Bool = true
-    
-    var selected: Bool = false
+    enum State {
+        case live
+        case dying
+        case dead
+    }
 
+    var living: Bool {
+        return self.state == .live || self.state == .dying
+    }
+
+    var state: State = .live
+
+    var selected: Bool = false
+    
 }

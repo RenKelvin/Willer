@@ -12,7 +12,7 @@ class GameManager: NSObject {
 
     // MARK: - Singleton
 
-    static let sharedInstance = GameManager()
+    static let shared = GameManager()
 
     override private init() {
 
@@ -27,14 +27,14 @@ class GameManager: NSObject {
     // MARK: - Pick
 
     func start(deck: Deck) {
-        PlayerMidiator.sharedInstance.generatePlayers(deck: deck)
+        PlayerMidiator.shared.generatePlayers(deck: deck)
     }
 
     // MARK: - Game
 
     func zeroDay() {
         // Process
-        ProcessMidiator.sharedInstance.reload()
+        ProcessMidiator.shared.reload()
 
         //
         self.updateViewController()
@@ -43,13 +43,13 @@ class GameManager: NSObject {
     func nextDay() {
 
         // Player
-        PlayerMidiator.sharedInstance.settle()
+        PlayerMidiator.shared.settle()
 
         // Status
-        StatusMidiator.sharedInstance.alternate()
+        StatusMidiator.shared.alternate()
 
         // Process
-        ProcessMidiator.sharedInstance.reload()
+        ProcessMidiator.shared.reload()
 
         //
         self.updateViewController()
@@ -57,10 +57,10 @@ class GameManager: NSObject {
 
     func nextStep() {
         //
-        PlayerMidiator.sharedInstance.cleanSelectedPlayers()
+        PlayerMidiator.shared.cleanSelectedPlayers()
 
         //
-        ProcessMidiator.sharedInstance.nextStep()
+        ProcessMidiator.shared.nextStep()
 
         //
         self.updateViewController()
@@ -69,33 +69,33 @@ class GameManager: NSObject {
     // MARK: -
 
     func currentDay() -> Int {
-        return StatusMidiator.sharedInstance.currentDay
+        return StatusMidiator.shared.currentDay
     }
 
     func currentStep() -> Step? {
-        return ProcessMidiator.sharedInstance.currentStep
+        return ProcessMidiator.shared.currentStep
     }
 
     func firstAction() {
-        let result = ProcessMidiator.sharedInstance.currentStep?.firstAction?()
+        let result = ProcessMidiator.shared.currentStep?.firstAction?()
         if result != nil && result! {
             self.nextStep()
         }
     }
 
     func secondAction() {
-        let result = ProcessMidiator.sharedInstance.currentStep?.secondAction?()
+        let result = ProcessMidiator.shared.currentStep?.secondAction?()
         if result != nil && result! {
             self.nextStep()
         }
     }
 
-    func alivePlayers() -> [Player] {
-        return PlayerMidiator.sharedInstance.alivePlayers()
+    func livingPlayers() -> [Player] {
+        return PlayerMidiator.shared.livingPlayers()
     }
 
     func selectPlayer(at index: Int) {
-        PlayerMidiator.sharedInstance.selectPlayer(at: index)
+        PlayerMidiator.shared.selectPlayer(at: index)
         
         //
         self.updateViewController()

@@ -26,7 +26,7 @@ class EffectMachine: NSObject {
             if self.effects.contains(effect) { return true }
             else { return false }
         }) { (system: GKRuleSystem) -> Void in
-            system.retractFact("alive" as NSObjectProtocol)
+            system.retractFact("live" as NSObjectProtocol)
         }
         self.ruleSystem.add(rule1)
 
@@ -35,7 +35,7 @@ class EffectMachine: NSObject {
             if self.effects.contains(effect) { return true }
             else { return false }
         }) { (system: GKRuleSystem) -> Void in
-            system.assertFact("alive" as NSObjectProtocol)
+            system.assertFact("live" as NSObjectProtocol)
         }
         self.ruleSystem.add(rule2)
 
@@ -44,7 +44,7 @@ class EffectMachine: NSObject {
             if self.effects.contains(effect) { return true }
             else { return false }
         }) { (system: GKRuleSystem) -> Void in
-            system.retractFact("alive" as NSObjectProtocol)
+            system.retractFact("live" as NSObjectProtocol)
         }
         self.ruleSystem.add(rule3)
 
@@ -53,7 +53,7 @@ class EffectMachine: NSObject {
             if self.effects.contains(effect) { return true }
             else { return false }
         }) { (system: GKRuleSystem) -> Void in
-            system.retractFact("alive" as NSObjectProtocol)
+            system.retractFact("live" as NSObjectProtocol)
         }
         self.ruleSystem.add(rule4)
 
@@ -75,13 +75,13 @@ class EffectMachine: NSObject {
     }
 
     func settle() -> Bool {
+        self.effects = Set(self.effects.filter({!$0.inactive()}))
+
         self.ruleSystem.reset()
-        self.ruleSystem.assertFact("alive" as NSObjectProtocol)
+        self.ruleSystem.assertFact("live" as NSObjectProtocol)
         self.ruleSystem.evaluate()
 
-        let grade = self.ruleSystem.grade(forFact: "alive" as NSObjectProtocol)
-
-        self.effects = Set(self.effects.filter({!($0.inactive() || $0.lastDayActive())}))
+        let grade = self.ruleSystem.grade(forFact: "live" as NSObjectProtocol)
 
         return grade == 1
     }

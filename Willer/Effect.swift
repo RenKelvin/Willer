@@ -47,12 +47,12 @@ struct Effect: Hashable {
     }
 
     func lastDayActive() -> Bool {
-        let day = StatusMidiator.sharedInstance.currentDay
+        let day = StatusMidiator.shared.currentDay
         return day == self.attached + self.delay + self.duration - 1
     }
 
     func inactive() -> Bool {
-        let day = StatusMidiator.sharedInstance.currentDay
+        let day = StatusMidiator.shared.currentDay
         return day > self.attached + self.delay + self.duration - 1
     }
 

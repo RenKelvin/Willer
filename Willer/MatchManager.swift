@@ -12,7 +12,7 @@ class MatchManager: NSObject {
 
     // MARK: - Singleton
 
-    static let sharedInstance = MatchManager()
+    static let shared = MatchManager()
 
     override private init() {
 

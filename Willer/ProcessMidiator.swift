@@ -28,7 +28,7 @@ class ProcessMidiator: NSObject {
 
     // MARK: - Singleton
 
-    static let sharedInstance = ProcessMidiator()
+    static let shared = ProcessMidiator()
 
     override private init() {
         super.init()
@@ -53,7 +53,7 @@ class ProcessMidiator: NSObject {
             self.stepQueue = [self.stepQueue.first!]
         }
 
-        let day = StatusMidiator.sharedInstance.currentDay
+        let day = StatusMidiator.shared.currentDay
         if day == 1 {
             // Add firstnight player step
             for characterId in self.firstNightCharacterSequence {

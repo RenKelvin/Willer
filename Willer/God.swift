@@ -55,7 +55,7 @@ class assign_sheriff_modifier: Modifier {
 
     override func modify() -> Bool {
         let effect = Effect.factory(id: Constants.sheriff_effect)
-        let targets = PlayerMidiator.sharedInstance.selectedPlayers
+        let targets = PlayerMidiator.shared.selectedPlayers
         if targets.isEmpty {
             return false
         }
@@ -108,7 +108,7 @@ class exile_modifier: Modifier {
 
     override func modify() -> Bool {
         let effect = Effect.factory(id: Constants.exile_effect)
-        let targets = PlayerMidiator.sharedInstance.selectedPlayers
+        let targets = PlayerMidiator.shared.selectedPlayers
         if targets.isEmpty {
             return false
         }
