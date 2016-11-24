@@ -39,14 +39,6 @@ class PlayerMidiator: NSObject {
         for player in self.livingPlayers() {
             player.settle()
         }
-
-        // Winning check
-        if (self.isWerewolfWiped()) {
-            print("好人获胜")
-        }
-        else if (self.isTownsfolkWiped() || self.isPriesthoodWiped()) {
-            print("狼人获胜")
-        }
     }
 
     func selectPlayer(at index: Int) {

@@ -32,12 +32,15 @@ class Player: NSObject {
     // MARK: -
 
     func settle() {
+        // live -> dying
         if (self.stateMachine.state == .live) {
             let live = self.effectMachine.settle()
             if (!live) {
                 self.stateMachine.state = .dying
+                self.onDying()
             }
         }
+            // dying -> dead
         else if (self.stateMachine.state == .dying) {
             self.stateMachine.state = .dead
         }
@@ -50,5 +53,16 @@ class Player: NSObject {
         }
         return steps
     }
-    
+
+    func onDying() {
+        // Winning check
+        if (PlayerMidiator.shared.isWerewolfWiped()) {
+            print("好人获胜")
+        }
+        else if (PlayerMidiator.shared.isTownsfolkWiped() || PlayerMidiator.shared.isPriesthoodWiped()) {
+            print("狼人获胜")
+        }
+
+        // Player action
+    }
 }
