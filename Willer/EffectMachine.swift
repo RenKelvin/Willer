@@ -21,6 +21,7 @@ class EffectMachine: NSObject {
     }
 
     func fillRules() {
+        // Werewolf kill -> dead
         let rule1 = GKRule(blockPredicate: { (system: GKRuleSystem) -> Bool in
             let effect = Effect(id: Constants.werewolf_kill_effect)
             if self.effects.contains(effect) { return true }
@@ -30,6 +31,7 @@ class EffectMachine: NSObject {
         }
         self.ruleSystem.add(rule1)
 
+        // Witch save -> live
         let rule2 = GKRule(blockPredicate: { (system: GKRuleSystem) -> Bool in
             let effect = Effect(id: Constants.witch_save_effect)
             if self.effects.contains(effect) { return true }
@@ -39,6 +41,7 @@ class EffectMachine: NSObject {
         }
         self.ruleSystem.add(rule2)
 
+        // Witch poison -> dead
         let rule3 = GKRule(blockPredicate: { (system: GKRuleSystem) -> Bool in
             let effect = Effect(id: Constants.witch_poison_effect)
             if self.effects.contains(effect) { return true }
@@ -48,14 +51,25 @@ class EffectMachine: NSObject {
         }
         self.ruleSystem.add(rule3)
 
+        // Hunter shot -> dead
         let rule4 = GKRule(blockPredicate: { (system: GKRuleSystem) -> Bool in
-            let effect = Effect(id: Constants.exile_effect)
+            let effect = Effect(id: Constants.hunter_shot_effect)
             if self.effects.contains(effect) { return true }
             else { return false }
         }) { (system: GKRuleSystem) -> Void in
             system.retractFact("live" as NSObjectProtocol)
         }
         self.ruleSystem.add(rule4)
+
+        // Exile -> dead
+        let rule5 = GKRule(blockPredicate: { (system: GKRuleSystem) -> Bool in
+            let effect = Effect(id: Constants.exile_effect)
+            if self.effects.contains(effect) { return true }
+            else { return false }
+        }) { (system: GKRuleSystem) -> Void in
+            system.retractFact("live" as NSObjectProtocol)
+        }
+        self.ruleSystem.add(rule5)
 
     }
 
@@ -75,13 +89,13 @@ class EffectMachine: NSObject {
     }
 
     func settle() -> Bool {
-        self.effects = Set(self.effects.filter({!$0.inactive()}))
-
         self.ruleSystem.reset()
         self.ruleSystem.assertFact("live" as NSObjectProtocol)
         self.ruleSystem.evaluate()
 
         let grade = self.ruleSystem.grade(forFact: "live" as NSObjectProtocol)
+
+        self.effects = Set(self.effects.filter({!($0.inactive() || $0.lastDayActive())}))
 
         return grade == 1
     }

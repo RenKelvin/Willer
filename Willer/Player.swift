@@ -63,6 +63,7 @@ class Player: NSObject {
             print("狼人获胜")
         }
 
-        // Player action
+        // Character action
+        self.character.onDying()
     }
 }

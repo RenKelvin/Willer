@@ -19,6 +19,13 @@ class Hunter: Character {
         self.abilities = [hunter_shot_ability()]
     }
 
+    override func onDying() {
+        for ability in self.abilities {
+            let step = ability.step()
+            ProcessMidiator.shared.ingestStep(step: step)
+        }
+    }
+
 }
 
 class hunter_shot_ability: Ability {
@@ -28,7 +35,7 @@ class hunter_shot_ability: Ability {
 
         self.id = Constants.hunter_shot_ability
 
-        self.maxSelected = 0
+        self.maxSelected = 1
 
         self.modifiers = [hunter_shot_modifier()]
     }
@@ -59,7 +66,13 @@ class hunter_shot_modifier: Modifier {
     }
 
     override func modify() -> Bool {
-        // TODO
+        let effect = Effect.factory(id: Constants.hunter_shot_effect)
+        let targets = PlayerMidiator.shared.selectedPlayers
+        if targets.isEmpty {
+            return false
+        }
+
+        self.takeEffect(effect: effect, targets: targets)
         return true
     }
     
@@ -67,6 +80,8 @@ class hunter_shot_modifier: Modifier {
 
 extension Constants {
     static let Hunter = "Hunter"
+
     static let hunter_shot_ability = "hunter_shot_ability"
     static let hunter_shot_modifier = "hunter_shot_modifier"
+    static let hunter_shot_effect = "hunter_shot_effect"
 }

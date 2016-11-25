@@ -40,6 +40,10 @@ class Character: NSObject {
         }
     }
 
+    func onDying() {
+        
+    }
+
     func ingest(player: Player) {
         self.player = player
         for ability in self.abilities {

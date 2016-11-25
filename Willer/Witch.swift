@@ -169,6 +169,8 @@ class witch_poison_modifier: Modifier {
 
 }
 
+// MARK: -
+
 extension Constants {
     static let Witch = "Witch"
 

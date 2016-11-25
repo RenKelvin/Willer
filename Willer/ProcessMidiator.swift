@@ -49,9 +49,9 @@ class ProcessMidiator: NSObject {
 
     func reload() {
         // Clear step queue but current one
-        if !self.stepQueue.isEmpty {
-            self.stepQueue = [self.stepQueue.first!]
-        }
+        //        if !self.stepQueue.isEmpty {
+        //            self.stepQueue = [self.stepQueue.first!]
+        //        }
 
         let day = StatusMidiator.shared.currentDay
         if day == 1 {
@@ -80,7 +80,7 @@ class ProcessMidiator: NSObject {
             // Enter night final step
             self.appendStep(step: Step.enterDayStep())
         }
-        // Day
+            // Day
         else {
             // Announce
             self.appendStep(step: Step.annouceStep())

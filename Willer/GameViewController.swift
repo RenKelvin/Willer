@@ -151,7 +151,8 @@ class GameCollectionViewCell: UICollectionViewCell {
 
     func config(player: Player) {
         // Info
-        label.text = String(player.no) + " " + player.character.name + "\n" + player.effectMachine.effectString()
+        label.text = "\(player.no) " + player.character.name + " \(player.stateMachine.state)" + "\n"
+            + player.effectMachine.effectString()
 
         // Selection
         if player.stateMachine.selected {
