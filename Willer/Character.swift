@@ -40,10 +40,6 @@ class Character: NSObject {
         }
     }
 
-    func onDying() {
-        
-    }
-
     func ingest(player: Player) {
         self.player = player
         for ability in self.abilities {
@@ -54,12 +50,16 @@ class Character: NSObject {
     func steps() -> [Step] {
         var steps: [Step] = []
 
-        // Abilities step
         for ability in self.abilities {
             steps.append(ability.step())
         }
 
         return steps
+    }
+
+    func dyingSteps() -> [Step] {
+        let step = Step.lastwordsStep(player: self.player!)
+        return [step]
     }
 
     func isWerewolf() -> Bool {

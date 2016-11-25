@@ -87,7 +87,7 @@ class Step: NSObject {
         }
         step.firstAction = enterNightAction
         step.firstActionText = "进入黑夜"
-        
+
         return step
     }
 
@@ -115,7 +115,7 @@ class Step: NSObject {
         let step = Step()
 
         step.headText = "宣布死者"
-        step.bodyText = "昨夜X号玩家死亡，请留遗言"
+        step.bodyText = "昨夜X号玩家死亡"
 
         step.firstAction = Step.trueAction
         step.firstActionText = "下一步"
@@ -139,4 +139,19 @@ class Step: NSObject {
         return exile_ability().step()
     }
 
+    static func lastwordsStep(player: Player) -> Step {
+        // TODO: can last words?
+        let on = true
+
+        var step = Step()
+        if (on) {
+            step = Step.simpleStep(head: "发表遗言", body: "\(player.no)号玩家请留遗言")
+        }
+        else {
+            step = Step.simpleStep(head: "发表遗言", body: "\(player.no)号玩家没有遗言")
+        }
+        
+        return step
+    }
+    
 }

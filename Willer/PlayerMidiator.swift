@@ -86,6 +86,11 @@ class PlayerMidiator: NSObject {
         return self.livePlayers().filter({$0.effectMachine.isWerewolfKilled()})
     }
 
+    func dyingPlayers() -> [Player]
+    {
+        return self.playerArray.filter({$0.stateMachine.state == .dying})
+    }
+
     // MARK: - Winning checks
 
     func isWerewolfWiped() -> Bool {

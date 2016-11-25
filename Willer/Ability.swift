@@ -81,7 +81,9 @@ class Ability: NSObject {
     }
 
     func avalaible() -> Bool {
-        return StatusMidiator.shared.currentDay - self.lastCast > self.cooldown
+        return
+            self.player!.stateMachine.living && 
+            StatusMidiator.shared.currentDay - self.lastCast > self.cooldown
     }
     
 }

@@ -19,11 +19,14 @@ class Hunter: Character {
         self.abilities = [hunter_shot_ability()]
     }
 
-    override func onDying() {
+    override func dyingSteps() -> [Step] {
+        var steps = super.dyingSteps()
+
         for ability in self.abilities {
-            let step = ability.step()
-            ProcessMidiator.shared.ingestStep(step: step)
+            steps.append(ability.step())
         }
+
+        return steps
     }
 
 }

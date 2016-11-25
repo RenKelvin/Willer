@@ -48,11 +48,6 @@ class ProcessMidiator: NSObject {
     }
 
     func reload() {
-        // Clear step queue but current one
-        //        if !self.stepQueue.isEmpty {
-        //            self.stepQueue = [self.stepQueue.first!]
-        //        }
-
         let day = StatusMidiator.shared.currentDay
         if day == 1 {
             // Add firstnight player step
@@ -65,7 +60,7 @@ class ProcessMidiator: NSObject {
 
         if day == 2 {
             // Elect sheriff step
-            self.appendSteps(steps: Step.electSheriffSteps())
+            // self.ingestSteps(steps: Step.electSheriffSteps())
         }
 
         // Night
@@ -76,23 +71,17 @@ class ProcessMidiator: NSObject {
                     self.appendSteps(steps: character.steps())
                 }
             }
-
-            // Enter night final step
-            self.appendStep(step: Step.enterDayStep())
         }
             // Day
         else {
             // Announce
-            self.appendStep(step: Step.annouceStep())
+            self.ingestStep(step: Step.annouceStep())
 
             // Pitch
             self.appendStep(step: Step.pitchStep())
 
             // Exile
             self.appendStep(step: Step.exileStep())
-
-            // Enter day final step
-            self.appendStep(step: Step.enterNightStep())
         }
     }
 
@@ -101,6 +90,19 @@ class ProcessMidiator: NSObject {
     /// - Returns: The current step
     func nextStep() {
         self.stepQueue = Array(self.stepQueue.dropFirst())
+
+        //
+        if (self.stepQueue.isEmpty) {
+            let day = StatusMidiator.shared.currentDay
+            if day % 2 == 1 {
+                // Enter day final step
+                self.appendStep(step: Step.enterDayStep())
+            }
+            else {
+                // Enter night final step
+                self.appendStep(step: Step.enterNightStep())
+            }
+        }
     }
 
     func appendStep(step: Step) {
@@ -108,13 +110,15 @@ class ProcessMidiator: NSObject {
     }
 
     func appendSteps(steps: [Step]) {
-        for step in steps {
-            self.stepQueue.append(step)
-        }
+        self.stepQueue.append(contentsOf: steps)
     }
-    
+
     func ingestStep(step: Step) {
         self.stepQueue.insert(step, at: 1)
+    }
+
+    func ingestSteps(steps: [Step]) {
+        self.stepQueue.insert(contentsOf: steps, at: 1)
     }
     
 }

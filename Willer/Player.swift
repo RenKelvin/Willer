@@ -54,6 +54,10 @@ class Player: NSObject {
         return steps
     }
 
+    func dyingSteps() -> [Step] {
+        return self.character.dyingSteps()
+    }
+
     func onDying() {
         // Winning check
         if (PlayerMidiator.shared.isWerewolfWiped()) {
@@ -63,7 +67,7 @@ class Player: NSObject {
             print("狼人获胜")
         }
 
-        // Character action
-        self.character.onDying()
+        // Dingest steps
+        ProcessMidiator.shared.appendSteps(steps: self.character.dyingSteps())
     }
 }
