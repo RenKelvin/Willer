@@ -149,6 +149,9 @@ class GameCollectionViewCell: UICollectionViewCell {
 
     @IBOutlet var label: UILabel!
 
+    @IBOutlet var portraitImageView: UIImageView!
+    @IBOutlet var noLabel: UILabel!
+
     func config(player: Player) {
         // Info
         label.text = "\(player.no) " + player.character.name + " \(player.stateMachine.state)" + "\n"
@@ -159,8 +162,14 @@ class GameCollectionViewCell: UICollectionViewCell {
             self.contentView.backgroundColor = UIColor.green
         }
         else {
-            self.contentView.backgroundColor = UIColor.gray
+            self.contentView.backgroundColor = UIColor.clear
         }
+
+        //
+        self.portraitImageView.layer.cornerRadius = self.portraitImageView.frame.size.width/2
+        self.portraitImageView.clipsToBounds = true
+
+        self.noLabel.text = String(player.no)
     }
     
 }
