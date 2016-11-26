@@ -10,6 +10,12 @@ import UIKit
 
 class God: Character {
 
+    static let shared = God()
+
+    private override init() {
+
+    }
+
 }
 
 // Assign sheriff
@@ -18,6 +24,8 @@ class assign_sheriff_ability: Ability {
 
     override init() {
         super.init()
+
+        // self.player = God.shared
 
         self.id = Constants.assign_sheriff_ability
 

@@ -81,9 +81,12 @@ class Ability: NSObject {
     }
 
     func avalaible() -> Bool {
-        return
-            self.player!.stateMachine.living && 
-            StatusMidiator.shared.currentDay - self.lastCast > self.cooldown
+        // God ability
+        if (self.player == nil) {
+            return true
+        }
+        
+        return StatusMidiator.shared.currentDay - self.lastCast > self.cooldown
     }
     
 }

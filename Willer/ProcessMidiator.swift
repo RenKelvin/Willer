@@ -38,8 +38,8 @@ class ProcessMidiator: NSObject {
         // Ingest player to character
         player.character.ingest(player: player)
 
-        if self.everyNightCharacterSequence.contains(player.character.id) {
-            self.everyNightCharacterDictionary[player.character.id] = player.character
+        if self.firstNightCharacterSequence.contains(player.character.id) {
+            self.firstNightCharacterDictionary[player.character.id] = player.character
         }
 
         if self.everyNightCharacterSequence.contains(player.character.id) {

@@ -71,19 +71,28 @@ class witch_save_ability: Ability {
             _step.bodyText = "今晚这位玩家死亡，请问你要救吗"
         }
 
-        if self.avalaible() {
-            _step.firstActionText = "救"
-            _step.firstAction = self.action
-
-            _step.secondActionText = "不救"
-            _step.secondAction = Step.trueAction
-        }
-        else {
-            _step.firstActionText = "解药已使用"
+        if !self.player!.stateMachine.living {
+            _step.firstActionText = "女巫已死亡"
             _step.firstAction = Step.falseAction
 
             _step.secondActionText = "下一步"
             _step.secondAction = Step.trueAction
+        }
+        else {
+            if self.avalaible() {
+                _step.firstActionText = "救"
+                _step.firstAction = self.action
+
+                _step.secondActionText = "不救"
+                _step.secondAction = Step.trueAction
+            }
+            else {
+                _step.firstActionText = "解药已使用"
+                _step.firstAction = Step.falseAction
+
+                _step.secondActionText = "下一步"
+                _step.secondAction = Step.trueAction
+            }
         }
     }
 
@@ -127,20 +136,29 @@ class witch_poison_ability: Ability {
         step.headText = "女巫行动"
         step.bodyText = "请问你要毒死谁吗"
 
-        if self.avalaible() {
-            step.firstActionText = "毒杀"
-            step.firstAction = self.action
-
-            step.secondActionText = "不毒"
-            step.secondAction = Step.trueAction
-        }
-        else {
-            step.firstActionText = "毒药已使用"
+        if !self.player!.stateMachine.living {
+            step.firstActionText = "女巫已死亡"
             step.firstAction = Step.falseAction
 
             step.secondActionText = "下一步"
             step.secondAction = Step.trueAction
+        }
+        else {
+            if self.avalaible() {
+                step.firstActionText = "毒杀"
+                step.firstAction = self.action
 
+                step.secondActionText = "不毒"
+                step.secondAction = Step.trueAction
+            }
+            else {
+                step.firstActionText = "毒药已使用"
+                step.firstAction = Step.falseAction
+
+                step.secondActionText = "下一步"
+                step.secondAction = Step.trueAction
+
+            }
         }
 
         return step
@@ -173,7 +191,7 @@ class witch_poison_modifier: Modifier {
 
 extension Constants {
     static let Witch = "Witch"
-
+    
     static let witch_save_ability = "witch_save_ability"
     static let witch_save_modifier = "witch_save_modifier"
     static let witch_save_effect = "witch_save_effect"
