@@ -23,7 +23,6 @@ class Ability: NSObject {
 
     var modifiers: [Modifier] = []
 
-
     // MARK: -
 
     func perform() -> Bool {

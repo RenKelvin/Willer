@@ -21,6 +21,8 @@ class GameViewController: UIViewController, UICollectionViewDataSource, UICollec
 
     @IBOutlet var firstButton: UIButton!
     @IBOutlet var secondButton: UIButton!
+    @IBOutlet var firstButtonContainer: UIView!
+    @IBOutlet var secondButtonContainer: UIView!
 
     // MARK: - Life cycle
 
@@ -91,10 +93,10 @@ class GameViewController: UIViewController, UICollectionViewDataSource, UICollec
         self.firstButton.setTitle(currentStep?.firstActionText, for: .normal)
         self.secondButton.setTitle(currentStep?.secondActionText, for: .normal)
 
-        self.firstButton.isHidden = false
-        self.secondButton.isHidden = false
+        self.firstButtonContainer.isHidden = false
+        self.secondButtonContainer.isHidden = false
         if currentStep?.secondAction == nil {
-            self.secondButton.isHidden = true
+            self.secondButtonContainer.isHidden = true
         }
     }
 
