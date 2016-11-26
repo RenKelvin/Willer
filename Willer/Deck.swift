@@ -16,7 +16,7 @@ class Deck: NSObject {
         let deck = Deck()
 
         deck.cards.append((Card(id: Constants.Werewolf), 3))
-        deck.cards.append((Card(id: Constants.Townsfolk), 3+7))
+        deck.cards.append((Card(id: Constants.Townsfolk), 3+3))
         deck.cards.append((Card(id: Constants.Foreteller), 1))
         deck.cards.append((Card(id: Constants.Witch), 1))
         deck.cards.append((Card(id: Constants.Hunter), 1))
