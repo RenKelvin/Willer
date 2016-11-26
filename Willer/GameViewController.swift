@@ -172,6 +172,14 @@ class GameCollectionViewCell: UICollectionViewCell {
         self.portraitImageView.clipsToBounds = true
 
         self.noLabel.text = String(player.no)
+
+        //
+        if player.stateMachine.state == .live {
+            self.portraitImageView.isHighlighted = false
+        }
+        else {
+            self.portraitImageView.isHighlighted = true
+        }
     }
     
 }
