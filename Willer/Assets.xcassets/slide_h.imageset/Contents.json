@@ -2,11 +2,11 @@
   "images" : [
     {
       "idiom" : "universal",
+      "filename" : "slide_h.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
-      "filename" : "tabmk3_hovered.png",
       "scale" : "2x"
     },
     {
