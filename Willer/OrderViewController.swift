@@ -10,15 +10,56 @@ import UIKit
 
 class OrderViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
+    @IBOutlet var numLabel: UILabel!
+    @IBOutlet var sliderButton: UIButton!
+    @IBOutlet var sliderFillImageView: UIImageView!
+    @IBOutlet var sliderContainerImageView: UIImageView!
+
+    @IBOutlet var sliderButtonLeadingSpaceConstraint: NSLayoutConstraint!
+    @IBOutlet var sliderFillImageViewWidthConstraint: NSLayoutConstraint!
+
+    var num: Int = 12
+    let numMin: Int = 4
+    let numMax: Int = 20
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        self.refresh()
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+
+    @IBAction func minusButtonTap() {
+        if self.num > self.numMin {
+            self.num -= 1
+            self.refresh()
+        }
+    }
+
+    @IBAction func plusButtonTap() {
+        if self.num < self.numMax {
+            self.num += 1
+            self.refresh()
+        }
+    }
+
+    func refresh() {
+        // Num
+        self.numLabel.text = String(self.num)
+
+        let xMin: CGFloat = self.sliderContainerImageView.frame.origin.x + 8
+        let xMax: CGFloat = self.sliderContainerImageView.frame.origin.x + self.sliderContainerImageView.frame.width - 8
+
+        let k: Float = Float(self.num - self.numMin) / Float(self.numMax - self.numMin)
+        let x = xMin + (xMax - xMin) * CGFloat(k)
+
+        self.sliderButtonLeadingSpaceConstraint.constant = x - self.sliderButton.frame.width / 2
+        self.sliderFillImageViewWidthConstraint.constant = x - self.sliderFillImageView.frame.origin.x
     }
 
     // MARK: - Table view data source
