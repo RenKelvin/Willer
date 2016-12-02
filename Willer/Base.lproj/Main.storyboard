@@ -6,6 +6,7 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -79,17 +80,16 @@
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="88"/>
                                     </imageView>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="smaller_slider" translatesAutoresizingMaskIntoConstraints="NO" id="5N9-ae-VHo">
-                                        <rect key="frame" x="59" y="48" width="256" height="16"/>
+                                        <rect key="frame" x="63.5" y="48" width="247.5" height="16"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="256" id="OMM-Ap-JTt"/>
                                             <constraint firstAttribute="height" constant="16" id="bfd-a4-jRD"/>
                                         </constraints>
                                     </imageView>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="smaller_slider_fill" translatesAutoresizingMaskIntoConstraints="NO" id="trx-qp-Jmw">
-                                        <rect key="frame" x="69" y="51" width="178" height="9"/>
+                                        <rect key="frame" x="73.5" y="51" width="40" height="9"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="9" id="ZTJ-A0-jep"/>
-                                            <constraint firstAttribute="width" constant="178" id="cVV-Go-CkV"/>
+                                            <constraint firstAttribute="width" constant="40" id="cVV-Go-CkV"/>
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="8" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZkZ-ml-lBy">
@@ -99,7 +99,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QtE-AK-ReG">
-                                        <rect key="frame" x="15" y="40" width="32" height="32"/>
+                                        <rect key="frame" x="19.5" y="40" width="32" height="32"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="32" id="9na-7k-DWF"/>
                                             <constraint firstAttribute="width" secondItem="QtE-AK-ReG" secondAttribute="height" multiplier="1:1" id="GNE-fZ-K8k"/>
@@ -110,7 +110,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wnm-ie-Wb0">
-                                        <rect key="frame" x="327" y="40" width="32" height="32"/>
+                                        <rect key="frame" x="323" y="40" width="32" height="32"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="32" id="ceg-YT-TzM"/>
                                             <constraint firstAttribute="width" secondItem="wnm-ie-Wb0" secondAttribute="height" multiplier="1:1" id="cfR-0d-lcS"/>
@@ -120,13 +120,18 @@
                                             <action selector="plusButtonTap" destination="sfv-GH-IY5" eventType="touchUpInside" id="49O-i1-fgC"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cd7-Jb-mPy">
-                                        <rect key="frame" x="236" y="38" width="21" height="36"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cd7-Jb-mPy">
+                                        <rect key="frame" x="129.5" y="34" width="44" height="44"/>
+                                        <gestureRecognizers/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="36" id="6Xa-wP-DMC"/>
-                                            <constraint firstAttribute="width" constant="21" id="mQc-QM-yrd"/>
+                                            <constraint firstAttribute="height" constant="44" id="6Xa-wP-DMC"/>
+                                            <constraint firstAttribute="width" constant="44" id="mQc-QM-yrd"/>
                                         </constraints>
                                         <state key="normal" image="slide_n"/>
+                                        <state key="highlighted" image="slide_h"/>
+                                        <connections>
+                                            <outletCollection property="gestureRecognizers" destination="C4S-1w-jNL" appends="YES" id="trZ-h2-f6I"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -138,11 +143,12 @@
                                     <constraint firstItem="5N9-ae-VHo" firstAttribute="centerX" secondItem="Alf-kP-ZQe" secondAttribute="centerX" id="GLA-pl-cFp"/>
                                     <constraint firstItem="wnm-ie-Wb0" firstAttribute="centerY" secondItem="5N9-ae-VHo" secondAttribute="centerY" id="O8q-uN-t6J"/>
                                     <constraint firstItem="trx-qp-Jmw" firstAttribute="centerY" secondItem="5N9-ae-VHo" secondAttribute="centerY" id="Q2t-OE-ORY"/>
+                                    <constraint firstItem="5N9-ae-VHo" firstAttribute="width" secondItem="Alf-kP-ZQe" secondAttribute="width" multiplier="0.66" id="S8F-PK-bL3"/>
                                     <constraint firstItem="QtE-AK-ReG" firstAttribute="centerY" secondItem="5N9-ae-VHo" secondAttribute="centerY" id="X8w-gb-KWy"/>
+                                    <constraint firstItem="cd7-Jb-mPy" firstAttribute="leading" secondItem="5N9-ae-VHo" secondAttribute="leading" constant="66" id="ZCC-4Z-K07"/>
                                     <constraint firstAttribute="height" constant="88" id="Zca-8l-syU"/>
                                     <constraint firstAttribute="bottom" secondItem="zT4-mc-LdX" secondAttribute="bottom" id="f28-JY-OrZ"/>
                                     <constraint firstItem="zT4-mc-LdX" firstAttribute="leading" secondItem="Alf-kP-ZQe" secondAttribute="leading" id="fGZ-Uv-DlQ"/>
-                                    <constraint firstItem="cd7-Jb-mPy" firstAttribute="leading" secondItem="Alf-kP-ZQe" secondAttribute="leading" constant="236" id="oZS-CF-Yj5"/>
                                     <constraint firstItem="wnm-ie-Wb0" firstAttribute="leading" secondItem="5N9-ae-VHo" secondAttribute="trailing" constant="12" id="onh-uh-ed7"/>
                                     <constraint firstAttribute="trailing" secondItem="zT4-mc-LdX" secondAttribute="trailing" id="qpc-S1-aRN"/>
                                     <constraint firstItem="ZkZ-ml-lBy" firstAttribute="centerY" secondItem="Alf-kP-ZQe" secondAttribute="centerY" constant="-12" id="r0t-FE-8lj"/>
@@ -227,7 +233,7 @@
                                             <segue destination="BYZ-38-t0r" kind="presentation" modalTransitionStyle="crossDissolve" id="74l-Vv-SqD"/>
                                         </connections>
                                     </button>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="heading" translatesAutoresizingMaskIntoConstraints="NO" id="Rn6-sG-mBr">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="heading" translatesAutoresizingMaskIntoConstraints="NO" id="Rn6-sG-mBr">
                                         <rect key="frame" x="0.0" y="-8" width="375" height="96"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="96" id="h2C-TU-LRx"/>
@@ -284,13 +290,18 @@
                     <connections>
                         <outlet property="numLabel" destination="ZkZ-ml-lBy" id="fYE-dD-kWT"/>
                         <outlet property="sliderButton" destination="cd7-Jb-mPy" id="NqN-xY-e8r"/>
-                        <outlet property="sliderButtonLeadingSpaceConstraint" destination="oZS-CF-Yj5" id="1UA-oC-J1u"/>
+                        <outlet property="sliderButtonLeadingSpaceConstraint" destination="ZCC-4Z-K07" id="Sbb-QW-nzH"/>
                         <outlet property="sliderContainerImageView" destination="5N9-ae-VHo" id="Mif-br-MYD"/>
                         <outlet property="sliderFillImageView" destination="trx-qp-Jmw" id="lFm-eJ-GQw"/>
                         <outlet property="sliderFillImageViewWidthConstraint" destination="cVV-Go-CkV" id="jjO-Vu-z4s"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="j8Q-Oi-Gjq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="0.0" id="C4S-1w-jNL">
+                    <connections>
+                        <action selector="sliderButtonDragWithGesture:" destination="sfv-GH-IY5" id="0Vu-pO-2H5"/>
+                    </connections>
+                </pongPressGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="848.79999999999995" y="97.601199400299862"/>
         </scene>
@@ -1021,6 +1032,7 @@
         <image name="portrait_placeholder_gray" width="300" height="300"/>
         <image name="portrait_ring" width="42" height="42"/>
         <image name="settings_a" width="31" height="32"/>
+        <image name="slide_h" width="30" height="45"/>
         <image name="slide_n" width="21" height="36"/>
         <image name="smaller_slider" width="309" height="18"/>
         <image name="smaller_slider_fill" width="282" height="8"/>

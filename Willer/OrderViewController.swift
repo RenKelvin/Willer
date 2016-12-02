@@ -26,6 +26,9 @@ class OrderViewController: UIViewController, UITableViewDataSource, UITableViewD
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+    }
+
+    override func viewDidAppear(_ animated: Bool) {
         self.refresh()
     }
 
@@ -48,17 +51,43 @@ class OrderViewController: UIViewController, UITableViewDataSource, UITableViewD
         }
     }
 
+    @IBAction func sliderButtonDrag(gesture: UILongPressGestureRecognizer) {
+        let x = gesture.location(in: self.sliderButton.superview).x
+
+        let xMin: CGFloat = self.sliderContainerImageView.frame.origin.x + 8
+        let xMax: CGFloat = self.sliderContainerImageView.frame.origin.x + self.sliderContainerImageView.frame.width - 8
+
+        if (x < xMin || x > xMax) {
+            return
+        }
+
+        let k = (self.sliderButton.center.x - xMin) / (xMax - xMin)
+        let n = Float(self.numMin) + Float(self.numMax - self.numMin) * Float(k)
+
+        self.num = Int(round(n))
+        self.numLabel.text = String(self.num)
+
+        self.sliderButtonLeadingSpaceConstraint.constant = x - self.sliderContainerImageView.frame.origin.x - self.sliderButton.frame.width / 2
+        self.sliderFillImageViewWidthConstraint.constant = x - self.sliderFillImageView.frame.origin.x
+
+        if gesture.state == .began || gesture.state == .changed {
+            self.sliderButton.isHighlighted = true
+        }
+        else {
+            self.sliderButton.isHighlighted = false
+        }
+    }
+
     func refresh() {
-        // Num
         self.numLabel.text = String(self.num)
 
         let xMin: CGFloat = self.sliderContainerImageView.frame.origin.x + 8
         let xMax: CGFloat = self.sliderContainerImageView.frame.origin.x + self.sliderContainerImageView.frame.width - 8
 
-        let k: Float = Float(self.num - self.numMin) / Float(self.numMax - self.numMin)
+        let k = Float(self.num - self.numMin) / Float(self.numMax - self.numMin)
         let x = xMin + (xMax - xMin) * CGFloat(k)
 
-        self.sliderButtonLeadingSpaceConstraint.constant = x - self.sliderButton.frame.width / 2
+        self.sliderButtonLeadingSpaceConstraint.constant = x - self.sliderContainerImageView.frame.origin.x - self.sliderButton.frame.width / 2
         self.sliderFillImageViewWidthConstraint.constant = x - self.sliderFillImageView.frame.origin.x
     }
 
