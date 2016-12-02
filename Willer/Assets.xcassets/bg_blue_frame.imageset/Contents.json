@@ -1,0 +1,35 @@
+{
+  "images" : [
+    {
+      "idiom" : "universal",
+      "scale" : "1x"
+    },
+    {
+      "resizing" : {
+        "mode" : "9-part",
+        "center" : {
+          "mode" : "tile",
+          "width" : 333,
+          "height" : 264
+        },
+        "cap-insets" : {
+          "bottom" : 102,
+          "top" : 106,
+          "right" : 121,
+          "left" : 191
+        }
+      },
+      "idiom" : "universal",
+      "filename" : "option_menu_outer.png",
+      "scale" : "2x"
+    },
+    {
+      "idiom" : "universal",
+      "scale" : "3x"
+    }
+  ],
+  "info" : {
+    "version" : 1,
+    "author" : "xcode"
+  }
+}
