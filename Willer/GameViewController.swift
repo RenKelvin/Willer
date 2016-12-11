@@ -10,7 +10,7 @@ import UIKit
 
 class GameViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
 
-    var deck: Deck?
+    static var deck: Deck?
 
     // MARK: - IBOutlets
 

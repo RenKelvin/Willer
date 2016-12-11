@@ -10,7 +10,7 @@ import UIKit
 
 class PickViewController: UIViewController {
 
-    var deck: Deck?
+    static var deck: Deck?
     var shuffledCards: [Card] = []
 
     var index: Int = 0
@@ -28,7 +28,7 @@ class PickViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        for (card, num) in self.deck!.cards {
+        for (card, num) in PickViewController.deck!.cards {
             for _ in 0..<num {
                 self.shuffledCards.append(card)
             }
@@ -96,8 +96,9 @@ class PickViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
-        let destination = segue.destination as! GameViewController
-        destination.deck = self.deck
+        if segue.identifier == "PickGameSegueIdentifier" || segue.identifier == "PickGameSegueIdentifier2" {
+            GameViewController.deck = PickViewController.deck
+        }
     }
 
 }

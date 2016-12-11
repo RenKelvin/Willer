@@ -215,7 +215,7 @@
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <connections>
                                             <outlet property="nameLabel" destination="jeI-9c-44P" id="s1Z-ku-VdZ"/>
-                                            <segue destination="unr-vM-xcp" kind="presentation" modalTransitionStyle="crossDissolve" id="aF7-aO-f9P"/>
+                                            <segue destination="unr-vM-xcp" kind="presentation" identifier="OrderDeckSegueIdentifier" modalTransitionStyle="crossDissolve" id="aF7-aO-f9P"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -443,7 +443,7 @@
                                                         </state>
                                                         <connections>
                                                             <action selector="secondButtonTapped" destination="i9T-Kh-tB1" eventType="touchUpInside" id="GMK-qH-oFp"/>
-                                                            <segue destination="Sgp-75-xjf" kind="presentation" modalTransitionStyle="crossDissolve" id="mHg-9R-3Xf"/>
+                                                            <segue destination="Sgp-75-xjf" kind="presentation" identifier="DeckPickSuegueIdentifier" modalTransitionStyle="crossDissolve" id="mHg-9R-3Xf"/>
                                                         </connections>
                                                     </button>
                                                 </subviews>
@@ -562,7 +562,7 @@
                                     <color key="titleColor" red="0.2784313725" green="0.36470588240000001" blue="0.55294117649999996" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
-                                    <segue destination="i9T-Kh-tB1" kind="presentation" modalTransitionStyle="crossDissolve" id="r2A-Y1-843"/>
+                                    <segue destination="i9T-Kh-tB1" kind="presentation" identifier="PickGameSegueIdentifier2" modalTransitionStyle="crossDissolve" id="r2A-Y1-843"/>
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3Ga-rN-Qfu">
@@ -767,8 +767,8 @@
                                                                     </constraints>
                                                                 </imageView>
                                                                 <label opaque="NO" userInteractionEnabled="NO" alpha="0.90000000000000002" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="12" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L9o-3Y-hxb">
-                                                                    <rect key="frame" x="29" y="5" width="18.5" height="21"/>
-                                                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                                                    <rect key="frame" x="29" y="5" width="19" height="21"/>
+                                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                     <nil key="highlightedColor"/>
                                                                     <color key="shadowColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
@@ -1060,8 +1060,8 @@
         <image name="bottom_frame" width="522" height="71"/>
         <image name="button2_n" width="141" height="32"/>
         <image name="card_foreteller" width="125" height="124"/>
-        <image name="card_frame" width="275" height="224"/>
-        <image name="card_text" width="297" height="80"/>
+        <image name="card_frame" width="137" height="112"/>
+        <image name="card_text" width="148" height="40"/>
         <image name="clock_bg" width="22" height="22"/>
         <image name="clock_frame" width="25" height="25"/>
         <image name="glow" width="169" height="24"/>
@@ -1084,8 +1084,8 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="YGI-q8-dzZ"/>
-        <segue reference="MXL-To-vyS"/>
+        <segue reference="aF7-aO-f9P"/>
         <segue reference="mHg-9R-3Xf"/>
-        <segue reference="JD8-U5-dV8"/>
+        <segue reference="r2A-Y1-843"/>
     </inferredMetricsTieBreakers>
 </document>

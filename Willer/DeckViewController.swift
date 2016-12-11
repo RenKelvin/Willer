@@ -10,7 +10,7 @@ import UIKit
 
 class DeckViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
-    var deck: Deck?
+    static var deck: Deck?
 
     @IBOutlet var nameLabel: UILabel!
 
@@ -18,14 +18,14 @@ class DeckViewController: UIViewController, UITableViewDataSource, UITableViewDe
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        self.nameLabel.text = deck?.name
+        self.nameLabel.text = DeckViewController.deck?.name
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
+
     // MARK: - Table view data source
 
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -56,8 +56,9 @@ class DeckViewController: UIViewController, UITableViewDataSource, UITableViewDe
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
-        let destination = segue.destination as! PickViewController
-        destination.deck = self.deck
+        if segue.identifier == "DeckPickSuegueIdentifier" {
+            PickViewController.deck = DeckViewController.deck
+        }
     }
-
+    
 }
