@@ -35,7 +35,7 @@ class GameViewController: UIViewController, UICollectionViewDataSource, UICollec
         NotificationCenter.default.addObserver(self, selector: #selector(GameViewController.onUpdate), name: NSNotification.Name("OnUpdate"), object: nil)
 
         // Game
-        GameManager.shared.start(deck: Deck.testDeck())
+        GameManager.shared.start(deck: Deck.deck_test)
         GameManager.shared.zeroDay()
     }
 

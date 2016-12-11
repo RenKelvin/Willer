@@ -25,28 +25,25 @@ struct Deck {
         }
     }
 
-    static func testDeck() -> Deck {
-        var deck = Deck()
-
-        deck.cards.append((Card(id: Constants.Werewolf), 3))
-        deck.cards.append((Card(id: Constants.Townsfolk), 3+3))
-        deck.cards.append((Card(id: Constants.Foreteller), 1))
-        deck.cards.append((Card(id: Constants.Witch), 1))
-        deck.cards.append((Card(id: Constants.Hunter), 1))
-
-        return deck
-    }
-
 }
 
 // MARK: -
 
 extension Deck {
 
+    static var deck_test: Deck {
+        return Deck(name: "测试",
+                    cards: [Constants.Werewolf: 3,
+                            Constants.Townsfolk: 6,
+                            Constants.Foreteller: 1,
+                            Constants.Witch: 1,
+                            Constants.Hunter: 1])
+    }
+
     // MARK: - 4
 
     static var deck_4_1: Deck {
-        return Deck.testDeck()
+        return Deck.deck_test
     }
 
     // MARK: - 5
@@ -76,11 +73,11 @@ extension Deck {
 
 
     // MARK: - 11
-    
-    
+
+
     // MARK: - 12
-    
-    
+
+
     // MARK: - 13
     
     

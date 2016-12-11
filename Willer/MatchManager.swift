@@ -23,7 +23,7 @@ class MatchManager: NSObject {
         case 9:
             return [Deck.deck_9_1, Deck.deck_9_1]
         default:
-            return [Deck.testDeck()]
+            return [Deck.deck_test]
         }
     }
     

@@ -67,14 +67,15 @@ class PickViewController: UIViewController {
         }
 
         // Last one
-        if hidden == false && index == self.shuffledCards.count-1 {
+        if hidden == true && index == self.shuffledCards.count {
+            self.titleLabel.text = "所有玩家均已看牌"
             self.mainButton.setTitle("开始游戏", for: .normal)
         }
     }
 
     @IBAction func buttonTap() {
         // Last one
-        if hidden == false && index == self.shuffledCards.count-1 {
+        if hidden == true && index == self.shuffledCards.count {
             self.performSegue(withIdentifier: "PickGameSegueIdentifier", sender: nil)
         }
             // Or update
