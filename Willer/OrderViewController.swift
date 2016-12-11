@@ -18,7 +18,7 @@ class OrderViewController: UIViewController, UITableViewDataSource, UITableViewD
     @IBOutlet var sliderButtonLeadingSpaceConstraint: NSLayoutConstraint!
     @IBOutlet var sliderFillImageViewWidthConstraint: NSLayoutConstraint!
 
-    var num: Int = 12
+    static var num: Int = 12
     let numMin: Int = 4
     let numMax: Int = 20
 
@@ -28,7 +28,7 @@ class OrderViewController: UIViewController, UITableViewDataSource, UITableViewD
         // Do any additional setup after loading the view.
     }
 
-    override func viewDidAppear(_ animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         self.refresh()
     }
 
@@ -38,15 +38,15 @@ class OrderViewController: UIViewController, UITableViewDataSource, UITableViewD
     }
 
     @IBAction func minusButtonTap() {
-        if self.num > self.numMin {
-            self.num -= 1
+        if OrderViewController.num > self.numMin {
+            OrderViewController.num -= 1
             self.refresh()
         }
     }
 
     @IBAction func plusButtonTap() {
-        if self.num < self.numMax {
-            self.num += 1
+        if OrderViewController.num < self.numMax {
+            OrderViewController.num += 1
             self.refresh()
         }
     }
@@ -64,8 +64,8 @@ class OrderViewController: UIViewController, UITableViewDataSource, UITableViewD
         let k = (self.sliderButton.center.x - xMin) / (xMax - xMin)
         let n = Float(self.numMin) + Float(self.numMax - self.numMin) * Float(k)
 
-        self.num = Int(round(n))
-        self.numLabel.text = String(self.num)
+        OrderViewController.num = Int(round(n))
+        self.numLabel.text = String(OrderViewController.num)
 
         self.sliderButtonLeadingSpaceConstraint.constant = x - self.sliderContainerImageView.frame.origin.x - self.sliderButton.frame.width / 2
         self.sliderFillImageViewWidthConstraint.constant = x - self.sliderFillImageView.frame.origin.x
@@ -79,12 +79,13 @@ class OrderViewController: UIViewController, UITableViewDataSource, UITableViewD
     }
 
     func refresh() {
-        self.numLabel.text = String(self.num)
+        self.numLabel.text = String(OrderViewController.num)
+        print(OrderViewController.num)
 
         let xMin: CGFloat = self.sliderContainerImageView.frame.origin.x + 8
         let xMax: CGFloat = self.sliderContainerImageView.frame.origin.x + self.sliderContainerImageView.frame.width - 8
 
-        let k = Float(self.num - self.numMin) / Float(self.numMax - self.numMin)
+        let k = Float(OrderViewController.num - self.numMin) / Float(self.numMax - self.numMin)
         let x = xMin + (xMax - xMin) * CGFloat(k)
 
         self.sliderButtonLeadingSpaceConstraint.constant = x - self.sliderContainerImageView.frame.origin.x - self.sliderButton.frame.width / 2
