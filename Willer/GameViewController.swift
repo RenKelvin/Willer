@@ -10,6 +10,8 @@ import UIKit
 
 class GameViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
 
+    var deck: Deck?
+
     // MARK: - IBOutlets
 
     @IBOutlet var dayLabel: UILabel!

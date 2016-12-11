@@ -8,7 +8,7 @@
 
 import UIKit
 
-class Card: NSObject {
+struct Card {
 
     let id: String
 

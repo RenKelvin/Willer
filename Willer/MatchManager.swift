@@ -17,5 +17,14 @@ class MatchManager: NSObject {
     override private init() {
 
     }
+
+    func decks(for num: Int) -> [Deck] {
+        switch num {
+        case 9:
+            return [Deck.deck_9_1, Deck.deck_9_1]
+        default:
+            return [Deck.testDeck()]
+        }
+    }
     
 }

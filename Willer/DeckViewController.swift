@@ -10,10 +10,15 @@ import UIKit
 
 class DeckViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
+    var deck: Deck?
+
+    @IBOutlet var nameLabel: UILabel!
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        self.nameLabel.text = deck?.name
     }
 
     override func didReceiveMemoryWarning() {
@@ -45,14 +50,14 @@ class DeckViewController: UIViewController, UITableViewDataSource, UITableViewDe
         tableView.deselectRow(at: indexPath, animated: true)
     }
 
-    /*
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
+        let destination = segue.destination as! PickViewController
+        destination.deck = self.deck
     }
-    */
 
 }

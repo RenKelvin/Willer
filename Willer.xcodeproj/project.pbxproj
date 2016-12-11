@@ -27,6 +27,7 @@
 		A55B71ED1DC33D9800B0CAF4 /* GameManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A55B71EC1DC33D9800B0CAF4 /* GameManager.swift */; };
 		A55B71F11DC3415800B0CAF4 /* Character.swift in Sources */ = {isa = PBXBuildFile; fileRef = A55B71F01DC3415800B0CAF4 /* Character.swift */; };
 		A55B71F31DC3416B00B0CAF4 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = A55B71F21DC3416B00B0CAF4 /* Player.swift */; };
+		A55BC18E1DFCF26A00CBF34B /* DeckTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A55BC18D1DFCF26A00CBF34B /* DeckTableViewCell.swift */; };
 		A5A460EE1DC261DB007F1A05 /* DeckViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5A460ED1DC261DB007F1A05 /* DeckViewController.swift */; };
 		A5A460F01DC261EB007F1A05 /* PickViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5A460EF1DC261EB007F1A05 /* PickViewController.swift */; };
 		A5A460F21DC2659F007F1A05 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5A460F11DC2659F007F1A05 /* GameViewController.swift */; };
@@ -63,6 +64,7 @@
 		A55B71EC1DC33D9800B0CAF4 /* GameManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = GameManager.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		A55B71F01DC3415800B0CAF4 /* Character.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Character.swift; sourceTree = "<group>"; };
 		A55B71F21DC3416B00B0CAF4 /* Player.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
+		A55BC18D1DFCF26A00CBF34B /* DeckTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeckTableViewCell.swift; sourceTree = "<group>"; };
 		A5A460ED1DC261DB007F1A05 /* DeckViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeckViewController.swift; sourceTree = "<group>"; };
 		A5A460EF1DC261EB007F1A05 /* PickViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PickViewController.swift; sourceTree = "<group>"; };
 		A5A460F11DC2659F007F1A05 /* GameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = GameViewController.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
@@ -169,6 +171,7 @@
 		A54CC81B1DC256E400877BE6 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				A55BC18C1DFCF24500CBF34B /* Cells */,
 				A5E8B6B31DBAD9A700DCA56A /* Main.storyboard */,
 			);
 			name = Views;
@@ -211,6 +214,14 @@
 				A5FA13E81DC4A1E9004F5939 /* Step.swift */,
 			);
 			name = Game;
+			sourceTree = "<group>";
+		};
+		A55BC18C1DFCF24500CBF34B /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				A55BC18D1DFCF26A00CBF34B /* DeckTableViewCell.swift */,
+			);
+			name = Cells;
 			sourceTree = "<group>";
 		};
 		A5E8B6A31DBAD9A700DCA56A = {
@@ -422,6 +433,7 @@
 				A5A460EE1DC261DB007F1A05 /* DeckViewController.swift in Sources */,
 				A5E8B6B21DBAD9A700DCA56A /* HomeViewController.swift in Sources */,
 				A55B71ED1DC33D9800B0CAF4 /* GameManager.swift in Sources */,
+				A55BC18E1DFCF26A00CBF34B /* DeckTableViewCell.swift in Sources */,
 				A525F3151DCE55CB00E04895 /* Hunter.swift in Sources */,
 				A5E8B6B01DBAD9A700DCA56A /* AppDelegate.swift in Sources */,
 				A51F9F591DC55EF4009A13CF /* PlayerMidiator.swift in Sources */,

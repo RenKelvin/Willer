@@ -18,9 +18,13 @@ class OrderViewController: UIViewController, UITableViewDataSource, UITableViewD
     @IBOutlet var sliderButtonLeadingSpaceConstraint: NSLayoutConstraint!
     @IBOutlet var sliderFillImageViewWidthConstraint: NSLayoutConstraint!
 
-    static var num: Int = 12
+    @IBOutlet var decksTableView: UITableView!
+
+    var decks: [Deck] = []
+
+    static var num: Int = 9
     let numMin: Int = 4
-    let numMax: Int = 20
+    let numMax: Int = 16
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -80,7 +84,6 @@ class OrderViewController: UIViewController, UITableViewDataSource, UITableViewD
 
     func refresh() {
         self.numLabel.text = String(OrderViewController.num)
-        print(OrderViewController.num)
 
         let xMin: CGFloat = self.sliderContainerImageView.frame.origin.x + 8
         let xMax: CGFloat = self.sliderContainerImageView.frame.origin.x + self.sliderContainerImageView.frame.width - 8
@@ -90,6 +93,10 @@ class OrderViewController: UIViewController, UITableViewDataSource, UITableViewD
 
         self.sliderButtonLeadingSpaceConstraint.constant = x - self.sliderContainerImageView.frame.origin.x - self.sliderButton.frame.width / 2
         self.sliderFillImageViewWidthConstraint.constant = x - self.sliderFillImageView.frame.origin.x
+
+        // Update table
+        self.decks = MatchManager.shared.decks(for: OrderViewController.num)
+        self.decksTableView.reloadData()
     }
 
     // MARK: - Table view data source
@@ -99,13 +106,15 @@ class OrderViewController: UIViewController, UITableViewDataSource, UITableViewD
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
+        return self.decks.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "OrderTableViewCellReuseIdentifier", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "OrderTableViewCellReuseIdentifier", for: indexPath) as! DeckTableViewCell
 
         // Configure the cell...
+        let deck = self.decks[indexPath.row]
+        cell.config(deck: deck)
 
         return cell
     }
@@ -116,14 +125,17 @@ class OrderViewController: UIViewController, UITableViewDataSource, UITableViewD
         tableView.deselectRow(at: indexPath, animated: true)
     }
 
-    /*
-     // MARK: - Navigation
+    // MARK: - Navigation
 
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destinationViewController.
-     // Pass the selected object to the new view controller.
-     }
-     */
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // Get the new view controller using segue.destinationViewController.
+        // Pass the selected object to the new view controller.
+        let indexPath = self.decksTableView.indexPathForSelectedRow!
+        let deck = self.decks[indexPath.row]
+        
+        let destination = segue.destination as! DeckViewController
+        destination.deck = deck
+    }
     
 }
