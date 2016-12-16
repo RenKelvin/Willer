@@ -79,18 +79,25 @@ class witch_save_ability: Ability {
             _step.secondAction = Step.trueAction
         }
         else {
-            if self.avalaible() {
-                _step.firstActionText = "救"
-                _step.firstAction = self.action
-
-                _step.secondActionText = "不救"
-                _step.secondAction = Step.trueAction
-            }
-            else {
+            if !self.avalaible() {
                 _step.firstActionText = "解药已使用"
                 _step.firstAction = Step.falseAction
 
                 _step.secondActionText = "下一步"
+                _step.secondAction = Step.trueAction
+            }
+            else if player != nil && player!.no == self.player!.no && StatusMidiator.shared.currentDay != 1 {
+                _step.firstActionText = "无法自救"
+                _step.firstAction = Step.falseAction
+
+                _step.secondActionText = "下一步"
+                _step.secondAction = Step.trueAction
+            }
+            else {
+                _step.firstActionText = "救"
+                _step.firstAction = self.action
+
+                _step.secondActionText = "不救"
                 _step.secondAction = Step.trueAction
             }
         }
