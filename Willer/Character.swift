@@ -35,6 +35,9 @@ class Character: NSObject {
         case Constants.Hunter:
             return Hunter()
 
+        case Constants.Idiot:
+            return Idiot()
+
         default:
             return Character()
         }
@@ -62,6 +65,10 @@ class Character: NSObject {
         return [step]
     }
 
+    func onDying() {
+        ProcessMidiator.shared.appendSteps(steps: self.dyingSteps())
+    }
+    
     func isWerewolf() -> Bool {
         return self.id == "Werewolf"
     }

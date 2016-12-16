@@ -44,6 +44,9 @@ struct Effect: Hashable {
         case Constants.exile_effect:
             return Effect(id: Constants.exile_effect, delay: 0, duration: 1)
 
+        case Constants.idiot_reveal_effect:
+            return Effect(id: Constants.idiot_reveal_effect, delay: 0, duration: 9999)
+
         default:
             return Effect()
         }

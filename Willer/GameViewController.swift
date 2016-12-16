@@ -76,6 +76,12 @@ class GameViewController: UIViewController, UICollectionViewDataSource, UICollec
 
     func updateInfo() {
         self.dayLabel.text = String(GameManager.shared.currentDay())
+        //        if GameManager.shared.currentDay() % 2 == 1 {
+        //            self.dayLabel.text = "夜"
+        //        }
+        //        else {
+        //            self.dayLabel.text = "日"
+        //        }
     }
 
     // MARK: - Battle area
@@ -173,9 +179,9 @@ class GameCollectionViewCell: UICollectionViewCell {
         //
         self.portraitImageView.layer.cornerRadius = self.portraitImageView.frame.size.width/2
         self.portraitImageView.clipsToBounds = true
-
+        
         self.noLabel.text = String(player.no)
-
+        
         //
         if player.stateMachine.state == .live {
             self.portraitImageView.isHighlighted = false

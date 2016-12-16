@@ -22,7 +22,7 @@ class OrderViewController: UIViewController, UITableViewDataSource, UITableViewD
 
     var decks: [Deck] = []
 
-    static var num: Int = 9
+    static var num: Int = 12
     let numMin: Int = 4
     let numMax: Int = 16
 

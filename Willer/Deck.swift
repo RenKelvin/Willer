@@ -77,6 +77,15 @@ extension Deck {
 
     // MARK: - 12
 
+    static var deck_12_1: Deck {
+        return Deck(name: "Lying Man",
+                    cards: [Constants.Werewolf: 4,
+                            Constants.Townsfolk: 4,
+                            Constants.Foreteller: 1,
+                            Constants.Witch: 1,
+                            Constants.Hunter: 1,
+                            Constants.Idiot: 1])
+    }
 
     // MARK: - 13
     

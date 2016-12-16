@@ -22,6 +22,8 @@ class MatchManager: NSObject {
         switch num {
         case 9:
             return [Deck.deck_9_1, Deck.deck_9_1]
+        case 12:
+            return [Deck.deck_12_1]
         default:
             return [Deck.deck_test]
         }

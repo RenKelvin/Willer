@@ -95,9 +95,11 @@ class EffectMachine: NSObject {
 
         let grade = self.ruleSystem.grade(forFact: "live" as NSObjectProtocol)
 
-        self.effects = Set(self.effects.filter({!($0.inactive() || $0.lastDayActive())}))
-
         return grade == 1
+    }
+
+    func clean() {
+        self.effects = Set(self.effects.filter({!($0.inactive() || $0.lastDayActive())}))
     }
 
     func isWerewolfKilled() -> Bool {

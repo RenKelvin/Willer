@@ -39,6 +39,7 @@ class Player: NSObject {
                 self.stateMachine.state = .dying
                 self.onDying()
             }
+            self.effectMachine.clean()
         }
             // dying -> dead
         else if (self.stateMachine.state == .dying) {
@@ -67,7 +68,7 @@ class Player: NSObject {
             print("狼人获胜")
         }
 
-        // Dingest steps
-        ProcessMidiator.shared.appendSteps(steps: self.character.dyingSteps())
+        // Character dying
+        self.character.onDying()
     }
 }

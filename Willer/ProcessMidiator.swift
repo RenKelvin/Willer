@@ -58,11 +58,6 @@ class ProcessMidiator: NSObject {
             }
         }
 
-        if day == 2 {
-            // Elect sheriff step
-            self.ingestSteps(steps: Step.electSheriffSteps())
-        }
-
         // Night
         if day % 2 == 1 {
             // Everynight player step
@@ -82,6 +77,11 @@ class ProcessMidiator: NSObject {
 
             // Exile
             self.appendStep(step: Step.exileStep())
+        }
+
+        if day == 2 {
+            // Elect sheriff step
+            self.ingestSteps(steps: Step.electSheriffSteps())
         }
     }
 
