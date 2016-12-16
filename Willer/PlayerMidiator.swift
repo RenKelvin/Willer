@@ -24,6 +24,8 @@ class PlayerMidiator: NSObject {
     }
 
     func generatePlayers(deck: Deck) {
+        self.playerArray.removeAll()
+
         var no = 1
         for (card, num) in deck.cards {
             for _ in 1...num {
@@ -32,6 +34,18 @@ class PlayerMidiator: NSObject {
                 self.playerArray.append(player)
                 no += 1
             }
+        }
+    }
+
+    func generatePlayers(cards: [Card]) {
+        self.playerArray.removeAll()
+
+        var no = 1
+        for card: Card in cards {
+            let player = Player(character: card.id, no: no)
+            ProcessMidiator.shared.register(player: player)
+            self.playerArray.append(player)
+            no += 1
         }
     }
 

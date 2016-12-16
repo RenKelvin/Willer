@@ -60,7 +60,7 @@ class ProcessMidiator: NSObject {
 
         if day == 2 {
             // Elect sheriff step
-            // self.ingestSteps(steps: Step.electSheriffSteps())
+            self.ingestSteps(steps: Step.electSheriffSteps())
         }
 
         // Night
@@ -78,7 +78,7 @@ class ProcessMidiator: NSObject {
             self.ingestStep(step: Step.annouceStep())
 
             // Pitch
-            self.appendStep(step: Step.pitchStep())
+            // self.appendStep(step: Step.pitchStep())
 
             // Exile
             self.appendStep(step: Step.exileStep())
@@ -116,7 +116,7 @@ class ProcessMidiator: NSObject {
     func ingestStep(step: Step) {
         self.stepQueue.insert(step, at: 1)
     }
-
+    
     func ingestSteps(steps: [Step]) {
         self.stepQueue.insert(contentsOf: steps, at: 1)
     }

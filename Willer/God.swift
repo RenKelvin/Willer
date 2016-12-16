@@ -40,7 +40,7 @@ class assign_sheriff_ability: Ability {
         let step = super.step()
 
         step.headText = "警长竞选"
-        step.bodyText = "（）"
+        step.bodyText = "请投票选出一名警长"
 
         step.firstActionText = "确认警长"
         step.firstAction = self.action
@@ -93,7 +93,7 @@ class exile_ability: Ability {
         let step = super.step()
 
         step.headText = "放逐投票"
-        step.bodyText = "现在开始放逐投票，各位玩家请投票 （）"
+        step.bodyText = "请投票放逐一名嫌疑犯"
 
         step.firstActionText = "确认放逐"
         step.firstAction = self.action

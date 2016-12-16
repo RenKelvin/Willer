@@ -21,6 +21,7 @@
 		A525F3151DCE55CB00E04895 /* Hunter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A525F3141DCE55CB00E04895 /* Hunter.swift */; };
 		A525F3191DCFC84500E04895 /* God.swift in Sources */ = {isa = PBXBuildFile; fileRef = A525F3181DCFC84500E04895 /* God.swift */; };
 		A54CC81F1DC2597700877BE6 /* OrderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A54CC81E1DC2597700877BE6 /* OrderViewController.swift */; };
+		A554DF3D1E03AA60001005D5 /* Idiot.swift in Sources */ = {isa = PBXBuildFile; fileRef = A554DF3C1E03AA60001005D5 /* Idiot.swift */; };
 		A55B71E71DC33CA300B0CAF4 /* Effect.swift in Sources */ = {isa = PBXBuildFile; fileRef = A55B71E61DC33CA300B0CAF4 /* Effect.swift */; };
 		A55B71E91DC33CA800B0CAF4 /* Ability.swift in Sources */ = {isa = PBXBuildFile; fileRef = A55B71E81DC33CA800B0CAF4 /* Ability.swift */; };
 		A55B71EB1DC33D8900B0CAF4 /* ResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A55B71EA1DC33D8900B0CAF4 /* ResultViewController.swift */; };
@@ -58,6 +59,7 @@
 		A525F3141DCE55CB00E04895 /* Hunter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Hunter.swift; sourceTree = "<group>"; };
 		A525F3181DCFC84500E04895 /* God.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = God.swift; sourceTree = "<group>"; };
 		A54CC81E1DC2597700877BE6 /* OrderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderViewController.swift; sourceTree = "<group>"; };
+		A554DF3C1E03AA60001005D5 /* Idiot.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Idiot.swift; sourceTree = "<group>"; };
 		A55B71E61DC33CA300B0CAF4 /* Effect.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = Effect.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		A55B71E81DC33CA800B0CAF4 /* Ability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = Ability.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		A55B71EA1DC33D8900B0CAF4 /* ResultViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultViewController.swift; sourceTree = "<group>"; };
@@ -285,6 +287,7 @@
 				A525F3121DCE55C200E04895 /* Foreteller.swift */,
 				A525F30A1DCDAAB900E04895 /* Witch.swift */,
 				A525F3141DCE55CB00E04895 /* Hunter.swift */,
+				A554DF3C1E03AA60001005D5 /* Idiot.swift */,
 			);
 			name = Characters;
 			sourceTree = "<group>";
@@ -451,6 +454,7 @@
 				A525F3131DCE55C200E04895 /* Foreteller.swift in Sources */,
 				A55B71E91DC33CA800B0CAF4 /* Ability.swift in Sources */,
 				A525F30B1DCDAAB900E04895 /* Witch.swift in Sources */,
+				A554DF3D1E03AA60001005D5 /* Idiot.swift in Sources */,
 				A5A460F91DC2AEF9007F1A05 /* Deck.swift in Sources */,
 				A55B71F31DC3416B00B0CAF4 /* Player.swift in Sources */,
 				A525F3091DCDAA9300E04895 /* Townsfolk.swift in Sources */,
@@ -581,7 +585,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = me.chuanren.willer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0.1;
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
@@ -598,7 +602,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = me.chuanren.willer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0.1;
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;

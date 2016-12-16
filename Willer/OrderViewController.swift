@@ -131,10 +131,10 @@ class OrderViewController: UIViewController, UITableViewDataSource, UITableViewD
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
-        if segue.identifier == "OrderDeckSegueIdentifier" {
+        if segue.identifier == "OrderPickSegueIdentifier" {
             let indexPath = self.decksTableView.indexPathForSelectedRow!
             let deck = self.decks[indexPath.row]
-            DeckViewController.deck = deck
+            PickViewController.deck = deck
         }
     }
     

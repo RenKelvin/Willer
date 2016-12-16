@@ -94,19 +94,19 @@ class Step: NSObject {
     static func electSheriffSteps() -> [Step] {
         var steps = [Step]()
 
-        let step1 = Step.simpleStep(head: "警长竞选", body: "现在开始警长竞选，想要竞选警长的玩家请举手")
-        steps.append(step1)
-
-        let step2 = Step.simpleStep(head: "警长竞选", body: "从X号玩家开始发言")
-        steps.append(step2)
-
-        let step3 = Step.simpleStep(head: "警长竞选", body: "现在开始投票，竞选及退水的玩家不能投票")
-        steps.append(step3)
+        //        let step1 = Step.simpleStep(head: "警长竞选", body: "现在开始警长竞选，想要竞选警长的玩家请举手")
+        //        steps.append(step1)
+        //
+        //        let step2 = Step.simpleStep(head: "警长竞选", body: "从X号玩家开始发言")
+        //        steps.append(step2)
+        //
+        //        let step3 = Step.simpleStep(head: "警长竞选", body: "现在开始投票，竞选及退水的玩家不能投票")
+        //        steps.append(step3)
 
         steps.append(assign_sheriff_ability().step())
 
-        let step5 = Step.simpleStep(head: "警长竞选", body: "X号玩家当选警长")
-        steps.append(step5)
+        //        let step5 = Step.simpleStep(head: "警长竞选", body: "X号玩家当选警长")
+        //        steps.append(step5)
 
         return steps
     }
@@ -115,7 +115,26 @@ class Step: NSObject {
         let step = Step()
 
         step.headText = "宣布死者"
-        step.bodyText = "昨夜X号玩家死亡"
+
+        let dyingPlayers = PlayerMidiator.shared.dyingPlayers()
+        if dyingPlayers.isEmpty {
+            step.bodyText = "昨夜平安夜"
+        }
+        else {
+            var text = "昨夜"
+
+            for i in 0..<dyingPlayers.count {
+                //                if i != 0 {
+                //                    text += ", "
+                //                }
+
+                text += "\(dyingPlayers[i].no)号"
+            }
+
+            text += "玩家死亡"
+
+            step.bodyText = text
+        }
 
         step.firstAction = Step.trueAction
         step.firstActionText = "下一步"
@@ -142,7 +161,7 @@ class Step: NSObject {
     static func lastwordsStep(player: Player) -> Step {
         // TODO: can last words?
         let on = (arc4random_uniform(2) == 0)
-
+        
         var step = Step()
         if (on) {
             step = Step.simpleStep(head: "发表遗言", body: "\(player.no)号玩家请留遗言")

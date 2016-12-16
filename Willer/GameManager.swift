@@ -30,6 +30,10 @@ class GameManager: NSObject {
         PlayerMidiator.shared.generatePlayers(deck: deck)
     }
 
+    func start(cards: [Card]) {
+        PlayerMidiator.shared.generatePlayers(cards: cards)
+    }
+
     // MARK: - Game
 
     func zeroDay() {

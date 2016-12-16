@@ -11,6 +11,7 @@ import UIKit
 class GameViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
 
     static var deck: Deck?
+    static var cards: [Card] = []
 
     // MARK: - IBOutlets
 
@@ -35,7 +36,7 @@ class GameViewController: UIViewController, UICollectionViewDataSource, UICollec
         NotificationCenter.default.addObserver(self, selector: #selector(GameViewController.onUpdate), name: NSNotification.Name("OnUpdate"), object: nil)
 
         // Game
-        GameManager.shared.start(deck: Deck.deck_test)
+        GameManager.shared.start(cards: GameViewController.cards)
         GameManager.shared.zeroDay()
     }
 
