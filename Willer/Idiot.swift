@@ -26,7 +26,7 @@ class Idiot: Character {
         // Revealed -> Dead
         if !self.player!.effectMachine.effects.contains(idiotRevealEffect) && self.player!.effectMachine.effects.contains(exileEffect) {
             self.player!.effectMachine.attachEffect(effect: idiotRevealEffect)
-            ProcessMidiator.shared.appendSteps(steps: self.steps())
+            ProcessMidiator.shared.ingestSteps(steps: self.steps())
         }
             // Not revealed -> Live
         else {

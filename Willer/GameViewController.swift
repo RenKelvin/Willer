@@ -34,6 +34,7 @@ class GameViewController: UIViewController, UICollectionViewDataSource, UICollec
 
         //
         NotificationCenter.default.addObserver(self, selector: #selector(GameViewController.onUpdate), name: NSNotification.Name("OnUpdate"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(GameViewController.onEnd), name: NSNotification.Name("OnEnd"), object: nil)
 
         // Game
         GameManager.shared.start(cards: GameViewController.cards)
@@ -70,6 +71,14 @@ class GameViewController: UIViewController, UICollectionViewDataSource, UICollec
 
         // Process
         self.updateStep()
+    }
+
+    func onEnd() {
+        self.end()
+    }
+
+    func end() {
+        self.performSegue(withIdentifier: "GameResultSegueIdentifier", sender: nil)
     }
 
     // MARK: - Info area

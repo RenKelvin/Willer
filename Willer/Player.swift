@@ -62,10 +62,10 @@ class Player: NSObject {
     func onDying() {
         // Winning check
         if (PlayerMidiator.shared.isWerewolfWiped()) {
-            print("好人获胜")
+            NotificationCenter.default.post(name: NSNotification.Name("OnEnd"), object: nil)
         }
         else if (PlayerMidiator.shared.isTownsfolkWiped() || PlayerMidiator.shared.isPriesthoodWiped()) {
-            print("狼人获胜")
+            NotificationCenter.default.post(name: NSNotification.Name("OnEnd"), object: nil)
         }
 
         // Character dying

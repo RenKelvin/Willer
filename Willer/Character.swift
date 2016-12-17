@@ -78,7 +78,7 @@ class Character: NSObject {
     }
     
     func isPriesthood() -> Bool {
-        return self.id == "Foreteller" || self.id == "Witch" || self.id == "Hunter"
+        return self.id == "Foreteller" || self.id == "Witch" || self.id == "Hunter" || self.id == "Idiot"
     }
     
 }
