@@ -22,8 +22,11 @@ class Hunter: Character {
     override func dyingSteps() -> [Step] {
         var steps = super.dyingSteps()
 
-        for ability in self.abilities {
-            steps.append(ability.step())
+        let poisonEffect = Effect.factory(id: Constants.witch_poison_effect)
+        if !self.player!.effectMachine.effects.contains(poisonEffect) {
+            for ability in self.abilities {
+                steps.append(ability.step())
+            }
         }
 
         return steps
@@ -78,7 +81,7 @@ class hunter_shot_modifier: Modifier {
         self.takeEffect(effect: effect, targets: targets)
         return true
     }
-    
+
 }
 
 extension Constants {
