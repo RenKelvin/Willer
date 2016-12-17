@@ -21,13 +21,13 @@ struct Deck {
     init(name: String, cards: [String: Int]) {
         self.name = name
         for (id, num) in cards {
-            self.cards.append((Card(id: id), num))
+            self.cards.append((Card.factory(id: id), num))
         }
     }
 
 }
 
-// MARK: -
+// MARK: - Stored
 
 extension Deck {
 

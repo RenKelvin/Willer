@@ -59,9 +59,9 @@ class PickViewController: UIViewController {
             self.titleLabel.text = "你的身份是"
 
             let card = self.shuffledCards[index]
-            self.cardImageView.image = UIImage(named: "card_foreteller")
-            self.cardNameLabel.text = card.id
-            self.cardSloganLabel.text = ""
+            self.cardImageView.image = UIImage(named: "card_" + card.id.lowercased())
+            self.cardNameLabel.text = card.name
+            self.cardSloganLabel.text = card.slogan
 
             self.mainButton.setTitle("知道了", for: .normal)
         }
