@@ -176,7 +176,10 @@ class Step: NSObject {
 
     static func lastwordsStep(player: Player) -> Step {
         // TODO: can last words?
-        let on = (arc4random_uniform(2) == 0)
+        var on = false
+        if StatusMidiator.shared.currentDay == 1 || StatusMidiator.shared.currentDay % 2 == 0 {
+            on = true
+        }
         
         var step = Step()
         if (on) {
