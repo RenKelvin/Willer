@@ -68,7 +68,7 @@ class PickViewController: UIViewController {
 
         // Last one
         if hidden == true && index == self.shuffledCards.count {
-            self.titleLabel.text = "所有玩家均已看牌"
+            self.titleLabel.text = "请上帝开始游戏"
             self.mainButton.setTitle("开始游戏", for: .normal)
         }
     }

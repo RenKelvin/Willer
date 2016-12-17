@@ -6,5 +6,6 @@ target 'Willer' do
   use_frameworks!
 
   # Pods for Willer
+  pod 'Firebase/Core'
 
 end
