@@ -91,6 +91,22 @@ class Step: NSObject {
         return step
     }
 
+    static func startStep() -> Step {
+        let step = Step()
+
+        step.headText = "游戏开始"
+        step.bodyText = "天黑请闭眼"
+
+        func enterNightAction() -> Bool {
+            GameManager.shared.nextDay()
+            return true
+        }
+        step.firstAction = enterNightAction
+        step.firstActionText = "进入黑夜"
+
+        return step
+    }
+
     static func electSheriffSteps() -> [Step] {
         var steps = [Step]()
 

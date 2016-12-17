@@ -49,6 +49,12 @@ class ProcessMidiator: NSObject {
 
     func reload() {
         let day = StatusMidiator.shared.currentDay
+
+        if day == 0 {
+            self.appendStep(step: Step.startStep())
+            return
+        }
+
         if day == 1 {
             // Add firstnight player step
             for characterId in self.firstNightCharacterSequence {
