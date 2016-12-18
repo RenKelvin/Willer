@@ -226,6 +226,8 @@
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <connections>
+                                            <outlet property="charactersLabel" destination="lYJ-td-tWR" id="4uo-md-W4s"/>
+                                            <outlet property="infoLabel" destination="eJm-tc-VQE" id="5pI-Ci-g5C"/>
                                             <outlet property="nameLabel" destination="jeI-9c-44P" id="s1Z-ku-VdZ"/>
                                             <segue destination="Sgp-75-xjf" kind="presentation" identifier="OrderPickSegueIdentifier" modalTransitionStyle="crossDissolve" id="V7A-j8-YB5"/>
                                         </connections>
@@ -1195,8 +1197,8 @@
         <image name="top_deco" width="93" height="16"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="uhp-Fl-QvJ"/>
-        <segue reference="r2A-Y1-843"/>
+        <segue reference="V7A-j8-YB5"/>
         <segue reference="Fdy-mq-zmQ"/>
+        <segue reference="r2A-Y1-843"/>
     </inferredMetricsTieBreakers>
 </document>

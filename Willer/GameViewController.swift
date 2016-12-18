@@ -150,7 +150,7 @@ class GameViewController: UIViewController, UICollectionViewDataSource, UICollec
         // Trigger menu
         if PlayerMidiator.shared.maxSelected == 0 {
             let player = GameManager.shared.livingPlayers()[indexPath.row]
-            if player.character.id == Constants.Werewolf {
+            if player.character.id == Constants.Werewolf && StatusMidiator.shared.currentDay%2 == 0 {
                 let alertController = UIAlertController(title: "狼人自爆", message: "", preferredStyle: .alert)
 
                 let cancelAction = UIAlertAction(title: "取消", style: .cancel) { action in
