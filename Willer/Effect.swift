@@ -32,6 +32,9 @@ struct Effect: Hashable {
         case Constants.witch_save_effect:
             return Effect(id: Constants.witch_save_effect, delay: 0, duration: 1)
 
+        case Constants.witch_save_use_effect:
+            return Effect(id: Constants.witch_save_use_effect, delay: 0, duration: 1)
+
         case Constants.witch_poison_effect:
             return Effect(id: Constants.witch_poison_effect, delay: 0, duration: 1)
 
@@ -67,9 +70,9 @@ struct Effect: Hashable {
     public var hashValue: Int {
         return self.id.hash
     }
-
+    
     // Equalable
-
+    
     public static func ==(lhs: Effect, rhs: Effect) -> Bool {
         return lhs.id == rhs.id
     }
