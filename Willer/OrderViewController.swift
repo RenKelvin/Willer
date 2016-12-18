@@ -79,6 +79,7 @@ class OrderViewController: UIViewController, UITableViewDataSource, UITableViewD
         }
         else {
             self.sliderButton.isHighlighted = false
+            self.refresh()
         }
     }
 

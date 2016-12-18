@@ -31,6 +31,8 @@ class GameManager: NSObject {
     }
 
     func start(cards: [Card]) {
+        StatusMidiator.shared.currentDay = 0
+        ProcessMidiator.shared.stepQueue = []
         PlayerMidiator.shared.generatePlayers(cards: cards)
     }
 
