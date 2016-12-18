@@ -561,7 +561,7 @@
                                     <segue destination="sfv-GH-IY5" kind="presentation" modalTransitionStyle="crossDissolve" id="Fdy-mq-zmQ"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5G5-Kd-tJw">
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5G5-Kd-tJw">
                                 <rect key="frame" x="328" y="16" width="31" height="30"/>
                                 <state key="normal" title="开始">
                                     <color key="titleColor" red="0.2784313725" green="0.36470588240000001" blue="0.55294117649999996" alpha="1" colorSpace="calibratedRGB"/>
@@ -788,7 +788,7 @@
                                                                 <constraint firstItem="L9o-3Y-hxb" firstAttribute="centerY" secondItem="Q0f-qw-UZA" secondAttribute="centerY" id="f9N-xW-AVd"/>
                                                             </constraints>
                                                         </view>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JdN-SE-wrb">
+                                                        <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JdN-SE-wrb">
                                                             <rect key="frame" x="0.0" y="0.0" width="76" height="120"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -1197,8 +1197,8 @@
         <image name="top_deco" width="93" height="16"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="V7A-j8-YB5"/>
-        <segue reference="Fdy-mq-zmQ"/>
+        <segue reference="uhp-Fl-QvJ"/>
         <segue reference="r2A-Y1-843"/>
+        <segue reference="Fdy-mq-zmQ"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -2,10 +2,11 @@
 # platform :ios, '9.0'
 
 target 'Willer' do
-  # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
-  use_frameworks!
+    # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
+    use_frameworks!
 
-  # Pods for Willer
-  pod 'Firebase/Core'
+    # Pods for Willer
+    pod 'Firebase/Core'
+    pod 'Firebase/Crash'
 
 end
