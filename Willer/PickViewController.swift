@@ -100,6 +100,8 @@ class PickViewController: UIViewController {
         if segue.identifier == "PickGameSegueIdentifier" || segue.identifier == "PickGameSegueIdentifier2" {
             GameViewController.deck = PickViewController.deck
             GameViewController.cards = self.shuffledCards
+
+            GameManager.shared.deck = PickViewController.deck
         }
     }
 

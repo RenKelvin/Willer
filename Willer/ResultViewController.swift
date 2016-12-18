@@ -16,11 +16,8 @@ class ResultViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        if (PlayerMidiator.shared.isWerewolfWiped()) {
-            self.titleLabel.text = "好人获胜！"
-        }
-        else if (PlayerMidiator.shared.isTownsfolkWiped() || PlayerMidiator.shared.isPriesthoodWiped()) {
-            self.titleLabel.text = "狼人获胜！"
+        if let winString = GameManager.shared.win() {
+            self.titleLabel.text = winString
         }
     }
 

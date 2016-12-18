@@ -10,6 +10,8 @@ import UIKit
 
 class GameManager: NSObject {
 
+    var deck: Deck?
+
     // MARK: - Singleton
 
     static let shared = GameManager()
@@ -102,9 +104,35 @@ class GameManager: NSObject {
 
     func selectPlayer(at index: Int) {
         PlayerMidiator.shared.selectPlayer(at: index)
-        
+
         //
         self.updateViewController()
     }
-    
+
+    // MARK: -
+
+    func win() -> String? {
+        if (self.deck?.massacre)! {
+            if (PlayerMidiator.shared.isWerewolfWiped()) {
+                return "好人获胜！"
+            }
+            else if (PlayerMidiator.shared.isTownsfolkWiped() && PlayerMidiator.shared.isPriesthoodWiped()) {
+                return "狼人获胜！"
+            }
+            else {
+                return nil
+            }
+        }
+        else {
+            if (PlayerMidiator.shared.isWerewolfWiped()) {
+                return "好人获胜！"
+            }
+            else if (PlayerMidiator.shared.isTownsfolkWiped() || PlayerMidiator.shared.isPriesthoodWiped()) {
+                return "狼人获胜！"
+            }
+            else {
+                return nil
+            }
+        }
+    }
 }

@@ -85,7 +85,7 @@ class ProcessMidiator: NSObject {
             self.appendStep(step: Step.exileStep())
         }
 
-        if day == 2 {
+        if (GameManager.shared.deck?.sheriff)! && day == 2 {
             // Elect sheriff step
             self.ingestSteps(steps: Step.electSheriffSteps())
         }

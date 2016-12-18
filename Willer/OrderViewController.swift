@@ -22,8 +22,8 @@ class OrderViewController: UIViewController, UITableViewDataSource, UITableViewD
 
     var decks: [Deck] = []
 
-    static var num: Int = 12
-    let numMin: Int = 4
+    static var num: Int = 9
+    let numMin: Int = 6
     let numMax: Int = 16
 
     override func viewDidLoad() {

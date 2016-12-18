@@ -61,6 +61,8 @@ class witch_save_ability: Ability {
 
     override func preAction() {
 
+        super.preAction()
+
         _step.headText = "女巫行动"
 
         let player = PlayerMidiator.shared.werewolfKilledPlayers().first
@@ -148,6 +150,8 @@ class witch_poison_ability: Ability {
     }
 
     override func preAction() {
+
+        super.preAction()
 
         _step.headText = "女巫行动"
         _step.bodyText = "请问你要毒死谁吗"

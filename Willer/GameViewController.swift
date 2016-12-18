@@ -32,7 +32,6 @@ class GameViewController: UIViewController, UICollectionViewDataSource, UICollec
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        //
         NotificationCenter.default.addObserver(self, selector: #selector(GameViewController.onUpdate), name: NSNotification.Name("OnUpdate"), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(GameViewController.onEnd), name: NSNotification.Name("OnEnd"), object: nil)
 
