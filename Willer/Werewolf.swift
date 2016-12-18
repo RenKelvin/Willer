@@ -16,7 +16,7 @@ class Werewolf: Character {
         self.id = "Werewolf"
         self.name = "狼人"
 
-        self.abilities = [werewolf_kill_ability()]
+        self.abilities = [werewolf_kill_ability(), werewolf_suicide_ability()]
     }
 
     override func steps() -> [Step] {
@@ -25,14 +25,21 @@ class Werewolf: Character {
         let firstStep = Step.simpleStep(head: "狼人行动", body: "狼人请睁眼")
         steps.append(firstStep)
 
-        for ability in self.abilities {
-            steps.append(ability.step())
-        }
+        steps.append(self.abilities[0].step())
 
         let lastStep = Step.simpleStep(head: "狼人行动", body: "狼人请闭眼")
         steps.append(lastStep)
 
         return steps
+    }
+
+    override func onDying() {
+        if self.player!.effectMachine.effects.contains(Effect.factory(id: Constants.werewolf_suicide_effect)) {
+            ProcessMidiator.shared.cutSteps(steps: self.dyingSteps())
+        }
+        else {
+            ProcessMidiator.shared.appendSteps(steps: self.dyingSteps())
+        }
     }
 
 }
@@ -58,7 +65,7 @@ class werewolf_kill_ability: Ability {
 
         step.headText = "狼人行动"
         step.bodyText = "请选择要击杀的目标"
-        
+
         step.firstActionText = "确认杀害"
         step.firstAction = self.action
 
@@ -84,8 +91,40 @@ class werewolf_kill_modifier: Modifier {
         if targets.isEmpty {
             return false
         }
-        
+
         self.attachEffect(effect: effect, targets: targets)
+        return true
+    }
+
+}
+
+// MARK: - Kill
+
+class werewolf_suicide_ability: Ability {
+
+    override init() {
+        super.init()
+
+        self.id = Constants.werewolf_suicide_ability
+
+        self.cooldown = -9999
+
+        self.modifiers = [werewolf_suicide_modifier()]
+    }
+
+}
+
+class werewolf_suicide_modifier: Modifier {
+
+    override init() {
+        super.init()
+
+        self.id = Constants.werewolf_suicide_modifier
+    }
+
+    override func modify() -> Bool {
+        let effect = Effect.factory(id: Constants.werewolf_suicide_effect)
+        self.takeEffect(effect: effect, targets: [self.player!])
         return true
     }
 
@@ -93,7 +132,12 @@ class werewolf_kill_modifier: Modifier {
 
 extension Constants {
     static let Werewolf = "Werewolf"
+
     static let werewolf_kill_ability = "werewolf_kill_ability"
     static let werewolf_kill_modifier = "werewolf_kill_modifier"
     static let werewolf_kill_effect = "werewolf_kill_effect"
+    
+    static let werewolf_suicide_ability = "werewolf_suicide_ability"
+    static let werewolf_suicide_modifier = "werewolf_suicide_modifier"
+    static let werewolf_suicide_effect = "werewolf_suicide_effect"
 }

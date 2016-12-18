@@ -724,7 +724,7 @@
                                                                         <constraint firstAttribute="width" constant="72" id="RBl-0S-rFA"/>
                                                                     </constraints>
                                                                 </imageView>
-                                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="portrait_placeholder" highlightedImage="portrait_placeholder_gray" translatesAutoresizingMaskIntoConstraints="NO" id="kDG-2F-tbL">
+                                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="portrait_placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="kDG-2F-tbL">
                                                                     <rect key="frame" x="2" y="2" width="72" height="72"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="width" secondItem="kDG-2F-tbL" secondAttribute="height" multiplier="1:1" id="oyj-6v-9I5"/>
@@ -770,7 +770,7 @@
                                                                     </constraints>
                                                                 </imageView>
                                                                 <label opaque="NO" userInteractionEnabled="NO" alpha="0.90000000000000002" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="12" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L9o-3Y-hxb">
-                                                                    <rect key="frame" x="29" y="5" width="19" height="21"/>
+                                                                    <rect key="frame" x="29" y="5" width="19" height="22"/>
                                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                     <nil key="highlightedColor"/>
@@ -1186,7 +1186,6 @@
         <image name="portrait_bg" width="37" height="37"/>
         <image name="portrait_gloss" width="29" height="27"/>
         <image name="portrait_placeholder" width="300" height="300"/>
-        <image name="portrait_placeholder_gray" width="300" height="300"/>
         <image name="portrait_ring" width="42" height="42"/>
         <image name="settings_a" width="31" height="32"/>
         <image name="slide_h" width="30" height="45"/>

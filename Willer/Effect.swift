@@ -29,6 +29,9 @@ struct Effect: Hashable {
         case Constants.werewolf_kill_effect:
             return Effect(id: Constants.werewolf_kill_effect, delay: 0, duration: 1)
 
+        case Constants.werewolf_suicide_effect:
+            return Effect(id: Constants.werewolf_suicide_effect, delay: 0, duration: 1)
+
         case Constants.witch_save_effect:
             return Effect(id: Constants.witch_save_effect, delay: 0, duration: 1)
 

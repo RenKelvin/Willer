@@ -71,6 +71,16 @@ class EffectMachine: NSObject {
         }
         self.ruleSystem.add(rule5)
 
+        // Werewolf suicide -> dead
+        let rule6 = GKRule(blockPredicate: { (system: GKRuleSystem) -> Bool in
+            let effect = Effect(id: Constants.werewolf_suicide_effect)
+            if self.effects.contains(effect) { return true }
+            else { return false }
+        }) { (system: GKRuleSystem) -> Void in
+            system.retractFact("live" as NSObjectProtocol)
+        }
+        self.ruleSystem.add(rule6)
+
     }
 
     func attachEffect(effect: Effect) {

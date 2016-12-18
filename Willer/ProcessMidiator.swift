@@ -126,5 +126,10 @@ class ProcessMidiator: NSObject {
     func ingestSteps(steps: [Step]) {
         self.stepQueue.insert(contentsOf: steps, at: 1)
     }
-    
+
+    func cutSteps(steps: [Step]) {
+        self.stepQueue.insert(contentsOf: steps, at: 0)
+        GameManager.shared.updateViewController()
+    }
+
 }

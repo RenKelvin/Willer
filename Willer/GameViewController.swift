@@ -148,7 +148,33 @@ class GameViewController: UIViewController, UICollectionViewDataSource, UICollec
     }
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        GameManager.shared.selectPlayer(at: indexPath.row)
+        // Trigger menu
+        if PlayerMidiator.shared.maxSelected == 0 {
+            let player = GameManager.shared.livingPlayers()[indexPath.row]
+            if player.character.id == Constants.Werewolf {
+                let alertController = UIAlertController(title: "狼人自爆", message: "", preferredStyle: .alert)
+
+                let cancelAction = UIAlertAction(title: "取消", style: .cancel) { action in
+                    // ...
+                }
+                alertController.addAction(cancelAction)
+
+                let doneAction = UIAlertAction(title: "确定", style: .default) { action in
+                    // ...
+                    _ = (player.character as! Werewolf).abilities[1].action()
+                    self.update()
+                }
+                alertController.addAction(doneAction)
+
+                self.present(alertController, animated: true) {
+                    // ...
+                }
+            }
+        }
+            // Select players
+        else {
+            GameManager.shared.selectPlayer(at: indexPath.row)
+        }
     }
 
     /*
@@ -188,15 +214,15 @@ class GameCollectionViewCell: UICollectionViewCell {
         //
         self.portraitImageView.layer.cornerRadius = self.portraitImageView.frame.size.width/2
         self.portraitImageView.clipsToBounds = true
-        
+
         self.noLabel.text = String(player.no)
         
         //
         if player.stateMachine.state == .live {
-            self.portraitImageView.isHighlighted = false
+            self.portraitImageView.image = UIImage(named: "portrait_placeholder")
         }
         else {
-            self.portraitImageView.isHighlighted = true
+            self.portraitImageView.image = UIImage(named: "portrait_placeholder_gray")
         }
     }
     
