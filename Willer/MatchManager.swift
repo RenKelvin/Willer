@@ -23,24 +23,16 @@ class MatchManager: NSObject {
         case 6:
             return [Deck.deck_6_1]
         case 7:
-            return [Deck.deck_6_1]
+            return [Deck.deck_7_1]
         case 8:
-            return [Deck.deck_6_1]
+            return [Deck.deck_8_1, Deck.deck_8_2, Deck.deck_8_3]
         case 9:
-            return [Deck.deck_9_1]
+            return [Deck.deck_9_1, Deck.deck_9_2, Deck.deck_9_3]
         case 10:
-            return [Deck.deck_6_1]
+            return [Deck.deck_10_1]
         case 11:
-            return [Deck.deck_6_1]
+            return [Deck.deck_11_1]
         case 12:
-            return [Deck.deck_12_1]
-        case 13:
-            return [Deck.deck_12_1]
-        case 14:
-            return [Deck.deck_12_1]
-        case 15:
-            return [Deck.deck_12_1]
-        case 16:
             return [Deck.deck_12_1]
         default:
             return [Deck.deck_test]

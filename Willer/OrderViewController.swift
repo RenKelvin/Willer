@@ -24,7 +24,7 @@ class OrderViewController: UIViewController, UITableViewDataSource, UITableViewD
 
     static var num: Int = 9
     let numMin: Int = 6
-    let numMax: Int = 16
+    let numMax: Int = 12
 
     override func viewDidLoad() {
         super.viewDidLoad()
