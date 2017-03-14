@@ -11,12 +11,6 @@ import UIKit
 class OrderViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
     @IBOutlet var numLabel: UILabel!
-    @IBOutlet var sliderButton: UIButton!
-    @IBOutlet var sliderFillImageView: UIImageView!
-    @IBOutlet var sliderContainerImageView: UIImageView!
-
-    @IBOutlet var sliderButtonLeadingSpaceConstraint: NSLayoutConstraint!
-    @IBOutlet var sliderFillImageViewWidthConstraint: NSLayoutConstraint!
 
     @IBOutlet var decksTableView: UITableView!
 
@@ -55,45 +49,8 @@ class OrderViewController: UIViewController, UITableViewDataSource, UITableViewD
         }
     }
 
-    @IBAction func sliderButtonDrag(gesture: UILongPressGestureRecognizer) {
-        let x = gesture.location(in: self.sliderButton.superview).x
-
-        let xMin: CGFloat = self.sliderContainerImageView.frame.origin.x + 8
-        let xMax: CGFloat = self.sliderContainerImageView.frame.origin.x + self.sliderContainerImageView.frame.width - 8
-
-        if (x < xMin || x > xMax) {
-            return
-        }
-
-        let k = (self.sliderButton.center.x - xMin) / (xMax - xMin)
-        let n = Float(self.numMin) + Float(self.numMax - self.numMin) * Float(k)
-
-        OrderViewController.num = Int(round(n))
-        self.numLabel.text = String(OrderViewController.num)
-
-        self.sliderButtonLeadingSpaceConstraint.constant = x - self.sliderContainerImageView.frame.origin.x - self.sliderButton.frame.width / 2
-        self.sliderFillImageViewWidthConstraint.constant = x - self.sliderFillImageView.frame.origin.x
-
-        if gesture.state == .began || gesture.state == .changed {
-            self.sliderButton.isHighlighted = true
-        }
-        else {
-            self.sliderButton.isHighlighted = false
-            self.refresh()
-        }
-    }
-
     func refresh() {
         self.numLabel.text = String(OrderViewController.num)
-
-        let xMin: CGFloat = self.sliderContainerImageView.frame.origin.x + 8
-        let xMax: CGFloat = self.sliderContainerImageView.frame.origin.x + self.sliderContainerImageView.frame.width - 8
-
-        let k = Float(OrderViewController.num - self.numMin) / Float(self.numMax - self.numMin)
-        let x = xMin + (xMax - xMin) * CGFloat(k)
-
-        self.sliderButtonLeadingSpaceConstraint.constant = x - self.sliderContainerImageView.frame.origin.x - self.sliderButton.frame.width / 2
-        self.sliderFillImageViewWidthConstraint.constant = x - self.sliderFillImageView.frame.origin.x
 
         // Update table
         self.decks = MatchManager.shared.decks(for: OrderViewController.num)
