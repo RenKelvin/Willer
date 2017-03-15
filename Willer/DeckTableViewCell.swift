@@ -14,6 +14,8 @@ class DeckTableViewCell: UITableViewCell {
     @IBOutlet var infoLabel: UILabel!
     @IBOutlet var charactersLabel: UILabel!
 
+    @IBOutlet var cardView: UIView!
+
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -55,6 +57,12 @@ class DeckTableViewCell: UITableViewCell {
         }
 
         self.charactersLabel.text = charString
+
+        self.cardView.layer.cornerRadius = 3.0
+        self.cardView.layer.shadowRadius = 4.0
+        self.cardView.layer.shadowOffset = CGSize(width: 0.0, height: 2.0)
+        self.cardView.layer.shadowColor = UIColor.black.cgColor
+        self.cardView.layer.shadowOpacity = 0.1
     }
 
 }

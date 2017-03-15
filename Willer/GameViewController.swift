@@ -214,7 +214,8 @@ class GameCollectionViewCell: UICollectionViewCell {
 
         // Selection
         if player.stateMachine.selected {
-            self.contentView.backgroundColor = UIColor.green
+            // self.contentView.backgroundColor = UIColor.green
+            self.contentView.backgroundColor = UIColor(red: 106.0/255.0, green: 140.0/255.0, blue: 54.0/255.0, alpha: 1.0)
         }
         else {
             self.contentView.backgroundColor = UIColor.clear
