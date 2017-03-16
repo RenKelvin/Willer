@@ -224,7 +224,7 @@ class GameCollectionViewCell: UICollectionViewCell {
         //
         self.portraitImageView.layer.cornerRadius = self.portraitImageView.frame.size.width/2
         self.portraitImageView.clipsToBounds = true
-
+        
         self.noLabel.text = String(player.no)
         
         //

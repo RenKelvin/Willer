@@ -62,7 +62,7 @@ class DeckTableViewCell: UITableViewCell {
         self.cardView.layer.shadowRadius = 4.0
         self.cardView.layer.shadowOffset = CGSize(width: 0.0, height: 2.0)
         self.cardView.layer.shadowColor = UIColor.black.cgColor
-        self.cardView.layer.shadowOpacity = 0.1
+        self.cardView.layer.shadowOpacity = 0.2
     }
 
 }

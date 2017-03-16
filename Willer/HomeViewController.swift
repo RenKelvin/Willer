@@ -10,6 +10,11 @@ import UIKit
 
 class HomeViewController: UIViewController {
 
+    override func viewWillAppear(_ animated: Bool) {
+        self.navigationController?.navigationBar.setBackgroundImage(UIImage(named: ""), for: .default)
+        self.navigationController?.navigationBar.shadowImage = UIImage(named: "")
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
