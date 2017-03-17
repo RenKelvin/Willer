@@ -45,8 +45,8 @@
                         <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="5qz-V7-Zi9">
-                                <rect key="frame" x="72" y="294.5" width="232" height="213"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="5qz-V7-Zi9">
+                                <rect key="frame" x="72" y="286.5" width="232" height="229"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U3N-JE-3uy">
                                         <rect key="frame" x="0.0" y="0.0" width="232" height="63"/>
@@ -57,12 +57,12 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I9H-u2-b2z">
-                                        <rect key="frame" x="0.0" y="75" width="232" height="63"/>
+                                        <rect key="frame" x="0.0" y="83" width="232" height="63"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                         <state key="normal" image="College"/>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WtZ-Nt-lQH">
-                                        <rect key="frame" x="0.0" y="150" width="232" height="63"/>
+                                        <rect key="frame" x="0.0" y="166" width="232" height="63"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                         <state key="normal" image="Library"/>
                                     </button>
@@ -193,31 +193,31 @@
                                 <rect key="frame" x="0.0" y="537" width="375" height="66"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="8" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZkZ-ml-lBy">
-                                        <rect key="frame" x="179" y="18.5" width="17" height="29"/>
+                                        <rect key="frame" x="179" y="19" width="17" height="29"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QtE-AK-ReG">
-                                        <rect key="frame" x="32" y="7" width="44" height="44"/>
+                                        <rect key="frame" x="32" y="11" width="44" height="44"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="44" id="9na-7k-DWF"/>
                                             <constraint firstAttribute="width" secondItem="QtE-AK-ReG" secondAttribute="height" multiplier="1:1" id="GNE-fZ-K8k"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="36"/>
-                                        <state key="normal" title="-"/>
+                                        <state key="normal" image="minus"/>
                                         <connections>
                                             <action selector="minusButtonTap" destination="sfv-GH-IY5" eventType="touchUpInside" id="wvk-33-DHQ"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wnm-ie-Wb0">
-                                        <rect key="frame" x="299" y="7" width="44" height="44"/>
+                                        <rect key="frame" x="299" y="11" width="44" height="44"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="44" id="ceg-YT-TzM"/>
                                             <constraint firstAttribute="width" secondItem="wnm-ie-Wb0" secondAttribute="height" multiplier="1:1" id="cfR-0d-lcS"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="36"/>
-                                        <state key="normal" title="+"/>
+                                        <state key="normal" image="add"/>
                                         <connections>
                                             <action selector="plusButtonTap" destination="sfv-GH-IY5" eventType="touchUpInside" id="49O-i1-fgC"/>
                                         </connections>
@@ -227,10 +227,10 @@
                                 <constraints>
                                     <constraint firstItem="QtE-AK-ReG" firstAttribute="leading" secondItem="Alf-kP-ZQe" secondAttribute="leading" constant="32" id="0ki-1W-BAZ"/>
                                     <constraint firstItem="ZkZ-ml-lBy" firstAttribute="centerX" secondItem="Alf-kP-ZQe" secondAttribute="centerX" id="Fb5-rS-JC1"/>
-                                    <constraint firstItem="wnm-ie-Wb0" firstAttribute="centerY" secondItem="Alf-kP-ZQe" secondAttribute="centerY" constant="-4" id="Sut-em-8NK"/>
+                                    <constraint firstItem="wnm-ie-Wb0" firstAttribute="centerY" secondItem="Alf-kP-ZQe" secondAttribute="centerY" id="Sut-em-8NK"/>
                                     <constraint firstAttribute="height" constant="66" id="Zca-8l-syU"/>
                                     <constraint firstAttribute="trailing" secondItem="wnm-ie-Wb0" secondAttribute="trailing" constant="32" id="bVS-uN-b2n"/>
-                                    <constraint firstItem="QtE-AK-ReG" firstAttribute="centerY" secondItem="Alf-kP-ZQe" secondAttribute="centerY" constant="-4" id="kZ9-Ve-JES"/>
+                                    <constraint firstItem="QtE-AK-ReG" firstAttribute="centerY" secondItem="Alf-kP-ZQe" secondAttribute="centerY" id="kZ9-Ve-JES"/>
                                     <constraint firstItem="ZkZ-ml-lBy" firstAttribute="centerY" secondItem="Alf-kP-ZQe" secondAttribute="centerY" id="r0t-FE-8lj"/>
                                 </constraints>
                             </view>
@@ -250,6 +250,7 @@
                     <connections>
                         <outlet property="decksTableView" destination="CBJ-ns-pV7" id="Noe-91-0Pv"/>
                         <outlet property="numLabel" destination="ZkZ-ml-lBy" id="fYE-dD-kWT"/>
+                        <outlet property="toolBarView" destination="Alf-kP-ZQe" id="LRp-2q-U6T"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="j8Q-Oi-Gjq" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -976,7 +977,7 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Dbh-IN-45W" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="517A4BEC-A2D7-47EE-B10A-19B872DBE40B" id="KOi-iO-Mxl">
+                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="73C116D2-1EC2-4275-A004-66AF03FA6A7C" id="KOi-iO-Mxl">
                     <rect key="frame" x="0.0" y="0.0" width="44" height="44"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 </imageView>
@@ -1082,7 +1083,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="517A4BEC-A2D7-47EE-B10A-19B872DBE40B" width="25" height="25">
+        <image name="73C116D2-1EC2-4275-A004-66AF03FA6A7C" width="25" height="25">
             <mutableData key="keyedArchiveRepresentation">
 YnBsaXN0MDDUAQIDBAUGPT5YJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK4HCBMU
 GR4fIyQrLjE3OlUkbnVsbNUJCgsMDQ4PEBESVk5TU2l6ZVYkY2xhc3NcTlNJbWFnZUZsYWdzVk5TUmVw
@@ -1178,11 +1179,12 @@ AEEAAAAAAAAAAAAAAAAAABQQA
         <image name="College" width="232" height="63"/>
         <image name="Library" width="232" height="63"/>
         <image name="Start" width="232" height="63"/>
+        <image name="add" width="32" height="31"/>
         <image name="announcement_bottom" width="353" height="24"/>
         <image name="announcement_glow_1" width="339" height="48"/>
         <image name="announcement_shadow" width="410" height="58"/>
         <image name="announcement_top" width="353" height="24"/>
-        <image name="back" width="10" height="18"/>
+        <image name="back" width="10" height="20"/>
         <image name="bg_blue" width="540" height="960"/>
         <image name="bg_dark" width="589" height="380"/>
         <image name="bg_element" width="325" height="55"/>
@@ -1195,6 +1197,7 @@ AEEAAAAAAAAAAAAAAAAAABQQA
         <image name="glow" width="169" height="24"/>
         <image name="heading" width="280" height="73"/>
         <image name="left_a" width="37" height="38"/>
+        <image name="minus" width="32" height="31"/>
         <image name="name_shadowing" width="41" height="10"/>
         <image name="portrait_bg" width="37" height="37"/>
         <image name="portrait_gloss" width="29" height="27"/>

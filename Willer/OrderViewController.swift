@@ -13,6 +13,7 @@ class OrderViewController: UIViewController, UITableViewDataSource, UITableViewD
     @IBOutlet var numLabel: UILabel!
 
     @IBOutlet var decksTableView: UITableView!
+    @IBOutlet var toolBarView: UIView!
 
     var decks: [Deck] = []
 
@@ -24,6 +25,15 @@ class OrderViewController: UIViewController, UITableViewDataSource, UITableViewD
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        self.toolBarView.layer.shadowRadius = 4.0
+        self.toolBarView.layer.shadowOffset = CGSize(width: 0.0, height: 0)
+        self.toolBarView.layer.shadowColor = UIColor.black.cgColor
+        self.toolBarView.layer.shadowOpacity = 0.4
+
+        self.navigationController?.navigationBar.layer.shadowRadius = 4.0
+        self.navigationController?.navigationBar.layer.shadowOffset = CGSize(width: 0.0, height: 0)
+        self.navigationController?.navigationBar.layer.shadowColor = UIColor.black.cgColor
+        self.navigationController?.navigationBar.layer.shadowOpacity = 0.4
     }
 
     override func viewWillAppear(_ animated: Bool) {
