@@ -11,8 +11,8 @@ import UIKit
 class HomeViewController: UIViewController {
 
     override func viewWillAppear(_ animated: Bool) {
-        self.navigationController?.navigationBar.setBackgroundImage(UIImage(named: ""), for: .default)
-        self.navigationController?.navigationBar.shadowImage = UIImage(named: "")
+        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
+        self.navigationController?.navigationBar.shadowImage = UIImage()
     }
 
     override func viewDidLoad() {
@@ -24,5 +24,5 @@ class HomeViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
+    
 }
