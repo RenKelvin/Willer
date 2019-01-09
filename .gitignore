@@ -2,12 +2,7 @@
 Pods/
 Podfile.lock
 
-*.xcbkptlist
-Breakpoints_v2.xcbkptlist
-/Willer.xcworkspace
-
-fastlane/
-
-Willer.ipa
-
-Willer.app.dSYM.zip
+Willer.xcworkspace
+Willer/.DS_Store
+.DS_Store
+Willer.xcodeproj/xcuserdata/chuanren.xcuserdatad/xcschemes/xcschememanagement.plist
