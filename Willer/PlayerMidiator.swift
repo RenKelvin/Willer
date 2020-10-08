@@ -71,7 +71,7 @@ class PlayerMidiator: NSObject {
         }
         else {
             player.stateMachine.selected = false
-            self.selectedPlayers.remove(at: self.selectedPlayers.index(of: player)!)
+            self.selectedPlayers.remove(at: self.selectedPlayers.firstIndex(of: player)!)
         }
     }
 

@@ -67,7 +67,7 @@ class GameViewController: UIViewController, UICollectionViewDataSource, UICollec
 
     // MARK: - General
 
-    func onUpdate() {
+    @objc func onUpdate() {
         self.update()
     }
 
@@ -82,7 +82,7 @@ class GameViewController: UIViewController, UICollectionViewDataSource, UICollec
         self.updateStep()
     }
 
-    func onEnd() {
+    @objc func onEnd() {
         self.end()
     }
 
